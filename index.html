@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nepalgunj Skin Center | Advanced Dermatology Clinic</title>
+  <title>Nepalgunj Skin Center | Advanced Dermatology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -15,123 +15,401 @@
 
 <body>
 
-  <nav class="navbar">
+  <div class="top-bar">
+    <div class="container">
+        <div>
+            <span>📍 Nepalgunj, Banke</span>
+        </div>
+        <div>
+            <span>📞 +977-9800000000</span>
+            <a href="contact.html">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar">
     <div class="container">
         <a href="index.html" class="logo">Nepalgunj Skin Center</a>
         <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
             &#9776;
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.5rem; color: white;">Book
-                    Appointment</a></li>
+            <li class="nav-item"><a href="index.html">Home</a></li>
+
+            <li class="nav-item">
+                <a href="#">Concerns ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Hair Loss & Transplant</a></li>
+                    <li><a href="#">Acne & Scars</a></li>
+                    <li><a href="#">Pigmentation</a></li>
+                    <li><a href="#">Anti-Aging</a></li>
+                    <li><a href="#">Laser Removal</a></li>
+                    <li><a href="#">Weight Management</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item"><a href="services.html">Services</a></li>
+            <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a href="about.html">About Us</a></li>
+            <li class="nav-item"><a href="faq.html">FAQ</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
         </ul>
     </div>
 </nav>
 
-  <section class="hero">
+  <!-- Hero Slider -->
+  <div class="hero-slider" id="heroSlider">
+
+    <!-- Slide 1 (Synced: user changed image to patient/1.jpg) -->
+    <div class="slide active" style="background-image: url('images/patient/1.jpg');">
+      <div class="slide-content">
+        <h1>Your Health, Our Priority!</h1>
+        <p style="font-size: 1.25rem; margin-bottom: 0;">Nepal's Premier Aesthetic Center for Skin, Hair, and Laser
+          treatments.</p>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" style="background-image: url('images/patient/verma.jpg');">
+      <div class="slide-content">
+        <h1>Advanced Hair Transplant</h1>
+        <p style="font-size: 1.25rem; margin-bottom: 0;">Natural-looking results with FUE technology.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3 (Synced: user changed image to patient/2.jpg) -->
+    <div class="slide" style="background-image: url('images/patient/2.jpg');">
+      <div class="slide-content">
+        <h1>Rejuvenate Your Skin</h1>
+        <p style="font-size: 1.25rem; margin-bottom: 0;">Expert care for glowing, youthful skin.</p>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="slider-prev" onclick="moveHeroSlide(-1)">&#10094;</div>
+    <div class="slider-next" onclick="moveHeroSlide(1)">&#10095;</div>
+
+  </div>
+
+  <script>
+    // Hero Slider Logic
+    let currentHeroSlide = 0;
+    const heroSlides = document.querySelectorAll('#heroSlider .slide');
+    const totalHeroSlides = heroSlides.length;
+
+    function showHeroSlide(n) {
+      if (n >= totalHeroSlides) currentHeroSlide = 0;
+      else if (n < 0) currentHeroSlide = totalHeroSlides - 1;
+      else currentHeroSlide = n;
+
+      heroSlides.forEach(slide => slide.classList.remove('active'));
+      heroSlides[currentHeroSlide].classList.add('active');
+    }
+
+    function moveHeroSlide(n) {
+      showHeroSlide(currentHeroSlide + n);
+    }
+
+    setInterval(() => {
+      moveHeroSlide(1);
+    }, 5000); 
+  </script>
+
+  <!-- Concerns Grid -->
+  <section class="section">
     <div class="container">
-      <h1>Reveal Your Best Skin</h1>
-      <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem;">World-class dermatology, hair transplant,
-        and aesthetic services in the heart of Nepalgunj.</p>
-      <a href="contact.html" class="btn btn-primary">Book an Appointment</a>
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <h2>What is your concern?</h2>
+        <p>We offer specialized solutions for all your aesthetic needs.</p>
+      </div>
+
+      <div class="grid grid-4" style="gap: 1rem;">
+        <a href="#" class="concern-item"><span class="concern-icon">🧴</span><span class="concern-title">Acne &
+            Scars</span></a>
+        <a href="#" class="concern-item"><span class="concern-icon">👩</span><span class="concern-title">Aging &
+            Wrinkles</span></a>
+        <a href="#" class="concern-item"><span class="concern-icon">✨</span><span
+            class="concern-title">Beautification</span></a>
+        <a href="#" class="concern-item"><span class="concern-icon">🔍</span><span class="concern-title">Moles &
+            Warts</span></a>
+        <a href="#" class="concern-item"><span class="concern-icon">⚪</span><span class="concern-title">Skin
+            Whitening</span></a>
+        <a href="#" class="concern-item"><span class="concern-icon">💆</span><span
+            class="concern-title">Rejuvenation</span></a>
+        <a href="#" class="concern-item"><span class="concern-icon">🦵</span><span class="concern-title">Unwanted
+            Hair</span></a>
+        <a href="#" class="concern-item"><span class="concern-icon">⚖️</span><span class="concern-title">Weight
+            Loss</span></a>
+      </div>
     </div>
   </section>
 
+  <!-- Why Choose Us -->
   <section class="section">
     <div class="container">
       <div class="text-center" style="margin-bottom: 3rem;">
-        <h2>Our Services</h2>
-        <p>Comprehensive care for your skin, hair, and nails.</p>
+        <h2>Why Choose Us?</h2>
+        <p>We are dedicated to providing the highest standard of dermatological care.</p>
       </div>
+
       <div class="grid grid-3">
         <div class="service-card">
-          <div class="service-icon">✨</div>
-          <h3>Clinical Dermatology</h3>
-          <p>Expert treatment for acne, eczema, psoriasis, and other skin conditions.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">💇</div>
-          <h3>Hair Transplant</h3>
-          <p>Advanced FUE hair transplantation for natural-looking results.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>Laser Treatments</h3>
-          <p>State-of-the-art laser solutions for hair removal, scarring, and rejuvenation.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">💉</div>
-          <h3>Botox & Fillers</h3>
-          <p>Anti-aging injections to smooth sprinkles and restore volume.</p>
+          <div class="service-icon">👨‍⚕️</div>
+          <h3>Expert Team</h3>
+          <p>Our clinics are led by highly qualified and experienced dermatologists and cosmetic surgeons.</p>
         </div>
         <div class="service-card">
           <div class="service-icon">🔬</div>
-          <h3>Hydrafacial</h3>
-          <p>Deep cleansing and hydration for glowing, healthy skin.</p>
+          <h3>Advanced Technology</h3>
+          <p>We use US-FDA approved lasers and the latest medical equipment for safe and effective results.</p>
         </div>
         <div class="service-card">
-          <div class="service-icon">🧪</div>
-          <h3>Chemical Peels</h3>
-          <p>Exfoliating treatments to improve skin texture and tone.</p>
+          <div class="service-icon">💖</div>
+          <h3>Personalized Care</h3>
+          <p>Every skin is unique. We customize treatment plans tailored specifically to your needs.</p>
         </div>
-      </div>
-      <div class="text-center" style="margin-top: 3rem;">
-        <a href="services.html" class="btn btn-secondary">View All Services</a>
       </div>
     </div>
   </section>
 
-  <section class="section section-bg">
+  <!-- Doctor Section -->
+  <section class="section">
     <div class="container">
       <div class="grid grid-2" style="align-items: center;">
         <div>
-          <img src="images/patient/doc.jpg" alt="Doctor examining patient"
-            style="border-radius: 10px; box-shadow: var(--shadow-lg);">
-          <!-- Note: Implementation plan handles real images, for now using placeholders if actuals don't exist, will be handled by browser loading fallbacks or I might want to check images later -->
+          <img src="images/patient/doc.jpg" alt="Our Doctor" style="border-radius: 10px; box-shadow: var(--shadow-lg);">
         </div>
         <div>
-          <h2>Why Choose Us?</h2>
-          <p style="margin-bottom: 1rem;">At Nepalgunj Skin Center, we combine medical expertise with artistic
-            precision. Our team of board-certified dermatologists uses the latest technology to deliver safe and
-            effective treatments tailored to your unique needs.</p>
-          <ul style="margin-bottom: 2rem;">
-            <li style="margin-bottom: 0.5rem;">✅ Certified & Experienced Specialists</li>
-            <li style="margin-bottom: 0.5rem;">✅ Cutting-edge Technology</li>
-            <li style="margin-bottom: 0.5rem;">✅ Hygienic & Comfortable Environment</li>
-          </ul>
-          <a href="about.html" class="btn btn-primary">Learn More About Us</a>
+          <h2>Meet Our Experts</h2>
+          <p style="margin-bottom: 1rem;">Led by experienced dermatologists and surgeons.</p>
+
+          <div style="margin-bottom: 1rem; border-left: 4px solid var(--primary-color); padding-left: 1rem;">
+            <h4 style="color: var(--secondary-color);">Dr. Name Surname</h4>
+            <p>Senior Dermatologist & Laser Specialist</p>
+          </div>
+
+          <div style="margin-bottom: 1rem; border-left: 4px solid var(--primary-color); padding-left: 1rem;">
+            <h4 style="color: var(--secondary-color);">Dr. Ami Pradhan</h4>
+            <p>Cosmetic Surgeon</p>
+          </div>
+
+          <a href="about.html" class="btn btn-primary">View Full Team</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
+  <!-- Success Stories (Marquee) -->
+  <section class="section section-bg" style="overflow: hidden;">
+    <div class="container" style="max-width: 100%;"> <!-- Full Width-->
       <div class="text-center" style="margin-bottom: 3rem;">
-        <h2>What Our Patients Say</h2>
+        <h2>Amazing Success Stories</h2>
+        <p>Hear from our satisfied patients</p>
       </div>
-      <div class="grid grid-3">
-        <div class="service-card" style="text-align: left;">
-          <p style="font-style: italic; margin-bottom: 1rem;">"Best skin clinic in Nepalgunj! The doctor was very
-            patient and the treatment worked wonders for my acne."</p>
-          <h4>- Anita S.</h4>
-        </div>
-        <div class="service-card" style="text-align: left;">
-          <p style="font-style: italic; margin-bottom: 1rem;">"Satisfied with my hair transplant results. Highly
-            professional team and great facilities."</p>
-          <h4>- Ramesh K.</h4>
-        </div>
-        <div class="service-card" style="text-align: left;">
-          <p style="font-style: italic; margin-bottom: 1rem;">"I loved the hydrafacial here. My skin feels so fresh and
-            clean. Will definitely visit again."</p>
-          <h4>- Priya M.</h4>
+
+      <!-- Marquee Slider -->
+      <div class="testimonial-slider" id="testimonialSlider">
+        <div class="testimonial-track">
+
+          <!-- ORIGINAL SET -->
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Milan Tamang</div>
+              </div>
+              <p class="story-text">"I visited Nepalgunj Skin Center. The result was awesome. Now I have the best hair!"
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Kumari Maharjan</div>
+              </div>
+              <p class="story-text">"I underwent cosmetic enhancement here and I couldn't be happier."</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Ramila Adhikari</div>
+              </div>
+              <p class="story-text">"I struggled with melasma for years. I'm now much more confident."</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Reena Tamang</div>
+              </div>
+              <p class="story-text">"I recently had Botox for wrinkles and I am blown away."</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Royesh Kahtri</div>
+              </div>
+              <p class="story-text">"Body Jet Liposuction helped me lose fat very fast. Highly recommend!"</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Megha Jha</div>
+              </div>
+              <p class="story-text">"HydraFacial changed my skin. Smoother, brighter, and more hydrated."</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Sanjay Shrestha</div>
+              </div>
+              <p class="story-text">"Cryolipolysis results exceeded my expectations. Truly delighted."</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Ashmita Kadel</div>
+              </div>
+              <p class="story-text">"Emsculpt helped me achieve a sculpted and toned physique."</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Bishal Gurung</div>
+              </div>
+              <p class="story-text">"Laser Hair Removal was quick, painless, and very effective. Great service!"</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Priya Sharma</div>
+              </div>
+              <p class="story-text">"The skin whitening treatment gave me a natural glow. I love the results."</p>
+            </div>
+          </div>
+
+          <!-- DUPLICATE SET (For Seamless Loop) -->
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Milan Tamang</div>
+              </div>
+              <p class="story-text">"I visited Nepalgunj Skin Center. The result was awesome. Now I have the best hair!"
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Kumari Maharjan</div>
+              </div>
+              <p class="story-text">"I underwent cosmetic enhancement here and I couldn't be happier."</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Ramila Adhikari</div>
+              </div>
+              <p class="story-text">"I struggled with melasma for years. I'm now much more confident."</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Reena Tamang</div>
+              </div>
+              <p class="story-text">"I recently had Botox for wrinkles and I am blown away."</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Royesh Kahtri</div>
+              </div>
+              <p class="story-text">"Body Jet Liposuction helped me lose fat very fast. Highly recommend!"</p>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Megha Jha</div>
+              </div>
+              <p class="story-text">"HydraFacial changed my skin. Smoother, brighter, and more hydrated."</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Sanjay Shrestha</div>
+              </div>
+              <p class="story-text">"Cryolipolysis results exceeded my expectations. Truly delighted."</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Ashmita Kadel</div>
+              </div>
+              <p class="story-text">"Emsculpt helped me achieve a sculpted and toned physique."</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Bishal Gurung</div>
+              </div>
+              <p class="story-text">"Laser Hair Removal was quick, painless, and very effective. Great service!"</p>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="story-card">
+              <div class="story-header">
+                <div class="story-avatar"></div>
+                <div class="story-name">Priya Sharma</div>
+              </div>
+              <p class="story-text">"The skin whitening treatment gave me a natural glow. I love the results."</p>
+            </div>
+          </div>
+
         </div>
       </div>
+
     </div>
   </section>
 

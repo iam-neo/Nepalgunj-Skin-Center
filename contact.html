@@ -15,20 +15,44 @@
 
 <body>
 
-    <nav class="navbar">
+    <div class="top-bar">
+    <div class="container">
+        <div>
+            <span>📍 Nepalgunj, Banke</span>
+        </div>
+        <div>
+            <span>📞 +977-9800000000</span>
+            <a href="contact.html">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar">
     <div class="container">
         <a href="index.html" class="logo">Nepalgunj Skin Center</a>
         <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
             &#9776;
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.5rem; color: white;">Book
-                    Appointment</a></li>
+            <li class="nav-item"><a href="index.html">Home</a></li>
+
+            <li class="nav-item">
+                <a href="#">Concerns ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Hair Loss & Transplant</a></li>
+                    <li><a href="#">Acne & Scars</a></li>
+                    <li><a href="#">Pigmentation</a></li>
+                    <li><a href="#">Anti-Aging</a></li>
+                    <li><a href="#">Laser Removal</a></li>
+                    <li><a href="#">Weight Management</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item"><a href="services.html">Services</a></li>
+            <li class="nav-item"><a href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a href="about.html">About Us</a></li>
+            <li class="nav-item"><a href="faq.html">FAQ</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
         </ul>
     </div>
 </nav>
