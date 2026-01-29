@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nepalgunjskincenter.com.np/sitemap.xml
