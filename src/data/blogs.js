@@ -1,9 +1,64 @@
 export const blogPosts = [
-    {
-        id: 'understanding-acne',
-        title: 'Understanding Acne: Causes, Types, and Modern Treatments',
-        excerpt: 'Acne affects millions worldwide. Learn about the different types of acne, what causes breakouts, and the most effective treatments available today.',
-        content: `
+  {
+    id: 'hydrafacial-ultimate-guide',
+    title: 'HydraFacial: The Ultimate Skin Rejuvenation Treatment',
+    excerpt: 'Discover everything about HydraFacial – the revolutionary treatment that cleanses, extracts, and hydrates your skin in one session for instant, visible results.',
+    content: `
+      <p>HydraFacial has revolutionized the way we approach skincare treatments. At Nepalgunj Skin Center, we're proud to offer this cutting-edge treatment that delivers immediate, noticeable results with no downtime.</p>
+      
+      <h3>What Makes HydraFacial Special?</h3>
+      <p>Unlike traditional facials, HydraFacial uses patented Vortex-Fusion® technology to combine cleansing, exfoliation, extraction, hydration, and antioxidant protection simultaneously. This multi-step treatment addresses:</p>
+      <ul>
+        <li><strong>Fine lines and wrinkles</strong></li>
+        <li><strong>Skin texture and elasticity</strong></li>
+        <li><strong>Brown spots and hyperpigmentation</strong></li>
+        <li><strong>Oily and congested skin</strong></li>
+        <li><strong>Enlarged pores</strong></li>
+      </ul>
+      
+      <h3>The 4-Step HydraFacial Process</h3>
+      <ol>
+        <li><strong>Cleanse + Peel:</strong> Dead skin cells are gently removed to reveal healthy new skin using a hydrating formula</li>
+        <li><strong>Extract + Hydrate:</strong> Painless vacuum suction removes impurities from pores while simultaneous hydration nourishes the skin</li>
+        <li><strong>Fuse + Protect:</strong> Antioxidants and peptides are infused to maximize your glow and protect your skin</li>
+        <li><strong>LED Light Therapy:</strong> Optional add-on that stimulates collagen production and kills acne-causing bacteria</li>
+      </ol>
+      
+      <h3>Results You Can See</h3>
+      <p>One of the most remarkable aspects of HydraFacial is the immediate visible improvement. After just one treatment, patients typically notice:</p>
+      <ul>
+        <li>Radiant, glowing complexion</li>
+        <li>Reduced appearance of pores</li>
+        <li>More even skin tone</li>
+        <li>Improved skin texture</li>
+        <li>Enhanced hydration</li>
+      </ul>
+      
+      <h3>Who Can Benefit from HydraFacial?</h3>
+      <p>HydraFacial is suitable for all skin types, ages, and conditions. Whether you have sensitive skin, aging concerns, acne-prone skin, or simply want to maintain healthy skin, HydraFacial can be customized to meet your needs.</p>
+      
+      <h3>How Often Should You Get HydraFacial?</h3>
+      <p>For optimal results, we recommend monthly HydraFacial treatments. However, you can safely get the treatment as often as every two weeks. Many of our patients schedule their HydraFacial before special events for that extra glow.</p>
+      
+      <h3>Experience HydraFacial at Nepalgunj Skin Center</h3>
+      <p>Dr. Abhishek Arjel and our trained skincare specialists customize each HydraFacial treatment to address your unique skin concerns. Visit us to experience why HydraFacial is often called "the best facial you'll ever have."</p>
+    `,
+    image: '/images/blog/hydrafacial-treatment.png',
+    images: [
+      { src: '/images/blog/hydrafacial-treatment.png', caption: 'HydraFacial Treatment in Progress' },
+      { src: '/images/blog/hydrafacial-results.png', caption: 'Before & After Results' },
+      { src: '/images/blog/hydrafacial-equipment.png', caption: 'HydraFacial Equipment & Serums' }
+    ],
+    category: 'Skin Care',
+    author: 'Dr. Abhishek Arjel',
+    date: '2026-01-29',
+    readTime: '8 min read'
+  },
+  {
+    id: 'understanding-acne',
+    title: 'Understanding Acne: Causes, Types, and Modern Treatments',
+    excerpt: 'Acne affects millions worldwide. Learn about the different types of acne, what causes breakouts, and the most effective treatments available today.',
+    content: `
       <p>Acne is one of the most common skin conditions, affecting people of all ages. While often associated with teenagers, adult acne is increasingly common, especially among women.</p>
       
       <h3>What Causes Acne?</h3>
@@ -38,17 +93,17 @@ export const blogPosts = [
       
       <p>Don't let acne affect your confidence. Schedule a consultation with Dr. Abhishek Arjel to discuss your personalized treatment plan.</p>
     `,
-        image: '/images/blog/acne-treatment.jpg',
-        category: 'Skin Care',
-        author: 'Dr. Abhishek Arjel',
-        date: '2026-01-15',
-        readTime: '5 min read'
-    },
-    {
-        id: 'hair-transplant-guide',
-        title: 'Hair Transplant 101: What to Expect from FUE',
-        excerpt: 'Considering a hair transplant? This comprehensive guide covers everything from the procedure to recovery and results you can expect.',
-        content: `
+    image: '/images/blog/acne-treatment.jpg',
+    category: 'Skin Care',
+    author: 'Dr. Abhishek Arjel',
+    date: '2026-01-15',
+    readTime: '5 min read'
+  },
+  {
+    id: 'hair-transplant-guide',
+    title: 'Hair Transplant 101: What to Expect from FUE',
+    excerpt: 'Considering a hair transplant? This comprehensive guide covers everything from the procedure to recovery and results you can expect.',
+    content: `
       <p>Hair loss can significantly impact self-esteem. Fortunately, modern hair transplant techniques offer natural-looking, permanent solutions. FUE (Follicular Unit Extraction) has revolutionized hair restoration.</p>
       
       <h3>What is FUE Hair Transplant?</h3>
@@ -75,17 +130,17 @@ export const blogPosts = [
       <h3>Why Choose Nepalgunj Skin Center?</h3>
       <p>Dr. Abhishek Arjel has performed over 500 successful hair transplants. We use the latest technology and techniques to ensure natural-looking results with minimal discomfort.</p>
     `,
-        image: '/images/blog/hair-transplant.jpg',
-        category: 'Hair Care',
-        author: 'Dr. Abhishek Arjel',
-        date: '2026-01-10',
-        readTime: '7 min read'
-    },
-    {
-        id: 'science-behind-hydrafacial',
-        title: 'The Science Behind HydraFacial: Why It Works',
-        excerpt: 'Discover why HydraFacial has become the most popular facial treatment worldwide and how it delivers instant, visible results.',
-        content: `
+    image: '/images/blog/hair-transplant.jpg',
+    category: 'Hair Care',
+    author: 'Dr. Abhishek Arjel',
+    date: '2026-01-10',
+    readTime: '7 min read'
+  },
+  {
+    id: 'science-behind-hydrafacial',
+    title: 'The Science Behind HydraFacial: Why It Works',
+    excerpt: 'Discover why HydraFacial has become the most popular facial treatment worldwide and how it delivers instant, visible results.',
+    content: `
       <p>HydraFacial has taken the skincare world by storm, with a treatment performed every 15 seconds worldwide. But what makes it so effective?</p>
       
       <h3>The HydraFacial Process</h3>
@@ -116,17 +171,17 @@ export const blogPosts = [
       
       <p>Experience the HydraFacial difference at Nepalgunj Skin Center. Perfect before special events or as part of your regular skincare routine.</p>
     `,
-        image: '/images/blog/hydrafacial.jpg',
-        category: 'Skin Care',
-        author: 'Dr. Abhishek Arjel',
-        date: '2026-01-05',
-        readTime: '4 min read'
-    },
-    {
-        id: 'sun-protection-guide',
-        title: 'How to Protect Your Skin from Sun Damage in Nepal',
-        excerpt: 'Living at higher altitudes means stronger UV exposure. Learn essential sun protection tips for healthy, youthful skin.',
-        content: `
+    image: '/images/blog/hydrafacial.jpg',
+    category: 'Skin Care',
+    author: 'Dr. Abhishek Arjel',
+    date: '2026-01-05',
+    readTime: '4 min read'
+  },
+  {
+    id: 'sun-protection-guide',
+    title: 'How to Protect Your Skin from Sun Damage in Nepal',
+    excerpt: 'Living at higher altitudes means stronger UV exposure. Learn essential sun protection tips for healthy, youthful skin.',
+    content: `
       <p>Nepal's altitude and climate make sun protection especially important. UV radiation increases by about 10% for every 1,000 meters of elevation. Here's how to protect your skin effectively.</p>
       
       <h3>Understanding UV Damage</h3>
@@ -157,17 +212,17 @@ export const blogPosts = [
         <li>Professional skin lightening treatments</li>
       </ul>
     `,
-        image: '/images/blog/sun-protection.jpg',
-        category: 'Skin Care',
-        author: 'Dr. Abhishek Arjel',
-        date: '2025-12-28',
-        readTime: '5 min read'
-    },
-    {
-        id: 'botox-vs-fillers',
-        title: 'Anti-Aging: Botox vs Dermal Fillers – Which is Right for You?',
-        excerpt: 'Both treatments fight aging but work differently. Understand the key differences to choose the best option for your concerns.',
-        content: `
+    image: '/images/blog/sun-protection.jpg',
+    category: 'Skin Care',
+    author: 'Dr. Abhishek Arjel',
+    date: '2025-12-28',
+    readTime: '5 min read'
+  },
+  {
+    id: 'botox-vs-fillers',
+    title: 'Anti-Aging: Botox vs Dermal Fillers – Which is Right for You?',
+    excerpt: 'Both treatments fight aging but work differently. Understand the key differences to choose the best option for your concerns.',
+    content: `
       <p>Botox and dermal fillers are the two most popular non-surgical anti-aging treatments. While often confused, they work in completely different ways.</p>
       
       <h3>How Botox Works</h3>
@@ -199,17 +254,17 @@ export const blogPosts = [
       <h3>Consultation is Key</h3>
       <p>At Nepalgunj Skin Center, Dr. Arjel will assess your concerns and create a personalized plan. Natural results are our priority – we enhance, not change, your appearance.</p>
     `,
-        image: '/images/blog/botox-fillers.jpg',
-        category: 'Anti-Aging',
-        author: 'Dr. Abhishek Arjel',
-        date: '2025-12-20',
-        readTime: '6 min read'
-    },
-    {
-        id: 'dealing-with-melasma',
-        title: 'Dealing with Melasma: Expert Tips for Managing Stubborn Pigmentation',
-        excerpt: 'Melasma can be frustrating to treat. Learn expert strategies for managing this common but challenging skin condition.',
-        content: `
+    image: '/images/blog/botox-fillers.jpg',
+    category: 'Anti-Aging',
+    author: 'Dr. Abhishek Arjel',
+    date: '2025-12-20',
+    readTime: '6 min read'
+  },
+  {
+    id: 'dealing-with-melasma',
+    title: 'Dealing with Melasma: Expert Tips for Managing Stubborn Pigmentation',
+    excerpt: 'Melasma can be frustrating to treat. Learn expert strategies for managing this common but challenging skin condition.',
+    content: `
       <p>Melasma, also known as "the mask of pregnancy," affects millions worldwide. This stubborn condition causes brown or gray-brown patches, typically on the face. Let's explore effective management strategies.</p>
       
       <h3>Understanding Melasma Triggers</h3>
@@ -242,14 +297,14 @@ export const blogPosts = [
       
       <p>Melasma is challenging but manageable. Schedule a consultation to discuss your personalized treatment plan.</p>
     `,
-        image: '/images/blog/melasma.jpg',
-        category: 'Skin Care',
-        author: 'Dr. Abhishek Arjel',
-        date: '2025-12-15',
-        readTime: '6 min read'
-    }
+    image: '/images/blog/melasma.jpg',
+    category: 'Skin Care',
+    author: 'Dr. Abhishek Arjel',
+    date: '2025-12-15',
+    readTime: '6 min read'
+  }
 ];
 
 export const getBlogBySlug = (slug) => {
-    return blogPosts.find(post => post.id === slug);
+  return blogPosts.find(post => post.id === slug);
 };

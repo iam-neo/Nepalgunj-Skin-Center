@@ -88,6 +88,7 @@ export const BlogPost = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
     const post = getBlogBySlug(slug);
+    const [selectedImage, setSelectedImage] = useState(0);
 
     if (!post) {
         return (
@@ -115,6 +116,9 @@ export const BlogPost = () => {
     const relatedPosts = blogPosts
         .filter(p => p.category === post.category && p.id !== post.id)
         .slice(0, 2);
+
+    // Check if post has multiple images
+    const hasMultipleImages = post.images && post.images.length > 0;
 
     return (
         <>
@@ -148,6 +152,104 @@ export const BlogPost = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Image Gallery - for posts with multiple images */}
+            {hasMultipleImages && (
+                <section className="section" style={{ paddingBottom: '0' }}>
+                    <div className="container" style={{ maxWidth: '900px' }}>
+                        {/* Main Image Display */}
+                        <div style={{
+                            position: 'relative',
+                            borderRadius: 'var(--radius)',
+                            overflow: 'hidden',
+                            marginBottom: '1rem',
+                            boxShadow: '0 10px 40px rgba(0,0,0,0.15)'
+                        }}>
+                            <img
+                                src={post.images[selectedImage].src}
+                                alt={post.images[selectedImage].caption}
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    maxHeight: '500px',
+                                    objectFit: 'cover',
+                                    display: 'block'
+                                }}
+                                onError={(e) => {
+                                    e.target.src = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=500&fit=crop';
+                                }}
+                            />
+                            {/* Caption */}
+                            <div style={{
+                                position: 'absolute',
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                                padding: '2rem 1.5rem 1rem',
+                                color: 'white'
+                            }}>
+                                <p style={{ margin: 0, fontSize: '0.9375rem' }}>
+                                    {post.images[selectedImage].caption}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Thumbnail Selection */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '0.75rem',
+                            justifyContent: 'center',
+                            flexWrap: 'wrap'
+                        }}>
+                            {post.images.map((img, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setSelectedImage(index)}
+                                    style={{
+                                        padding: 0,
+                                        border: selectedImage === index
+                                            ? '3px solid var(--primary)'
+                                            : '3px solid transparent',
+                                        borderRadius: 'var(--radius-sm)',
+                                        overflow: 'hidden',
+                                        cursor: 'pointer',
+                                        transition: 'all 0.3s ease',
+                                        opacity: selectedImage === index ? 1 : 0.7,
+                                        transform: selectedImage === index ? 'scale(1.05)' : 'scale(1)',
+                                        background: 'none'
+                                    }}
+                                    title={img.caption}
+                                >
+                                    <img
+                                        src={img.src}
+                                        alt={img.caption}
+                                        style={{
+                                            width: '100px',
+                                            height: '70px',
+                                            objectFit: 'cover',
+                                            display: 'block'
+                                        }}
+                                        onError={(e) => {
+                                            e.target.src = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=100&h=70&fit=crop';
+                                        }}
+                                    />
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Image Counter */}
+                        <p style={{
+                            textAlign: 'center',
+                            marginTop: '1rem',
+                            color: 'var(--text-light)',
+                            fontSize: '0.875rem'
+                        }}>
+                            Image {selectedImage + 1} of {post.images.length}
+                        </p>
+                    </div>
+                </section>
+            )}
 
             {/* Article Content */}
             <section className="section">
