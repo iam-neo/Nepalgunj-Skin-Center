@@ -1,69 +1,65 @@
-# Nepalgunj Skin Center – Official Website
+# Nepalgunj Skin Center
 
-A professional, modern website for **Nepalgunj Skin & Hair Transplant Clinic**, built using HTML and CSS. The site features a premium design, responsive layout, and a static build system for easy deployment.
+**Modern React Website for Western Nepal's Premier Dermatology Clinic**
 
----
-
-## 📂 Project Structure
+## 🚀 Quick Start
 
 ```bash
-├── src/                # SOURCE CODE (Edit these files!)
-│   ├── header.html     # Header template
-│   ├── footer.html     # Footer template
-│   └── *.html          # Pages (index, about, etc.)
-├── css/                
-│   └── style.css       # Main stylesheet
-├── images/             # Media assets
-├── build.js            # Build script (compiles src/ -> root)
-├── index.html          # GENERATED FILE (Do not edit directly)
-└── README.md           # Project documentation
+# Install dependencies
+npm install
+
+# Development server
+npm run dev
+
+# Production build
+npm run build
 ```
 
+## 🛠 Tech Stack
+
+- **React 18** + Vite
+- **React Router** for multi-page navigation
+- **Custom CSS** with logo-matching color scheme
+- **Vercel** deployment ready
+
+## 📄 Pages
+
+| Page | Route | Description |
+|------|-------|-------------|
+| Home | `/` | Hero slider, services, testimonials |
+| About | `/about` | Mission, team profiles |
+| Services | `/services` | 8 treatment cards |
+| Gallery | `/gallery` | Masonry image gallery |
+| Blog | `/blog` | 6 dermatology articles |
+| FAQ | `/faq` | Accordion-style Q&A |
+| Contact | `/contact` | Form + map |
+
+## 🎨 Color Scheme
+
+Derived from the clinic logo:
+- Primary Cyan: `#00B4D8`
+- Primary Blue: `#0077B6`
+- Deep Blue: `#023E8A`
+
+## 📁 Structure
+
+```
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Page components
+│   ├── data/           # Services, testimonials, blogs, FAQs
+│   └── index.css       # Global styles
+├── public/images/      # Image assets
+├── documentation/      # Project documentation
+└── vercel.json         # Vercel SPA config
+```
+
+## 🚢 Deploy to Vercel
+
+1. Push to GitHub
+2. Connect repo to Vercel
+3. Deploy automatically
+
 ---
 
-## 🛠️ Technologies Used
-
-- **Static Site Generation (SSG)**: Custom Node.js script to stitch header/footer.
-- **HTML5/CSS3**: Core technologies.
-- **Vercel**: Optimized for static hosting.
-
----
-
-## 🚀 Deployment Guide (Vercel)
-
-This project is optimized for **Vercel**.
-
-### Method 1: Zero-Config Deployment (Recommended)
-1. Push this repository to **GitHub**.
-2. Go to [Vercel](https://vercel.com) and click **"Add New Project"**.
-3. Import your repository.
-4. **Vercel will automatically detect the static HTML files** in the root directory.
-5. Click **Deploy**. Done!
-
-*(Since I have already run the build script, the `index.html` and other files in the root are ready to be served).*
-
-### Method 2: Manual Build (For Developers)
-If you make changes to the source files in `src/`, you need to rebuild the project before deploying (or committing).
-
-1. **Edit** files in `src/` (e.g., `src/index.html`).
-2. **Run Build**:
-   ```bash
-   node build.js
-   ```
-   *This command updates the files in the root directory.*
-3. **Commit & Push** to GitHub.
-
----
-
-## 💻 Running Locally
-
-You can simply open `index.html` in your browser! No server is required anymore because the files are fully static.
-
----
-
-## 📞 Contact
-
-**Nepalgunj Skin Center**
-Nepalgunj, Banke, Nepal
-Phone: +977-9800000000
-Email: info@nepalgunjskincenter.com
+© 2026 Nepalgunj Skin Center

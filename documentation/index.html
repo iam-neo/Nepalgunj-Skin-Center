@@ -39,17 +39,19 @@
             <section id="overview">
                 <h1>Documentation Hub</h1>
                 <p class="lead">Welcome to the official documentation for the <strong>Nepalgunj Skin Center</strong>
-                    website. This guide explains the architecture, content specificities, and deployment processes for
-                    the developer team.</p>
+                    website. This guide explains the architecture, content, and deployment processes for the modern
+                    React-based site.</p>
 
                 <div class="alert alert-info">
-                    <strong>Note:</strong> This site uses a Static Site Generation (SSG) approach. Changes should always
-                    be made in the <code>src/</code> directory.
+                    <strong>🎉 v2.0 - React Conversion Complete!</strong> The site has been fully rebuilt using React +
+                    Vite
+                    for a modern, professional single-page application experience.
                 </div>
 
                 <h2>Project Overview</h2>
                 <p>The <strong>Nepalgunj Skin Center</strong> website serves as the digital front door for Western
-                    Nepal's premier aesthetic clinic. It allows patients to explore services, read testimonials, and
+                    Nepal's premier aesthetic clinic. Patients can explore services, read the health blog, view
+                    testimonials, and
                     contact the clinic.</p>
 
                 <h3>Key Goals</h3>
@@ -57,8 +59,9 @@
                     <li><strong>Inform:</strong> Provide detailed info on Hair Transplants, Laser treatments, etc.</li>
                     <li><strong>Trust:</strong> Showcase Dr. Abhishek Arjel's credentials and patient success stories.
                     </li>
+                    <li><strong>Educate:</strong> Blog with skincare tips and treatment information.</li>
                     <li><strong>Convert:</strong> Drive bookings through prominent "Book Now" calls to action.</li>
-                    <li><strong>Perform:</strong> Ensure fast load times on all devices using static HTML.</li>
+                    <li><strong>Perform:</strong> Fast load times and smooth animations with React SPA.</li>
                 </ul>
 
                 <h3>Technology Stack</h3>
@@ -71,20 +74,24 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Core</td>
-                            <td>HTML5, CSS3, JavaScript (ES6+)</td>
+                            <td>Framework</td>
+                            <td>React 18 + Vite</td>
                         </tr>
                         <tr>
-                            <td>Build Tool</td>
-                            <td>Node.js (Custom Build Script)</td>
+                            <td>Routing</td>
+                            <td>React Router DOM</td>
                         </tr>
                         <tr>
                             <td>Styling</td>
-                            <td>LESS (Pre-processor), Bootstrap Grid</td>
+                            <td>Custom CSS with CSS Variables</td>
                         </tr>
                         <tr>
-                            <td>Interactive</td>
-                            <td>jQuery, Revolution Slider, Owl Carousel</td>
+                            <td>Deployment</td>
+                            <td>Vercel (optimized with vercel.json)</td>
+                        </tr>
+                        <tr>
+                            <td>Build Output</td>
+                            <td>Static files in /dist folder</td>
                         </tr>
                     </tbody>
                 </table>
@@ -93,69 +100,118 @@
             <!-- STRUCTURE -->
             <section id="structure">
                 <h2>Directory & File Structure</h2>
-                <p>We separate source code from built code. Always edit files in <code>src/</code>.</p>
+                <p>The project follows a modern React SPA structure with component-based architecture.</p>
 
-                <div class="alert alert-warning">
-                    <strong>Warning:</strong> Do not edit the .html files in the root directory directly. They are
-                    overwritten by the build script.
-                </div>
-
-                <pre><code>├── src/                # SOURCE CODE (Edit here!)
-│   ├── header.html     # Global Header
-│   ├── footer.html     # Global Footer
-│   └── *.html          # Page templates
-├── css/                # Stylesheets
-│   └── style.css       # Main compiled CSS
-├── js/                 # JavaScript
-│   └── custom.js       # Main logic file
-├── images/             # Assets
-│   ├── hosp/           # Hospital photos/logo
-│   └── patient/        # Patient photos
-├── build.js            # Build Script
-└── index.html          # GENERATED FILE (Output)
-</code></pre>
+                <pre><code>├── src/                  # React Source Code
+│   ├── components/       # Reusable Components
+│   │   ├── Navbar.jsx    # Navigation with dropdown
+│   │   ├── Footer.jsx    # Site footer with links
+│   │   ├── TopBar.jsx    # Contact info bar
+│   │   ├── HeroSlider.jsx# Homepage hero slider
+│   │   ├── TestimonialSlider.jsx # Testimonials marquee
+│   │   └── BlogCard.jsx  # Blog post preview card
+│   ├── pages/            # Page Components
+│   │   ├── Home.jsx      # Homepage
+│   │   ├── About.jsx     # About Us
+│   │   ├── Services.jsx  # Treatments list
+│   │   ├── Gallery.jsx   # Image gallery
+│   │   ├── Blog.jsx      # Blog listing & post
+│   │   ├── FAQ.jsx       # FAQ accordion
+│   │   └── Contact.jsx   # Contact form
+│   ├── data/             # Static Data
+│   │   ├── services.js   # Services array
+│   │   ├── testimonials.js
+│   │   ├── faqs.js       # FAQ by category
+│   │   └── blogs.js      # 6 dermatology articles
+│   ├── App.jsx           # Main app with routing
+│   ├── main.jsx          # Entry point
+│   └── index.css         # Global styles
+├── public/               # Static Assets
+│   └── images/           # All images (hosp, patient, etc.)
+├── dist/                 # Build output (deploy this!)
+├── documentation/        # This documentation
+├── index.html            # HTML template with SEO
+├── package.json          # Dependencies
+├── vite.config.js        # Vite configuration
+└── vercel.json           # Vercel SPA routing config</code></pre>
 
                 <h3>Key Directories</h3>
                 <ul>
-                    <li><strong><code>src/</code></strong>: The "Workspace". All editing happens here.</li>
-                    <li><strong><code>images/</code></strong>: Organized by type (e.g., <code>hosp</code> for
-                        infrastructure, <code>patient</code> for clinical results).</li>
-                    <li><strong><code>css/</code></strong>: Contains <code>style.css</code> (the main look and feel) and
-                        <code>bootstrap.min.css</code>.
-                    </li>
+                    <li><strong><code>src/</code></strong>: All React components and application logic.</li>
+                    <li><strong><code>src/components/</code></strong>: Reusable UI components.</li>
+                    <li><strong><code>src/pages/</code></strong>: Page-level components for each route.</li>
+                    <li><strong><code>src/data/</code></strong>: Static data (services, testimonials, blog posts).</li>
+                    <li><strong><code>public/images/</code></strong>: All image assets.</li>
+                    <li><strong><code>dist/</code></strong>: Production build output for deployment.</li>
                 </ul>
             </section>
 
             <!-- PAGES -->
             <section id="pages">
                 <h2>Pages Guide</h2>
-                <p>A breakdown of the website's key pages and their components.</p>
+                <p>The site has 7 main pages, all rendered as React components with React Router.</p>
 
-                <h3>1. Homepage (<code>index.html</code>)</h3>
-                <p>The landing page features:</p>
-                <ul>
-                    <li><strong>Hero Slider:</strong> Large rotating banner (Revolution Slider).</li>
-                    <li><strong>Concerns Grid:</strong> Icons linking to specific treatments (Acne, Aging, etc.).</li>
-                    <li><strong>Success Stories:</strong> A marquee slider containing patient testimonials.</li>
-                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Page</th>
+                            <th>Route</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Home</strong></td>
+                            <td><code>/</code></td>
+                            <td>Hero slider, concerns grid, doctor section, testimonials</td>
+                        </tr>
+                        <tr>
+                            <td><strong>About</strong></td>
+                            <td><code>/about</code></td>
+                            <td>Mission, vision, team profiles, core values</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Services</strong></td>
+                            <td><code>/services</code></td>
+                            <td>8 treatment cards with icons</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gallery</strong></td>
+                            <td><code>/gallery</code></td>
+                            <td>Masonry image gallery</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Blog</strong></td>
+                            <td><code>/blog</code></td>
+                            <td>6 dermatology articles with category filter</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Blog Post</strong></td>
+                            <td><code>/blog/:slug</code></td>
+                            <td>Individual blog article page</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FAQ</strong></td>
+                            <td><code>/faq</code></td>
+                            <td>Accordion FAQ by category (5 categories)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact</strong></td>
+                            <td><code>/contact</code></td>
+                            <td>Contact form, info card, Google Maps</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <h3>2. About Us (<code>about.html</code>)</h3>
-                <p>Contains the clinic's Mission, Vision, and detailed profiles of the medical team (Dr. Abhishek
-                    Arjel).</p>
-
-                <h3>3. Services (<code>services.html</code>)</h3>
-                <p>The catalog of treatments. Each service item links to booking or further details.</p>
-
-                <h3>4. Gallery (<code>gallery.html</code>)</h3>
-                <p><strong>Before & After</strong> photos. Uses a lightbox plugin to view images in full screen.</p>
-
-                <h3>5. Contact (<code>contact.html</code>)</h3>
-                <p>Includes:</p>
-                <ul>
-                    <li>Google Map embed (Pasang Lhamu Road).</li>
-                    <li>Contact Form (Name, Email, Phone, Message).</li>
-                    <li>Direct phone links for mobile users.</li>
-                </ul>
+                <h3>Blog Articles (New in v2.0)</h3>
+                <ol>
+                    <li>Understanding Acne: Causes, Types, and Treatments</li>
+                    <li>Hair Transplant 101: What to Expect from FUE</li>
+                    <li>The Science Behind HydraFacial</li>
+                    <li>How to Protect Your Skin from Sun Damage</li>
+                    <li>Anti-Aging: Botox vs Dermal Fillers</li>
+                    <li>Dealing with Melasma: Expert Tips</li>
+                </ol>
             </section>
 
             <!-- SETUP -->
@@ -163,58 +219,61 @@
                 <h2>Setup & Deployment</h2>
 
                 <h3>Prerequisites</h3>
-                <p>You need <a href="https://nodejs.org/" target="_blank">Node.js</a> installed to run the build script.
-                </p>
+                <p>You need <a href="https://nodejs.org/" target="_blank">Node.js 18+</a> installed.</p>
 
                 <h3>Local Development</h3>
-                <ol>
-                    <li>Clone the repository.</li>
-                    <li>Open terminal in the project root.</li>
-                    <li>Run the build command whenever you change a file in <code>src/</code>:</li>
-                </ol>
-                <pre><code>node build.js</code></pre>
-                <p>This compiles the templates in <code>src/</code> into the final HTML files in the root folder.</p>
+                <pre><code># Install dependencies
+npm install
 
-                <h3>Deployment</h3>
-                <p>The site is static, so it can be hosted anywhere (Vercel, GitHub Pages, Netlify, Apache/Nginx).</p>
-                <p><strong>Recommended (Vercel):</strong> Simply push to GitHub and import into Vercel. Vercel will
-                    automatically detect the static files.</p>
+# Start development server
+npm run dev
+
+# Build for production
+npm run build</code></pre>
+
+                <p>The development server runs at <code>http://localhost:5173</code> (or next available port).</p>
+
+                <h3>Deployment to Vercel</h3>
+                <ol>
+                    <li>Push the project to GitHub.</li>
+                    <li>Connect the repository to Vercel.</li>
+                    <li>Vercel auto-detects Vite and deploys.</li>
+                    <li>The <code>vercel.json</code> handles SPA routing automatically.</li>
+                </ol>
+
+                <div class="alert alert-info">
+                    <strong>Note:</strong> The <code>vercel.json</code> file contains rewrites to ensure all routes
+                    redirect to <code>index.html</code> for proper SPA behavior.
+                </div>
             </section>
 
             <!-- SEO -->
             <section id="seo">
                 <h2>SEO Strategy</h2>
-                <p>The website is pre-optimized for Search Engines to identify it as the leading skin center in
+                <p>The website is optimized for Search Engines to identify it as the leading skin center in
                     Nepalgunj.</p>
 
                 <h3>Meta Tags</h3>
-                <p>Every page includes unique meta tags in the <code>&lt;head&gt;</code> section.</p>
+                <p>The <code>index.html</code> includes comprehensive meta tags:</p>
                 <ul>
-                    <li><strong>Title Tag:</strong> Includes primary keywords (e.g., "Advanced Dermatology", "Hair
-                        Transplant").</li>
-                    <li><strong>Description:</strong> A compelling summary displayed in search results.</li>
-                    <li><strong>Keywords:</strong> Targeted phrases like "dermatologist nepalgunj", "laser clinic".</li>
+                    <li><strong>Title Tag:</strong> "Advanced Dermatology & Hair Transplant"</li>
+                    <li><strong>Description:</strong> Premier clinic for skin, hair, and laser treatments.</li>
+                    <li><strong>Keywords:</strong> dermatologist nepalgunj, hair transplant nepal, etc.</li>
+                    <li><strong>Open Graph:</strong> Rich preview cards for Facebook, LinkedIn, Twitter.</li>
                 </ul>
 
-                <h3>Open Graph (Social Media)</h3>
-                <p>When shared on Facebook, LinkedIn, or Twitter, the site displays a rich preview card.</p>
-                <div class="alert alert-info">
-                    <strong>Note:</strong> The default sharing image is located at <code>images/hosp/logo.png</code>.
-                </div>
-
                 <h3>Structured Data (Schema.org)</h3>
-                <p>We use JSON-LD structured data to tell Google explicitly about the business details.</p>
+                <p>JSON-LD structured data is included for Google Business visibility:</p>
                 <pre><code>{
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "Nepalgunj Skin Center",
   "address": {
     "streetAddress": "Pasang Lhamu Road",
-    "addressLocality": "Nepalgunj",
-    ...
-  }
+    "addressLocality": "Nepalgunj"
+  },
+  "telephone": "+977-9802580007"
 }</code></pre>
-                <p>This increases the chance of showing up in the Google "Local Pack" (Map results).</p>
             </section>
 
             <!-- VERSION HISTORY -->
@@ -231,6 +290,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr style="background: rgba(0, 180, 216, 0.1);">
+                            <td><strong>v2.0.0</strong></td>
+                            <td>Jan 29, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>🎉 <strong>Full React Conversion</strong> - Rebuilt site using React + Vite</li>
+                                    <li>Added React Router for multi-page SPA navigation</li>
+                                    <li>New modern color scheme matching logo (cyan to blue gradient)</li>
+                                    <li>Added Blog section with 6 dermatology articles</li>
+                                    <li>Enhanced testimonials with infinite marquee slider</li>
+                                    <li>New FAQ page with category-based accordion</li>
+                                    <li>Responsive design with mobile-first approach</li>
+                                    <li>Vercel deployment configuration</li>
+                                    <li>Removed legacy HTML, CSS, and JS files</li>
+                                </ul>
+                            </td>
+                        </tr>
                         <tr>
                             <td><strong>v1.1.0</strong></td>
                             <td>Jan 29, 2026</td>
@@ -246,7 +322,7 @@
                             <td>Jan 01, 2026</td>
                             <td>
                                 <ul>
-                                    <li>Initial Release.</li>
+                                    <li>Initial Release (Static HTML).</li>
                                     <li>Implementation of Hero Slider, Services, and Contact forms.</li>
                                     <li>Integration of Google Maps and Appointment logic.</li>
                                 </ul>
@@ -260,24 +336,62 @@
             <section id="technical">
                 <h2>Technical Reference</h2>
 
-                <h3>Namespace</h3>
-                <p>All custom JavaScript logic is encapsulated in the <code>THEMEMASCOT</code> object to prevent global
-                    namespace pollution.</p>
-                <p>See <code>js/custom.js</code> for the implementation.</p>
+                <h3>Color Palette (from Logo)</h3>
+                <p>The design uses colors extracted from the clinic logo:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Value</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>--primary-cyan</code></td>
+                            <td>#00B4D8</td>
+                            <td>Primary buttons, accents</td>
+                        </tr>
+                        <tr>
+                            <td><code>--primary-blue</code></td>
+                            <td>#0077B6</td>
+                            <td>Links, hover states</td>
+                        </tr>
+                        <tr>
+                            <td><code>--deep-blue</code></td>
+                            <td>#023E8A</td>
+                            <td>Headings, footer, dark sections</td>
+                        </tr>
+                        <tr>
+                            <td><code>--accent-light</code></td>
+                            <td>#90E0EF</td>
+                            <td>Light backgrounds, highlights</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <h3>Key Libraries</h3>
+                <h3>Key Dependencies</h3>
                 <ul>
-                    <li><strong>Revolution Slider:</strong> Used for the complex animations in the hero section.</li>
-                    <li><strong>Magnific Popup:</strong> Handles all lightboxes (images, galleries, videos).</li>
-                    <li><strong>Owl Carousel:</strong> Used for the testimonial sliders.</li>
+                    <li><strong>react</strong>: ^18.x - Core React library</li>
+                    <li><strong>react-router-dom</strong>: ^6.x - Client-side routing</li>
+                    <li><strong>vite</strong>: ^7.x - Build tool and dev server</li>
                 </ul>
 
-                <h3>CSS Customization</h3>
-                <p>The site uses LESS for pre-processing. While you can edit <code>css/style.css</code> directly for
-                    quick fixes, the source of truth is in the LESS files (if available in the repo).</p>
-                <p><strong>Theme Colors:</strong> Look for <code>--primary-color</code> variables or hex codes in
-                    <code>style.css</code> to adjust branding.
-                </p>
+                <h3>Build Output</h3>
+                <p>Running <code>npm run build</code> generates:</p>
+                <ul>
+                    <li><code>dist/index.html</code> - Main HTML (~3 KB)</li>
+                    <li><code>dist/assets/*.css</code> - Compiled CSS (~17 KB)</li>
+                    <li><code>dist/assets/*.js</code> - React bundle (~285 KB, 89 KB gzipped)</li>
+                </ul>
+
+                <h3>Adding New Blog Posts</h3>
+                <p>To add a new blog article:</p>
+                <ol>
+                    <li>Open <code>src/data/blogs.js</code></li>
+                    <li>Add a new object to the <code>blogPosts</code> array with id, title, excerpt, content, etc.</li>
+                    <li>The blog listing and detail pages will automatically include it.</li>
+                </ol>
             </section>
 
         </div>
