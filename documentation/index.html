@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepalgunj Skin Center - Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <button class="menu-toggle">☰ Menu</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Skin Center Docs</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#overview" class="nav-link active">Project Overview</a></li>
+            <li><a href="#structure" class="nav-link">Directory Structure</a></li>
+            <li><a href="#pages" class="nav-link">Pages Guide</a></li>
+            <li><a href="#setup" class="nav-link">Setup & Deployment</a></li>
+            <li><a href="#seo" class="nav-link">SEO Strategy</a></li>
+            <li><a href="#version" class="nav-link">Version History</a></li>
+            <li><a href="#technical" class="nav-link">Technical Reference</a></li>
+        </ul>
+        <div style="margin-top: auto; padding-top: 2rem; font-size: 0.8rem; color: #666;">
+            &copy; 2026 Nepalgunj Skin Center<br>Internal Documentation
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+
+            <!-- OVERVIEW -->
+            <section id="overview">
+                <h1>Documentation Hub</h1>
+                <p class="lead">Welcome to the official documentation for the <strong>Nepalgunj Skin Center</strong>
+                    website. This guide explains the architecture, content specificities, and deployment processes for
+                    the developer team.</p>
+
+                <div class="alert alert-info">
+                    <strong>Note:</strong> This site uses a Static Site Generation (SSG) approach. Changes should always
+                    be made in the <code>src/</code> directory.
+                </div>
+
+                <h2>Project Overview</h2>
+                <p>The <strong>Nepalgunj Skin Center</strong> website serves as the digital front door for Western
+                    Nepal's premier aesthetic clinic. It allows patients to explore services, read testimonials, and
+                    contact the clinic.</p>
+
+                <h3>Key Goals</h3>
+                <ul>
+                    <li><strong>Inform:</strong> Provide detailed info on Hair Transplants, Laser treatments, etc.</li>
+                    <li><strong>Trust:</strong> Showcase Dr. Abhishek Arjel's credentials and patient success stories.
+                    </li>
+                    <li><strong>Convert:</strong> Drive bookings through prominent "Book Now" calls to action.</li>
+                    <li><strong>Perform:</strong> Ensure fast load times on all devices using static HTML.</li>
+                </ul>
+
+                <h3>Technology Stack</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Technology</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Core</td>
+                            <td>HTML5, CSS3, JavaScript (ES6+)</td>
+                        </tr>
+                        <tr>
+                            <td>Build Tool</td>
+                            <td>Node.js (Custom Build Script)</td>
+                        </tr>
+                        <tr>
+                            <td>Styling</td>
+                            <td>LESS (Pre-processor), Bootstrap Grid</td>
+                        </tr>
+                        <tr>
+                            <td>Interactive</td>
+                            <td>jQuery, Revolution Slider, Owl Carousel</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- STRUCTURE -->
+            <section id="structure">
+                <h2>Directory & File Structure</h2>
+                <p>We separate source code from built code. Always edit files in <code>src/</code>.</p>
+
+                <div class="alert alert-warning">
+                    <strong>Warning:</strong> Do not edit the .html files in the root directory directly. They are
+                    overwritten by the build script.
+                </div>
+
+                <pre><code>├── src/                # SOURCE CODE (Edit here!)
+│   ├── header.html     # Global Header
+│   ├── footer.html     # Global Footer
+│   └── *.html          # Page templates
+├── css/                # Stylesheets
+│   └── style.css       # Main compiled CSS
+├── js/                 # JavaScript
+│   └── custom.js       # Main logic file
+├── images/             # Assets
+│   ├── hosp/           # Hospital photos/logo
+│   └── patient/        # Patient photos
+├── build.js            # Build Script
+└── index.html          # GENERATED FILE (Output)
+</code></pre>
+
+                <h3>Key Directories</h3>
+                <ul>
+                    <li><strong><code>src/</code></strong>: The "Workspace". All editing happens here.</li>
+                    <li><strong><code>images/</code></strong>: Organized by type (e.g., <code>hosp</code> for
+                        infrastructure, <code>patient</code> for clinical results).</li>
+                    <li><strong><code>css/</code></strong>: Contains <code>style.css</code> (the main look and feel) and
+                        <code>bootstrap.min.css</code>.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- PAGES -->
+            <section id="pages">
+                <h2>Pages Guide</h2>
+                <p>A breakdown of the website's key pages and their components.</p>
+
+                <h3>1. Homepage (<code>index.html</code>)</h3>
+                <p>The landing page features:</p>
+                <ul>
+                    <li><strong>Hero Slider:</strong> Large rotating banner (Revolution Slider).</li>
+                    <li><strong>Concerns Grid:</strong> Icons linking to specific treatments (Acne, Aging, etc.).</li>
+                    <li><strong>Success Stories:</strong> A marquee slider containing patient testimonials.</li>
+                </ul>
+
+                <h3>2. About Us (<code>about.html</code>)</h3>
+                <p>Contains the clinic's Mission, Vision, and detailed profiles of the medical team (Dr. Abhishek
+                    Arjel).</p>
+
+                <h3>3. Services (<code>services.html</code>)</h3>
+                <p>The catalog of treatments. Each service item links to booking or further details.</p>
+
+                <h3>4. Gallery (<code>gallery.html</code>)</h3>
+                <p><strong>Before & After</strong> photos. Uses a lightbox plugin to view images in full screen.</p>
+
+                <h3>5. Contact (<code>contact.html</code>)</h3>
+                <p>Includes:</p>
+                <ul>
+                    <li>Google Map embed (Pasang Lhamu Road).</li>
+                    <li>Contact Form (Name, Email, Phone, Message).</li>
+                    <li>Direct phone links for mobile users.</li>
+                </ul>
+            </section>
+
+            <!-- SETUP -->
+            <section id="setup">
+                <h2>Setup & Deployment</h2>
+
+                <h3>Prerequisites</h3>
+                <p>You need <a href="https://nodejs.org/" target="_blank">Node.js</a> installed to run the build script.
+                </p>
+
+                <h3>Local Development</h3>
+                <ol>
+                    <li>Clone the repository.</li>
+                    <li>Open terminal in the project root.</li>
+                    <li>Run the build command whenever you change a file in <code>src/</code>:</li>
+                </ol>
+                <pre><code>node build.js</code></pre>
+                <p>This compiles the templates in <code>src/</code> into the final HTML files in the root folder.</p>
+
+                <h3>Deployment</h3>
+                <p>The site is static, so it can be hosted anywhere (Vercel, GitHub Pages, Netlify, Apache/Nginx).</p>
+                <p><strong>Recommended (Vercel):</strong> Simply push to GitHub and import into Vercel. Vercel will
+                    automatically detect the static files.</p>
+            </section>
+
+            <!-- SEO -->
+            <section id="seo">
+                <h2>SEO Strategy</h2>
+                <p>The website is pre-optimized for Search Engines to identify it as the leading skin center in
+                    Nepalgunj.</p>
+
+                <h3>Meta Tags</h3>
+                <p>Every page includes unique meta tags in the <code>&lt;head&gt;</code> section.</p>
+                <ul>
+                    <li><strong>Title Tag:</strong> Includes primary keywords (e.g., "Advanced Dermatology", "Hair
+                        Transplant").</li>
+                    <li><strong>Description:</strong> A compelling summary displayed in search results.</li>
+                    <li><strong>Keywords:</strong> Targeted phrases like "dermatologist nepalgunj", "laser clinic".</li>
+                </ul>
+
+                <h3>Open Graph (Social Media)</h3>
+                <p>When shared on Facebook, LinkedIn, or Twitter, the site displays a rich preview card.</p>
+                <div class="alert alert-info">
+                    <strong>Note:</strong> The default sharing image is located at <code>images/hosp/logo.png</code>.
+                </div>
+
+                <h3>Structured Data (Schema.org)</h3>
+                <p>We use JSON-LD structured data to tell Google explicitly about the business details.</p>
+                <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Nepalgunj Skin Center",
+  "address": {
+    "streetAddress": "Pasang Lhamu Road",
+    "addressLocality": "Nepalgunj",
+    ...
+  }
+}</code></pre>
+                <p>This increases the chance of showing up in the Google "Local Pack" (Map results).</p>
+            </section>
+
+            <!-- VERSION HISTORY -->
+            <section id="version">
+                <h2>Version History</h2>
+                <p>Track the evolution of the Nepalgunj Skin Center website.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;">Version</th>
+                            <th style="width: 20%;">Date</th>
+                            <th>Changes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>v1.1.0</strong></td>
+                            <td>Jan 29, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>Added comprehensive HTML Documentation.</li>
+                                    <li>Refactored SEO Meta Tags strategy.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>v1.0.0</strong></td>
+                            <td>Jan 01, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>Initial Release.</li>
+                                    <li>Implementation of Hero Slider, Services, and Contact forms.</li>
+                                    <li>Integration of Google Maps and Appointment logic.</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- TECHNICAL -->
+            <section id="technical">
+                <h2>Technical Reference</h2>
+
+                <h3>Namespace</h3>
+                <p>All custom JavaScript logic is encapsulated in the <code>THEMEMASCOT</code> object to prevent global
+                    namespace pollution.</p>
+                <p>See <code>js/custom.js</code> for the implementation.</p>
+
+                <h3>Key Libraries</h3>
+                <ul>
+                    <li><strong>Revolution Slider:</strong> Used for the complex animations in the hero section.</li>
+                    <li><strong>Magnific Popup:</strong> Handles all lightboxes (images, galleries, videos).</li>
+                    <li><strong>Owl Carousel:</strong> Used for the testimonial sliders.</li>
+                </ul>
+
+                <h3>CSS Customization</h3>
+                <p>The site uses LESS for pre-processing. While you can edit <code>css/style.css</code> directly for
+                    quick fixes, the source of truth is in the LESS files (if available in the repo).</p>
+                <p><strong>Theme Colors:</strong> Look for <code>--primary-color</code> variables or hex codes in
+                    <code>style.css</code> to adjust branding.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
