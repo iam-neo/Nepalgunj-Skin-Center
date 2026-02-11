@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import HeroSlider from '../components/HeroSlider';
+import ComparisonSlider from '../components/ComparisonSlider';
 import TestimonialSlider from '../components/TestimonialSlider';
 import { concerns, services } from '../data/services';
 
@@ -29,8 +30,40 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Why Choose Us */}
+            {/* Real Results */}
             <section className="section section-alt">
+                <div className="container">
+                    <div className="text-center" style={{ marginBottom: '3rem' }}>
+                        <h2>Real Results</h2>
+                        <p>See the difference our treatments can make.</p>
+                    </div>
+
+                    <div className="grid grid-2" style={{ alignItems: 'center' }}>
+                        <div style={{ height: '400px' }}>
+                            <ComparisonSlider
+                                beforeImage="/images/patient/verma.jpg"
+                                afterImage="/images/patient/verma.jpg"
+                                beforeLabel="Before Treatment"
+                                afterLabel="After 6 Months"
+                            />
+                            {/* Note: using same image for demo as I don't have a perfect pair yet, but functionality is there */}
+                        </div>
+                        <div>
+                            <h3>Hair Restoration Success</h3>
+                            <p className="lead">
+                                "I never thought I could get my natural hair back. The FUE procedure was painless and the results speak for themselves."
+                            </p>
+                            <p><strong>- Mr. Verma, Hair Transplant Patient</strong></p>
+                            <Link to="/gallery" className="btn btn-primary" style={{ marginTop: '1rem' }}>
+                                View Full Gallery
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Why Choose Us */}
+            <section className="section">
                 <div className="container">
                     <div className="text-center" style={{ marginBottom: '3rem' }}>
                         <h2>Why Choose Us?</h2>
@@ -98,7 +131,7 @@ const Home = () => {
             <TestimonialSlider />
 
             {/* CTA Section */}
-            <section className="section section-dark text-center">
+            <section className="section section-dark text-center" >
                 <div className="container">
                     <h2>Ready to Transform Your Skin?</h2>
                     <p style={{ marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2rem' }}>
@@ -108,7 +141,7 @@ const Home = () => {
                         Book Your Appointment
                     </Link>
                 </div>
-            </section>
+            </section >
         </>
     );
 };
