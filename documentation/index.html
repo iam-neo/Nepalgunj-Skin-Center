@@ -25,6 +25,7 @@
             <li><a href="#setup" class="nav-link">Setup & Deployment</a></li>
             <li><a href="#seo" class="nav-link">SEO Strategy</a></li>
             <li><a href="#version" class="nav-link">Version History</a></li>
+            <li><a href="#updates" class="nav-link">Recent Updates</a></li>
             <li><a href="#technical" class="nav-link">Technical Reference</a></li>
         </ul>
         <div style="margin-top: auto; padding-top: 2rem; font-size: 0.8rem; color: #666;">
@@ -108,18 +109,20 @@
 │   │   ├── Footer.jsx    # Site footer with links
 │   │   ├── TopBar.jsx    # Contact info bar
 │   │   ├── HeroSlider.jsx# Homepage hero slider
+│   │   ├── ComparisonSlider.jsx # Before/After image slider ✨
 │   │   ├── TestimonialSlider.jsx # Testimonials marquee
 │   │   └── BlogCard.jsx  # Blog post preview card
 │   ├── pages/            # Page Components
 │   │   ├── Home.jsx      # Homepage
 │   │   ├── About.jsx     # About Us
 │   │   ├── Services.jsx  # Treatments list
+│   │   ├── ServiceDetail.jsx # Dynamic service detail page ✨
 │   │   ├── Gallery.jsx   # Image gallery
 │   │   ├── Blog.jsx      # Blog listing & post
 │   │   ├── FAQ.jsx       # FAQ accordion
 │   │   └── Contact.jsx   # Contact form
 │   ├── data/             # Static Data
-│   │   ├── services.js   # Services array
+│   │   ├── services.js   # Services array (with full details)
 │   │   ├── testimonials.js
 │   │   ├── faqs.js       # FAQ by category
 │   │   └── blogs.js      # 6 dermatology articles
@@ -127,7 +130,7 @@
 │   ├── main.jsx          # Entry point
 │   └── index.css         # Global styles
 ├── public/               # Static Assets
-│   └── images/           # All images (hosp, patient, etc.)
+│   └── images/           # All images (hosp, patient, bna, etc.)
 ├── dist/                 # Build output (deploy this!)
 ├── documentation/        # This documentation
 ├── index.html            # HTML template with SEO
@@ -199,6 +202,11 @@
                             <td><strong>Contact</strong></td>
                             <td><code>/contact</code></td>
                             <td>Contact form, info card, Google Maps</td>
+                        </tr>
+                        <tr style="background: rgba(0, 180, 216, 0.1);">
+                            <td><strong>Service Detail</strong></td>
+                            <td><code>/services/:slug</code></td>
+                            <td>Dynamic detail page for each treatment with overview, benefits, process steps, FAQs, and related services <em>(New in v2.1)</em></td>
                         </tr>
                     </tbody>
                 </table>
@@ -290,6 +298,20 @@ npm run build</code></pre>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr style="background: rgba(0, 180, 216, 0.15);">
+                            <td><strong>v2.1.0</strong></td>
+                            <td>Feb 11, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>✨ <strong>Before & After Comparison Slider</strong> — Interactive image slider on the homepage using <code>react-compare-slider</code></li>
+                                    <li>✨ <strong>Dynamic Service Detail Pages</strong> — New <code>/services/:slug</code> route with full treatment details, benefits, process steps, FAQs, and related services</li>
+                                    <li>📦 Expanded <code>services.js</code> data with detailed descriptions, benefits, process steps, and FAQs for each treatment</li>
+                                    <li>🖼️ Added new before/after treatment images to <code>public/images/bna/</code></li>
+                                    <li>🎨 Fixed footer bottom text color for better readability (changed to white)</li>
+                                    <li>🔗 Services page cards now link to dynamic detail pages</li>
+                                </ul>
+                            </td>
+                        </tr>
                         <tr style="background: rgba(0, 180, 216, 0.1);">
                             <td><strong>v2.0.0</strong></td>
                             <td>Jan 29, 2026</td>
@@ -327,6 +349,112 @@ npm run build</code></pre>
                                     <li>Integration of Google Maps and Appointment logic.</li>
                                 </ul>
                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- RECENT UPDATES -->
+            <section id="updates">
+                <h2>Recent Updates (February 11, 2026)</h2>
+                <p>Summary of all changes made today across the project.</p>
+
+                <h3>🎯 Phase 2 Features Implemented</h3>
+                <div class="alert alert-info">
+                    <strong>Major Feature Drop!</strong> Two key Phase 2 features have been shipped: the Before & After Comparison Slider and Dynamic Service Detail Pages.
+                </div>
+
+                <h4>1. Before & After Comparison Slider</h4>
+                <p>A new interactive slider component has been added to the homepage, allowing patients to visually compare treatment results. This builds trust and demonstrates the clinic's effectiveness.</p>
+                <ul>
+                    <li><strong>Component:</strong> <code>src/components/ComparisonSlider.jsx</code> — Reusable slider built with the <code>react-compare-slider</code> library</li>
+                    <li><strong>Integration:</strong> Added as a new section on the homepage (<code>Home.jsx</code>) showcasing Hair Transplant results</li>
+                    <li><strong>Assets:</strong> New before/after images added at <code>public/images/bna/7.jpg</code> and <code>public/images/bna/8.jpg</code></li>
+                </ul>
+
+                <h4>2. Dynamic Service Detail Pages</h4>
+                <p>Each treatment/service now has its own dedicated detail page with comprehensive information, accessible via <code>/services/:slug</code>.</p>
+                <ul>
+                    <li><strong>Page:</strong> <code>src/pages/ServiceDetail.jsx</code> — Full-featured detail page with multiple content sections</li>
+                    <li><strong>Sections include:</strong> Service overview, key benefits, step-by-step treatment process, service-specific FAQs, and related services</li>
+                    <li><strong>Routing:</strong> Updated <code>App.jsx</code> to register the <code>/services/:slug</code> dynamic route</li>
+                    <li><strong>Navigation:</strong> Service cards on the Services page now link to their respective detail pages</li>
+                </ul>
+
+                <h4>3. Services Data Expansion</h4>
+                <p>The <code>src/data/services.js</code> file has been significantly expanded (from ~43 lines to ~226 lines) to include:</p>
+                <ul>
+                    <li>Detailed descriptions for each treatment</li>
+                    <li>Lists of benefits</li>
+                    <li>Step-by-step process information</li>
+                    <li>Treatment-specific FAQs</li>
+                    <li>URL slugs for routing</li>
+                </ul>
+
+                <h3>🎨 Styling Fixes</h3>
+                <ul>
+                    <li><strong>Footer:</strong> Updated bottom text color to white for improved readability against the dark background</li>
+                </ul>
+
+                <h3>📁 Files Changed</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>Change Type</th>
+                            <th>Summary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>src/components/ComparisonSlider.jsx</code></td>
+                            <td>✅ New</td>
+                            <td>Before/After image comparison slider component</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/pages/ServiceDetail.jsx</code></td>
+                            <td>✅ New</td>
+                            <td>Dynamic service detail page with full treatment info</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/data/services.js</code></td>
+                            <td>📝 Modified</td>
+                            <td>Expanded with detailed descriptions, benefits, process, FAQs, slugs</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/pages/Home.jsx</code></td>
+                            <td>📝 Modified</td>
+                            <td>Added comparison slider section</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/pages/Services.jsx</code></td>
+                            <td>📝 Modified</td>
+                            <td>Cards now link to detail pages</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/App.jsx</code></td>
+                            <td>📝 Modified</td>
+                            <td>Added ServiceDetail route</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/index.css</code></td>
+                            <td>📝 Modified</td>
+                            <td>Footer text color fix</td>
+                        </tr>
+                        <tr>
+                            <td><code>package.json</code></td>
+                            <td>📝 Modified</td>
+                            <td>Added react-compare-slider dependency</td>
+                        </tr>
+                        <tr>
+                            <td><code>public/images/bna/7.jpg</code></td>
+                            <td>✅ New</td>
+                            <td>Before treatment image</td>
+                        </tr>
+                        <tr>
+                            <td><code>public/images/bna/8.jpg</code></td>
+                            <td>✅ New</td>
+                            <td>After treatment image</td>
                         </tr>
                     </tbody>
                 </table>
@@ -374,6 +502,7 @@ npm run build</code></pre>
                 <ul>
                     <li><strong>react</strong>: ^18.x - Core React library</li>
                     <li><strong>react-router-dom</strong>: ^6.x - Client-side routing</li>
+                    <li><strong>react-compare-slider</strong>: ^3.x - Before/After image comparison slider</li>
                     <li><strong>vite</strong>: ^7.x - Build tool and dev server</li>
                 </ul>
 
