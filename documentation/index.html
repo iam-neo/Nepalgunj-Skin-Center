@@ -108,7 +108,7 @@
 │   │   ├── Navbar.jsx    # Navigation with dropdown
 │   │   ├── Footer.jsx    # Site footer with links
 │   │   ├── TopBar.jsx    # Contact info bar
-│   │   ├── HeroSlider.jsx# Homepage hero slider
+│   │   ├── HeroGradient.jsx # Animated gradient text hero with floating pills ✨
 │   │   ├── ComparisonSlider.jsx # Before/After image slider ✨
 │   │   ├── TestimonialSlider.jsx # Testimonials marquee
 │   │   └── BlogCard.jsx  # Blog post preview card
@@ -166,7 +166,7 @@
                         <tr>
                             <td><strong>Home</strong></td>
                             <td><code>/</code></td>
-                            <td>Hero slider, concerns grid, doctor section, testimonials</td>
+                            <td>Modern gradient hero, concerns grid, doctor section, testimonials</td>
                         </tr>
                         <tr>
                             <td><strong>About</strong></td>
@@ -206,7 +206,8 @@
                         <tr style="background: rgba(0, 180, 216, 0.1);">
                             <td><strong>Service Detail</strong></td>
                             <td><code>/services/:slug</code></td>
-                            <td>Dynamic detail page for each treatment with overview, benefits, process steps, FAQs, and related services <em>(New in v2.1)</em></td>
+                            <td>Dynamic detail page for each treatment with overview, benefits, process steps, FAQs, and
+                                related services <em>(New in v2.1)</em></td>
                         </tr>
                     </tbody>
                 </table>
@@ -303,10 +304,15 @@ npm run build</code></pre>
                             <td>Feb 11, 2026</td>
                             <td>
                                 <ul>
-                                    <li>✨ <strong>Before & After Comparison Slider</strong> — Interactive image slider on the homepage using <code>react-compare-slider</code></li>
-                                    <li>✨ <strong>Dynamic Service Detail Pages</strong> — New <code>/services/:slug</code> route with full treatment details, benefits, process steps, FAQs, and related services</li>
-                                    <li>📦 Expanded <code>services.js</code> data with detailed descriptions, benefits, process steps, and FAQs for each treatment</li>
-                                    <li>🖼️ Added new before/after treatment images to <code>public/images/bna/</code></li>
+                                    <li>✨ <strong>Before & After Comparison Slider</strong> — Interactive image slider
+                                        on the homepage using <code>react-compare-slider</code></li>
+                                    <li>✨ <strong>Dynamic Service Detail Pages</strong> — New
+                                        <code>/services/:slug</code> route with full treatment details, benefits,
+                                        process steps, FAQs, and related services</li>
+                                    <li>📦 Expanded <code>services.js</code> data with detailed descriptions, benefits,
+                                        process steps, and FAQs for each treatment</li>
+                                    <li>🖼️ Added new before/after treatment images to <code>public/images/bna/</code>
+                                    </li>
                                     <li>🎨 Fixed footer bottom text color for better readability (changed to white)</li>
                                     <li>🔗 Services page cards now link to dynamic detail pages</li>
                                 </ul>
@@ -326,6 +332,20 @@ npm run build</code></pre>
                                     <li>Responsive design with mobile-first approach</li>
                                     <li>Vercel deployment configuration</li>
                                     <li>Removed legacy HTML, CSS, and JS files</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr style="background: rgba(0, 180, 216, 0.2);">
+                            <td><strong>v2.2.0</strong></td>
+                            <td>Feb 11, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>✨ <strong>New Gradient Hero</strong> — Replaced photo slider with a modern,
+                                        performance-focused gradient text hero (Option 4).</li>
+                                    <li>🎨 <strong>Floating Service Pills</strong> — Added animated floating tags for
+                                        key services in the hero section.</li>
+                                    <li>📱 <strong>Mobile Optimization</strong> — Improved mobile layout for hero
+                                        section with scaled-down pills.</li>
                                 </ul>
                             </td>
                         </tr>
@@ -361,28 +381,39 @@ npm run build</code></pre>
 
                 <h3>🎯 Phase 2 Features Implemented</h3>
                 <div class="alert alert-info">
-                    <strong>Major Feature Drop!</strong> Two key Phase 2 features have been shipped: the Before & After Comparison Slider and Dynamic Service Detail Pages.
+                    <strong>Major Feature Drop!</strong> Two key Phase 2 features have been shipped: the Before & After
+                    Comparison Slider and Dynamic Service Detail Pages.
                 </div>
 
                 <h4>1. Before & After Comparison Slider</h4>
-                <p>A new interactive slider component has been added to the homepage, allowing patients to visually compare treatment results. This builds trust and demonstrates the clinic's effectiveness.</p>
+                <p>A new interactive slider component has been added to the homepage, allowing patients to visually
+                    compare treatment results. This builds trust and demonstrates the clinic's effectiveness.</p>
                 <ul>
-                    <li><strong>Component:</strong> <code>src/components/ComparisonSlider.jsx</code> — Reusable slider built with the <code>react-compare-slider</code> library</li>
-                    <li><strong>Integration:</strong> Added as a new section on the homepage (<code>Home.jsx</code>) showcasing Hair Transplant results</li>
-                    <li><strong>Assets:</strong> New before/after images added at <code>public/images/bna/7.jpg</code> and <code>public/images/bna/8.jpg</code></li>
+                    <li><strong>Component:</strong> <code>src/components/ComparisonSlider.jsx</code> — Reusable slider
+                        built with the <code>react-compare-slider</code> library</li>
+                    <li><strong>Integration:</strong> Added as a new section on the homepage (<code>Home.jsx</code>)
+                        showcasing Hair Transplant results</li>
+                    <li><strong>Assets:</strong> New before/after images added at <code>public/images/bna/7.jpg</code>
+                        and <code>public/images/bna/8.jpg</code></li>
                 </ul>
 
                 <h4>2. Dynamic Service Detail Pages</h4>
-                <p>Each treatment/service now has its own dedicated detail page with comprehensive information, accessible via <code>/services/:slug</code>.</p>
+                <p>Each treatment/service now has its own dedicated detail page with comprehensive information,
+                    accessible via <code>/services/:slug</code>.</p>
                 <ul>
-                    <li><strong>Page:</strong> <code>src/pages/ServiceDetail.jsx</code> — Full-featured detail page with multiple content sections</li>
-                    <li><strong>Sections include:</strong> Service overview, key benefits, step-by-step treatment process, service-specific FAQs, and related services</li>
-                    <li><strong>Routing:</strong> Updated <code>App.jsx</code> to register the <code>/services/:slug</code> dynamic route</li>
-                    <li><strong>Navigation:</strong> Service cards on the Services page now link to their respective detail pages</li>
+                    <li><strong>Page:</strong> <code>src/pages/ServiceDetail.jsx</code> — Full-featured detail page with
+                        multiple content sections</li>
+                    <li><strong>Sections include:</strong> Service overview, key benefits, step-by-step treatment
+                        process, service-specific FAQs, and related services</li>
+                    <li><strong>Routing:</strong> Updated <code>App.jsx</code> to register the
+                        <code>/services/:slug</code> dynamic route</li>
+                    <li><strong>Navigation:</strong> Service cards on the Services page now link to their respective
+                        detail pages</li>
                 </ul>
 
                 <h4>3. Services Data Expansion</h4>
-                <p>The <code>src/data/services.js</code> file has been significantly expanded (from ~43 lines to ~226 lines) to include:</p>
+                <p>The <code>src/data/services.js</code> file has been significantly expanded (from ~43 lines to ~226
+                    lines) to include:</p>
                 <ul>
                     <li>Detailed descriptions for each treatment</li>
                     <li>Lists of benefits</li>
@@ -391,9 +422,20 @@ npm run build</code></pre>
                     <li>URL slugs for routing</li>
                 </ul>
 
+                <h4>4. Gradient Text Hero (v2.2)</h4>
+                <p>Replaced the generic photo slider with a modern, conversion-focused hero section.</p>
+                <ul>
+                    <li><strong>Component:</strong> <code>src/components/HeroGradient.jsx</code></li>
+                    <li><strong>Features:</strong> Animated mesh gradient background, floating service pills with
+                        glassmorphism, and gradient text heading.</li>
+                    <li><strong>Performance:</strong> Lightweight (no large hero images to load), pure CSS animations.
+                    </li>
+                </ul>
+
                 <h3>🎨 Styling Fixes</h3>
                 <ul>
-                    <li><strong>Footer:</strong> Updated bottom text color to white for improved readability against the dark background</li>
+                    <li><strong>Footer:</strong> Updated bottom text color to white for improved readability against the
+                        dark background</li>
                 </ul>
 
                 <h3>📁 Files Changed</h3>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import HeroSlider from '../components/HeroSlider';
+import HeroGradient from '../components/HeroGradient';
 import ComparisonSlider from '../components/ComparisonSlider';
 import TestimonialSlider from '../components/TestimonialSlider';
 import { concerns, services } from '../data/services';
@@ -9,7 +9,7 @@ const Home = () => {
 
     return (
         <>
-            <HeroSlider />
+            <HeroGradient />
 
             {/* Concerns Grid */}
             <section className="section">
