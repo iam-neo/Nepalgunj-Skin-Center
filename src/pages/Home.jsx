@@ -41,10 +41,10 @@ const Home = () => {
                     <div className="grid grid-2" style={{ alignItems: 'center' }}>
                         <div style={{ height: '400px' }}>
                             <ComparisonSlider
-                                beforeImage="/images/patient/verma.jpg"
-                                afterImage="/images/patient/verma.jpg"
+                                beforeImage="/images/bna/7.jpg"
+                                afterImage="/images/bna/8.jpg"
                                 beforeLabel="Before Treatment"
-                                afterLabel="After 6 Months"
+                                afterLabel="After 8 Months"
                             />
                             {/* Note: using same image for demo as I don't have a perfect pair yet, but functionality is there */}
                         </div>
@@ -53,7 +53,7 @@ const Home = () => {
                             <p className="lead">
                                 "I never thought I could get my natural hair back. The FUE procedure was painless and the results speak for themselves."
                             </p>
-                            <p><strong>- Mr. Verma, Hair Transplant Patient</strong></p>
+                            <p><strong>- Dr. Verma, Hair Transplant Patient</strong></p>
                             <Link to="/gallery" className="btn btn-primary" style={{ marginTop: '1rem' }}>
                                 View Full Gallery
                             </Link>
