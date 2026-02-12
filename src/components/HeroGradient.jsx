@@ -46,8 +46,8 @@ const HeroGradient = () => {
                     <span className="gradient-text">Expert Care.</span>
                 </h1>
                 <p className="hero-subtext">
-                    Nepal's leading aesthetic clinic for advanced dermatology,
-                    hair transplant, and laser treatments in Nepalgunj.
+                    Aesthetic clinic for advanced dermatology,
+                    hair transplant, and laser treatments in Western Nepal.
                 </p>
                 <div className="hero-cta-group">
                     <Link to="/contact" className="btn btn-primary btn-lg">
