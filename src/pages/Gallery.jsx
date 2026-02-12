@@ -1,13 +1,38 @@
+import { useState } from 'react';
+
 const galleryItems = [
-    { id: 1, image: '/images/patient/1.jpg', title: 'Hair Transplant Result', category: 'Hair' },
-    { id: 2, image: '/images/patient/2.jpg', title: 'Skin Treatment', category: 'Skin' },
-    { id: 3, image: '/images/patient/verma.jpg', title: 'Before & After', category: 'Hair' },
-    { id: 4, image: '/images/front/Doc.jpg', title: 'Our Expert', category: 'Team' },
-    { id: 5, image: '/images/hosp/hos.jpg', title: 'Our Clinic', category: 'Facility' },
-    { id: 6, image: '/images/front/Sapna3.JPG', title: 'Our Team', category: 'Team' }
+    // Hair Transplant
+    { id: 1, image: '/images/patient/1.jpg', title: 'Hair Transplant Process', category: 'Hair Transplant' },
+    { id: 2, image: '/images/patient/2.jpg', title: 'Follicular Unit Extraction', category: 'Hair Transplant' },
+    { id: 3, image: '/images/patient/3.jpg', title: 'Successful Transplant', category: 'Hair Transplant' },
+    { id: 4, image: '/images/patient/verma.jpg', title: 'Patient Result', category: 'Hair Transplant' },
+    { id: 5, image: '/images/bna/7.jpg', title: 'Before & After', category: 'Hair Transplant' },
+
+    // Skin Care
+    { id: 6, image: '/images/patient/b1.jpg', title: 'Skin Rejuvenation', category: 'Skin Care' },
+    { id: 7, image: '/images/patient/b2.jpg', title: 'Acne Treatment', category: 'Skin Care' },
+    { id: 8, image: '/images/patient/fack.jpg', title: 'Laser Treatment', category: 'Skin Care' },
+    { id: 9, image: '/images/patient/mono.jpg', title: 'Pigmentation Control', category: 'Skin Care' },
+
+    // Facility
+    { id: 10, image: '/images/hosp/hos.jpg', title: 'Our Modern Facility', category: 'Facility' },
+
+    // Team
+    { id: 11, image: '/images/front/Doc.jpg', title: 'Our Expert Doctor', category: 'Team' },
+    { id: 12, image: '/images/front/Sapna3.JPG', title: 'Dedicated Staff', category: 'Team' },
+    { id: 13, image: '/images/front/sapana.jpg', title: 'Nursing Team', category: 'Team' }
 ];
 
+const categories = ['All', 'Hair Transplant', 'Skin Care', 'Facility', 'Team'];
+
 const Gallery = () => {
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    const filteredItems = selectedCategory === 'All'
+        ? galleryItems
+        : galleryItems.filter(item => item.category === selectedCategory);
+
     return (
         <>
             {/* Page Header */}
@@ -18,19 +43,40 @@ const Gallery = () => {
                 </div>
             </section>
 
-            {/* Gallery Grid */}
+            {/* Gallery Section */}
             <section className="section">
                 <div className="container">
+
+                    {/* Filter Buttons */}
+                    <div className="gallery-filter">
+                        {categories.map(category => (
+                            <button
+                                key={category}
+                                className={`btn-filter ${selectedCategory === category ? 'active' : ''}`}
+                                onClick={() => setSelectedCategory(category)}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Gallery Grid */}
                     <div className="gallery-grid">
-                        {galleryItems.map((item) => (
-                            <div key={item.id} className="gallery-item">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    onError={(e) => {
-                                        e.target.src = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&fit=crop';
-                                    }}
-                                />
+                        {filteredItems.map((item) => (
+                            <div key={item.id} className="gallery-item" onClick={() => setSelectedImage(item)}>
+                                <div className="img-container">
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        loading="lazy"
+                                        onError={(e) => {
+                                            e.target.src = 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&fit=crop';
+                                        }}
+                                    />
+                                    <div className="overlay">
+                                        <span>+</span>
+                                    </div>
+                                </div>
                                 <div className="gallery-caption">
                                     <h4>{item.title}</h4>
                                     <p>{item.category}</p>
@@ -39,14 +85,35 @@ const Gallery = () => {
                         ))}
                     </div>
 
-                    {/* Note about before/after */}
+                    {/* Empty State */}
+                    {filteredItems.length === 0 && (
+                        <div className="text-center" style={{ padding: '3rem' }}>
+                            <p>No images found in this category.</p>
+                        </div>
+                    )}
+
+                    {/* Privacy Note */}
                     <div className="text-center" style={{ marginTop: '3rem' }}>
-                        <p style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
-                            For patient privacy, actual before and after images are shown during consultations.
+                        <p style={{ color: 'var(--text-muted)', fontStyle: 'italic', fontSize: '0.9rem' }}>
+                            * Some images are for representational purposes. Actual patient results may vary.
                         </p>
                     </div>
                 </div>
             </section>
+
+            {/* Lightbox Modal */}
+            {selectedImage && (
+                <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+                    <button className="lightbox-close" onClick={() => setSelectedImage(null)}>&times;</button>
+                    <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                        <img src={selectedImage.image} alt={selectedImage.title} />
+                        <div className="lightbox-caption">
+                            <h3>{selectedImage.title}</h3>
+                            <p>{selectedImage.category}</p>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* CTA */}
             <section className="section section-dark text-center">
