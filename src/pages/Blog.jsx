@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { blogPosts, getBlogBySlug } from '../data/blogs';
 import BlogCard from '../components/BlogCard';
+import { Helmet } from 'react-helmet-async';
+import { FaFacebook, FaTwitter, FaLinkedin, FaWhatsapp, FaLink, FaCheck } from 'react-icons/fa';
+
+const SITE_URL = 'https://nepalgunjskincenter.com';
+const SITE_NAME = 'Nepalgunj Skin Center';
 
 // Blog Listing Page
 export const Blog = () => {
@@ -15,6 +20,24 @@ export const Blog = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Skin Health Blog | {SITE_NAME}</title>
+                <meta name="description" content="Expert dermatology insights, skincare tips, and the latest treatments from Nepalgunj Skin Center. Read articles by Dr. Abhishek Arjel on acne, anti-aging, hair care, and more." />
+                <link rel="canonical" href={`${SITE_URL}/blog`} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={`Skin Health Blog | ${SITE_NAME}`} />
+                <meta property="og:description" content="Expert dermatology insights, skincare tips, and the latest treatments from Nepalgunj Skin Center." />
+                <meta property="og:url" content={`${SITE_URL}/blog`} />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content={SITE_NAME} />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`Skin Health Blog | ${SITE_NAME}`} />
+                <meta name="twitter:description" content="Expert dermatology insights, skincare tips, and the latest treatments from Nepalgunj Skin Center." />
+            </Helmet>
+
             {/* Page Header */}
             <section className="page-header">
                 <div className="container">
@@ -83,12 +106,49 @@ export const Blog = () => {
     );
 };
 
+// Social Share Button Component
+const ShareButton = ({ onClick, bgColor, hoverBgColor, icon: Icon, label }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <button
+            onClick={onClick}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{
+                background: isHovered ? hoverBgColor : bgColor,
+                color: 'white',
+                border: 'none',
+                borderRadius: '50%',
+                width: '44px',
+                height: '44px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                fontSize: '1.25rem',
+                transition: 'all 0.3s ease',
+                transform: isHovered ? 'translateY(-3px) scale(1.1)' : 'translateY(0) scale(1)',
+                boxShadow: isHovered
+                    ? `0 6px 20px ${bgColor}66`
+                    : `0 2px 8px ${bgColor}33`,
+                position: 'relative',
+            }}
+            aria-label={label}
+            title={label}
+        >
+            <Icon />
+        </button>
+    );
+};
+
 // Blog Post Detail Page
 export const BlogPost = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
     const post = getBlogBySlug(slug);
     const [selectedImage, setSelectedImage] = useState(0);
+    const [linkCopied, setLinkCopied] = useState(false);
 
     if (!post) {
         return (
@@ -112,6 +172,10 @@ export const BlogPost = () => {
         });
     };
 
+    const formatDateISO = (dateString) => {
+        return new Date(dateString).toISOString();
+    };
+
     // Get related posts (same category, excluding current)
     const relatedPosts = blogPosts
         .filter(p => p.category === post.category && p.id !== post.id)
@@ -120,8 +184,71 @@ export const BlogPost = () => {
     // Check if post has multiple images
     const hasMultipleImages = post.images && post.images.length > 0;
 
+    const postUrl = `${SITE_URL}/blog/${post.id}`;
+    const postImage = post.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/og-default.jpg`;
+
+    const handleCopyLink = () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            setLinkCopied(true);
+            setTimeout(() => setLinkCopied(false), 2000);
+        });
+    };
+
+    // Article structured data (JSON-LD)
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": postImage,
+        "author": {
+            "@type": "Person",
+            "name": post.author,
+            "url": `${SITE_URL}/about`
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": SITE_NAME,
+            "url": SITE_URL,
+        },
+        "datePublished": formatDateISO(post.date),
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": postUrl
+        },
+        "articleSection": post.category
+    };
+
     return (
         <>
+            <Helmet>
+                <title>{post.title} | {SITE_NAME} Blog</title>
+                <meta name="description" content={post.excerpt} />
+                <link rel="canonical" href={postUrl} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content={post.title} />
+                <meta property="og:description" content={post.excerpt} />
+                <meta property="og:image" content={postImage} />
+                <meta property="og:url" content={postUrl} />
+                <meta property="og:type" content="article" />
+                <meta property="og:site_name" content={SITE_NAME} />
+                <meta property="article:published_time" content={formatDateISO(post.date)} />
+                <meta property="article:author" content={post.author} />
+                <meta property="article:section" content={post.category} />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={post.title} />
+                <meta name="twitter:description" content={post.excerpt} />
+                <meta name="twitter:image" content={postImage} />
+
+                {/* Article Schema JSON-LD */}
+                <script type="application/ld+json">
+                    {JSON.stringify(articleSchema)}
+                </script>
+            </Helmet>
+
             {/* Article Header */}
             <section className="page-header">
                 <div className="container" style={{ maxWidth: '800px' }}>
@@ -269,11 +396,90 @@ export const BlogPost = () => {
                         />
                     </article>
 
-                    {/* Share & Back */}
+                    {/* Social Sharing */}
                     <div style={{
                         marginTop: '3rem',
                         paddingTop: '2rem',
                         borderTop: '1px solid var(--gray)',
+                    }}>
+                        <p style={{
+                            fontWeight: 600,
+                            marginBottom: '1rem',
+                            textAlign: 'center',
+                            fontSize: '1.0625rem',
+                            color: 'var(--deep-blue)',
+                        }}>
+                            Share this article
+                        </p>
+                        <div style={{
+                            display: 'flex',
+                            gap: '0.875rem',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            flexWrap: 'wrap',
+                        }}>
+                            <ShareButton
+                                onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400')}
+                                bgColor="#1877F2"
+                                hoverBgColor="#0d65d9"
+                                icon={FaFacebook}
+                                label="Share on Facebook"
+                            />
+                            <ShareButton
+                                onClick={() => window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`, '_blank', 'width=600,height=400')}
+                                bgColor="#1DA1F2"
+                                hoverBgColor="#0c8de0"
+                                icon={FaTwitter}
+                                label="Share on Twitter"
+                            />
+                            <ShareButton
+                                onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400')}
+                                bgColor="#0A66C2"
+                                hoverBgColor="#084e96"
+                                icon={FaLinkedin}
+                                label="Share on LinkedIn"
+                            />
+                            <ShareButton
+                                onClick={() => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(post.title + ' ' + window.location.href)}`, '_blank')}
+                                bgColor="#25D366"
+                                hoverBgColor="#1fb855"
+                                icon={FaWhatsapp}
+                                label="Share on WhatsApp"
+                            />
+                            <button
+                                onClick={handleCopyLink}
+                                style={{
+                                    background: linkCopied ? '#10B981' : '#6B7280',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: linkCopied ? 'var(--radius-full)' : '50%',
+                                    width: linkCopied ? 'auto' : '44px',
+                                    height: '44px',
+                                    padding: linkCopied ? '0 1.25rem' : '0',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: '0.5rem',
+                                    cursor: 'pointer',
+                                    fontSize: linkCopied ? '0.875rem' : '1.25rem',
+                                    fontWeight: linkCopied ? 600 : 400,
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: linkCopied
+                                        ? '0 4px 15px rgba(16,185,129,0.4)'
+                                        : '0 2px 8px rgba(107,114,128,0.3)',
+                                }}
+                                aria-label="Copy link"
+                                title="Copy link to clipboard"
+                            >
+                                {linkCopied ? <><FaCheck /> Copied!</> : <FaLink />}
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Back & CTA */}
+                    <div style={{
+                        marginTop: '2rem',
+                        paddingTop: '1.5rem',
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'center',
