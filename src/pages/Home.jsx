@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom';
 import HeroGradient from '../components/HeroGradient';
 import ComparisonSlider from '../components/ComparisonSlider';
 import TestimonialSlider from '../components/TestimonialSlider';
-import { concerns, services } from '../data/services';
+import { concerns } from '../data/services';
 
 const Home = () => {
-    const featuredServices = services.slice(0, 3);
-
     return (
         <>
             <HeroGradient />

@@ -107,16 +107,17 @@ export const Blog = () => {
 };
 
 // Social Share Button Component
-const ShareButton = ({ onClick, bgColor, hoverBgColor, icon: Icon, label }) => {
+const ShareButton = (props) => {
     const [isHovered, setIsHovered] = useState(false);
+    const IconComponent = props.Icon;
 
     return (
         <button
-            onClick={onClick}
+            onClick={props.onClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             style={{
-                background: isHovered ? hoverBgColor : bgColor,
+                background: isHovered ? props.hoverBgColor : props.bgColor,
                 color: 'white',
                 border: 'none',
                 borderRadius: '50%',
@@ -130,14 +131,14 @@ const ShareButton = ({ onClick, bgColor, hoverBgColor, icon: Icon, label }) => {
                 transition: 'all 0.3s ease',
                 transform: isHovered ? 'translateY(-3px) scale(1.1)' : 'translateY(0) scale(1)',
                 boxShadow: isHovered
-                    ? `0 6px 20px ${bgColor}66`
-                    : `0 2px 8px ${bgColor}33`,
+                    ? `0 6px 20px ${props.bgColor}66`
+                    : `0 2px 8px ${props.bgColor}33`,
                 position: 'relative',
             }}
-            aria-label={label}
-            title={label}
+            aria-label={props.label}
+            title={props.label}
         >
-            <Icon />
+            <IconComponent />
         </button>
     );
 };
@@ -422,28 +423,28 @@ export const BlogPost = () => {
                                 onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400')}
                                 bgColor="#1877F2"
                                 hoverBgColor="#0d65d9"
-                                icon={FaFacebook}
+                                Icon={FaFacebook}
                                 label="Share on Facebook"
                             />
                             <ShareButton
                                 onClick={() => window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`, '_blank', 'width=600,height=400')}
                                 bgColor="#1DA1F2"
                                 hoverBgColor="#0c8de0"
-                                icon={FaTwitter}
+                                Icon={FaTwitter}
                                 label="Share on Twitter"
                             />
                             <ShareButton
                                 onClick={() => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400')}
                                 bgColor="#0A66C2"
                                 hoverBgColor="#084e96"
-                                icon={FaLinkedin}
+                                Icon={FaLinkedin}
                                 label="Share on LinkedIn"
                             />
                             <ShareButton
                                 onClick={() => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(post.title + ' ' + window.location.href)}`, '_blank')}
                                 bgColor="#25D366"
                                 hoverBgColor="#1fb855"
-                                icon={FaWhatsapp}
+                                Icon={FaWhatsapp}
                                 label="Share on WhatsApp"
                             />
                             <button
