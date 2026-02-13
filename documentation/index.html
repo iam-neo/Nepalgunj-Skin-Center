@@ -332,6 +332,32 @@ npm run build</code></pre>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr style="background: rgba(0, 180, 216, 0.25);">
+                            <td><strong>v2.4.0</strong></td>
+                            <td>Feb 13, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>✨ <strong>Blog Features</strong> — Social sharing & Copy Link</li>
+                                    <li>🔍 <strong>SEO</strong> — Dynamic meta tags with Helmet & Open Graph</li>
+                                    <li>🚀 <strong>Optimization</strong> — React 18 stability & Linting fixes</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr style="background: rgba(0, 180, 216, 0.2);">
+                            <td><strong>v2.3.0</strong></td>
+                            <td>Feb 12, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>✨ <strong>Gallery Revamp</strong> — Filtering, Lightbox, and Responsive Grid
+                                    </li>
+                                    <li>🎨 <strong>Home Enhancements</strong> — Premium "Concern" cards with React Icons
+                                    </li>
+                                    <li>📦 <strong>Services Overhaul</strong> — 20+ detailed services with text & images
+                                    </li>
+                                    <li>🔧 <strong>Tech Debt</strong> — Migrated services data to JSX</li>
+                                </ul>
+                            </td>
+                        </tr>
                         <tr style="background: rgba(0, 180, 216, 0.15);">
                             <td><strong>v2.1.0</strong></td>
                             <td>Feb 11, 2026</td>
@@ -410,8 +436,85 @@ npm run build</code></pre>
 
             <!-- RECENT UPDATES -->
             <section id="updates">
-                <h2>Recent Updates (February 11, 2026)</h2>
-                <p>Summary of all changes made today across the project.</p>
+                <h2>Recent Updates</h2>
+
+                <h3>February 13, 2026 (v2.4.0)</h3>
+                <p><strong>Focus:</strong> Blog Features, SEO Optimization, and Deployment Stability.</p>
+
+                <h4>1. Blog Enhancements</h4>
+                <p>The blog section has been upgraded with social engagement features.</p>
+                <ul>
+                    <li><strong>Social Sharing:</strong> Added Facebook, Twitter (X), LinkedIn, and WhatsApp sharing
+                        buttons to every blog post.</li>
+                    <li><strong>Copy Link:</strong> One-click "Copy Link" button with visual feedback.</li>
+                    <li><strong>UI Polish:</strong> Enhanced button styling with hover animations and tooltips.</li>
+                </ul>
+
+                <h4>2. Advanced SEO Implementation</h4>
+                <p>Implemented <code>react-helmet-async</code> for dynamic meta tags across the site.</p>
+                <ul>
+                    <li><strong>Dynamic Titles:</strong> Each page and blog post now has a unique document title.</li>
+                    <li><strong>Open Graph & Twitter Cards:</strong> Rich social media previews with images and
+                        descriptions.</li>
+                    <li><strong>JSON-LD:</strong> Structured data for Google Rich Results (Articles, Breadcrumbs).</li>
+                    <li><strong>Canonical URLs:</strong> Prevents duplicate content issues.</li>
+                </ul>
+
+                <h4>3. Deployment & Stability Fixes</h4>
+                <p>Resolved critical build and deployment issues on Vercel.</p>
+                <ul>
+                    <li><strong>React 18 Downgrade:</strong> Downgraded to React 18.3.1 to resolve peer dependency
+                        conflicts with <code>react-helmet-async</code>.</li>
+                    <li><strong>Linting Clean-up:</strong> Fixed strict linting errors in Blog, Home, and documentation
+                        scripts.</li>
+                    <li><strong>Dependency Fix:</strong> Ensured all production dependencies are correctly listed in
+                        <code>package.json</code>.
+                    </li>
+                </ul>
+
+                <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #eee;">
+
+                <h3>February 12, 2026 (v2.3.0)</h3>
+                <p><strong>Focus:</strong> Visual Polish, Content Expansion, and Gallery Interactivity.</p>
+
+                <h4>1. Gallery Page Revamp</h4>
+                <p>The Gallery page has been completely redesigned for better usability and visual appeal.</p>
+                <ul>
+                    <li><strong>Category Filtering:</strong> Users can now filter images by category (Hair Transplant,
+                        Skin Care, etc.).</li>
+                    <li><strong>Lightbox Integration:</strong> Clicking an image opens a full-screen interactive
+                        lightbox for detailed viewing.</li>
+                    <li><strong>Responsive Layout:</strong> A 3-column grid that adapts beautifully to mobile devices.
+                    </li>
+                </ul>
+
+                <h4>2. Home Page Enhancements</h4>
+                <p>The "What is your concern?" section has received a significant facelift.</p>
+                <ul>
+                    <li><strong>Premium Card Design:</strong> Cards now feature depth, shadows, and lift-on-hover
+                        effects.</li>
+                    <li><strong>Professional Icons:</strong> Replaced generic emojis with professional medical icons
+                        from <code>react-icons</code> (FontAwesome, Material Design).</li>
+                    <li><strong>Visual Hierarchy:</strong> Icons are framed in vibrant circular gradients to match the
+                        brand aesthetic.</li>
+                </ul>
+
+                <h4>3. Comprehensive Services Expansion</h4>
+                <p>The services database has been massively expanded to match the clinic's full offerings.</p>
+                <ul>
+                    <li><strong>20+ Detailed Services:</strong> Added full data for Hair Transplant, Laser treatments,
+                        PRP, HydraFacial, and more.</li>
+                    <li><strong>Rich Content:</strong> Each service now includes a specific icon, detailed description,
+                        benefits list, procedure steps, and pricing info.</li>
+                    <li><strong>Code Update:</strong> Migrated <code>src/data/services.js</code> to
+                        <code>src/data/services.jsx</code> to support component-based icons.
+                    </li>
+                </ul>
+
+                <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #eee;">
+
+                <h3>February 11, 2026 (v2.1.0 & v2.2.0)</h3>
+                <p>Summary of previous Phase 2 changes.</p>
 
                 <h3>🎯 Phase 2 Features Implemented</h3>
                 <div class="alert alert-info">
