@@ -124,9 +124,11 @@ const About = () => {
                             </div>
                             <h3>Dr. Sapana Sharma</h3>
                             <p style={{ color: 'var(--primary-blue)', fontWeight: '500' }}>
-                                Cosmetic Surgeon
+                                Skin & Hair Transplant Expert
                             </p>
-                            <p style={{ fontSize: '0.9375rem' }}>MBBS</p>
+                            <p style={{ fontSize: '0.9375rem' }}>MBBS <br></br>
+                                (Training in Cosmetic Dermatology)
+                            </p>
                             <p style={{ marginTop: '1rem' }}>
                                 Expert in skin and hair transplant procedures with a focus on
                                 natural-looking results and patient comfort.

@@ -150,7 +150,7 @@ export const services = [
         title: 'Vampire Facial',
         description: 'Rejuvenate your face with microneedling and PRP.',
         longDescription: 'Combines microneedling with PRP to boost collagen, improve texture, and give your skin a youthful glow. Famous for its anti-aging benefits.',
-        image: '/images/services/vampire.jpg',
+        image: '/images/services/vampire.jpeg',
         benefits: ['Collagen boost', 'Tightening', 'Glow', 'Anti-aging'],
         duration: '60 Mins',
         pricing: 'Per Session'
