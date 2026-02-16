@@ -280,12 +280,12 @@ export const services = [
 
 // Updated concerns mapping to new service IDs
 export const concerns = [
-    { icon: <MdFaceRetouchingNatural />, title: 'Acne & Scars', link: '/services/acne-treatment' },
-    { icon: <FaHeadSideVirus />, title: 'Hair Loss', link: '/services/hair-transplant' },
-    { icon: <GiRazor />, title: 'Unwanted Hair', link: '/services/laser-hair-reduction' },
-    { icon: <RiTimeLine />, title: 'Aging Signs', link: '/services/botox-fillers' }, // or anti-aging
-    { icon: <MdWbSunny />, title: 'Dark Spots', link: '/services/laser-skin-whitening' },
-    { icon: <FaSearch />, title: 'Moles/Warts', link: '/services/mole-wart-removal' },
-    { icon: <FaSpa />, title: 'Dull Skin', link: '/services/hydrafacial' },
-    { icon: <FaWeight />, title: 'Uneven Tone', link: '/services/laser-skin-resurfacing' }
+    { icon: <MdFaceRetouchingNatural />, title: 'Acne & Scars', subtitle: '(डन्डीफोर र दाग)', link: '/services/acne-treatment' },
+    { icon: <FaHeadSideVirus />, title: 'Hair Loss', subtitle: '(कपाल झर्ने)', link: '/services/hair-transplant' },
+    { icon: <GiRazor />, title: 'Unwanted Hair', subtitle: '(नचाहेको रौँ)', link: '/services/laser-hair-reduction' },
+    { icon: <RiTimeLine />, title: 'Aging Signs', subtitle: '(चाउरीपना)', link: '/services/botox-fillers' }, // or anti-aging
+    { icon: <MdWbSunny />, title: 'Dark Spots', subtitle: '(कालो दाग)', link: '/services/laser-skin-whitening' },
+    { icon: <FaSearch />, title: 'Moles/Warts', subtitle: '(कोठी र मुसा)', link: '/services/mole-wart-removal' },
+    { icon: <FaSpa />, title: 'Melasma', subtitle: '(चायाँ पोतो)', link: '/services/hydrafacial' },
+    { icon: <FaWeight />, title: 'Uneven Tone', subtitle: '(असमान छाला)', link: '/services/laser-skin-resurfacing' }
 ];

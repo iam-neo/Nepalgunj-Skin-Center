@@ -21,7 +21,19 @@ const Home = () => {
                         {concerns.map((concern, index) => (
                             <Link key={index} to={concern.link} className="concern-item">
                                 <span className="concern-icon">{concern.icon}</span>
-                                <span className="concern-title">{concern.title}</span>
+                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                    <span className="concern-title">{concern.title}</span>
+                                    {concern.subtitle && (
+                                        <span style={{
+                                            fontSize: '0.95rem',
+                                            color: 'var(--text-secondary)',
+                                            fontWeight: '400',
+                                            marginTop: '0.25rem'
+                                        }}>
+                                            {concern.subtitle}
+                                        </span>
+                                    )}
+                                </div>
                             </Link>
                         ))}
                     </div>
