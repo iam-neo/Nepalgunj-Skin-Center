@@ -10,7 +10,7 @@ const floatingServices = [
     // Right Side
     { label: 'Botox & Fillers', icon: '💆‍♀️', slug: 'anti-aging', position: { top: '40%', right: '5%' }, delay: '0.2s', duration: '6.2s' },
     { label: 'Acne & Scars', icon: '🧴', slug: 'acne-treatment', position: { top: '55%', right: '5%' }, delay: '0.7s', duration: '5.8s' },
-    { label: 'HydraFacial', icon: '💧', slug: 'hydrafacial', position: { top: '65%', right: '5%' }, delay: '1.2s', duration: '6.8s' },
+    { label: 'HydraFacial', icon: '💧', slug: 'hydrafacial', position: { top: '70%', right: '5%' }, delay: '1.2s', duration: '6.8s' },
     { label: 'Body Contouring', icon: '⚖️', slug: 'weight-management', position: { top: '85%', right: '5%' }, delay: '1.7s', duration: '7.2s' },
 ];
 
