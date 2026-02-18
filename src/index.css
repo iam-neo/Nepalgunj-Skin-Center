@@ -336,12 +336,34 @@ button {
    ============================================ */
 
 .navbar {
-  background: var(--white);
-  box-shadow: var(--shadow-md);
-  position: sticky;
-  top: 0;
+  background: transparent;
+  box-shadow: none;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
   z-index: 1000;
   padding: var(--space-md) 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-scrolled {
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
 
 .navbar .container {
@@ -372,6 +394,11 @@ button {
   position: relative;
 }
 
+.navbar-scrolled .nav-item>a {
+  color: var(--text-primary);
+  text-shadow: none;
+}
+
 .nav-item>a::after {
   content: '';
   position: absolute;
@@ -385,6 +412,11 @@ button {
 
 .nav-item>a:hover,
 .nav-item>a.active {
+  color: var(--primary-blue);
+}
+
+.navbar-scrolled .nav-item>a:hover,
+.navbar-scrolled .nav-item>a.active {
   color: var(--primary-blue);
 }
 

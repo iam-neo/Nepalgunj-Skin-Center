@@ -1,8 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const navItems = [
         { path: '/', label: 'Home' },
@@ -24,7 +33,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
             <div className="container">
                 <Link to="/" className="logo">
                     {/* <img src="/images/hosp/logo.png" alt="Nepalgunj Skin Center" /> */}
