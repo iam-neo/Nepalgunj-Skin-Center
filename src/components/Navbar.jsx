@@ -27,7 +27,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="container">
                 <Link to="/" className="logo">
-                    <img src="/images/hosp/logo.png" alt="Nepalgunj Skin Center" />
+                    {/* <img src="/images/hosp/logo.png" alt="Nepalgunj Skin Center" /> */}
                 </Link>
 
                 <div
