@@ -377,19 +377,20 @@ button {
   width: auto;
 }
 
+/* Logo: hidden by default, visible on scroll */
 .navbar-logo {
   opacity: 0;
-  transform: scale(0.8);
-  max-height: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
-  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  height: 45px;
+  width: auto;
 }
 
-.navbar-logo-visible {
+.navbar-logo.visible {
   opacity: 1;
-  transform: scale(1);
-  max-height: 45px;
-  pointer-events: auto;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .nav-links {

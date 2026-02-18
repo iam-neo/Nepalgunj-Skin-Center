@@ -35,17 +35,12 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
             <div className="container">
-                <Link to="/" className={`logo ${scrolled ? 'visible' : ''}`}>
-                    {scrolled && (
-                        <img
-                            src="/images/hosp/logo.png"
-                            alt="Nepalgunj Skin Center"
-                            style={{
-                                opacity: scrolled ? 1 : 0,
-                                transition: 'opacity 0.3s ease'
-                            }}
-                        />
-                    )}
+                <Link to="/" className="logo">
+                    <img
+                        src="/images/hosp/logo.png"
+                        alt="Nepalgunj Skin Center"
+                        className={`navbar-logo ${scrolled ? 'visible' : ''}`}
+                    />
                 </Link>
 
                 <div
