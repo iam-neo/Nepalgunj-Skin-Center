@@ -60,11 +60,27 @@ const Home = () => {
                         </div>
                         <div>
                             <h3>Hair Restoration Success</h3>
-                            <p className="lead">
+                            <p className="lead" style={{ fontStyle: 'italic', color: 'var(--text-secondary)' }}>
                                 "I never thought I could get my natural hair back. The FUE procedure was painless and the results speak for themselves."
                             </p>
-                            <p><strong>- Dr. Verma, Hair Transplant Patient</strong></p>
-                            <Link to="/gallery" className="btn btn-primary" style={{ marginTop: '1rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1.5rem' }}>
+                                <img
+                                    src="/images/bna/verma.jpeg"
+                                    alt="Dr. Verma - Hair Transplant Patient"
+                                    style={{
+                                        width: '60px',
+                                        height: '60px',
+                                        borderRadius: '50%',
+                                        objectFit: 'cover',
+                                        border: '3px solid var(--primary)'
+                                    }}
+                                />
+                                <div>
+                                    <p style={{ margin: 0, fontWeight: '600', fontSize: '1.05rem' }}>Dr. Purusottam Verma</p>
+                                    <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Hair Transplant Patient</p>
+                                </div>
+                            </div>
+                            <Link to="/gallery" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
                                 View Full Gallery
                             </Link>
                         </div>
