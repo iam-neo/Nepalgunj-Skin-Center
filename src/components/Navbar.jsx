@@ -4,6 +4,12 @@ import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [isDark, setIsDark] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('theme') === 'dark';
+        }
+        return false;
+    });
 
     useEffect(() => {
         const handleScroll = () => {
@@ -12,6 +18,12 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Apply dark mode
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }, [isDark]);
 
     const navItems = [
         { path: '/', label: 'Home' },
@@ -43,12 +55,22 @@ const Navbar = () => {
                     />
                 </Link>
 
-                <div
-                    className="menu-toggle"
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Toggle menu"
-                >
-                    {isOpen ? '✕' : '☰'}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <button
+                        className="theme-toggle"
+                        onClick={() => setIsDark(!isDark)}
+                        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                        title={isDark ? 'Light mode' : 'Dark mode'}
+                    >
+                        {isDark ? '☀️' : '🌙'}
+                    </button>
+                    <div
+                        className="menu-toggle"
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? '✕' : '☰'}
+                    </div>
                 </div>
 
                 <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
@@ -83,3 +105,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

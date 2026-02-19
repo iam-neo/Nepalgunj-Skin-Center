@@ -50,9 +50,26 @@ export const blogPosts = [
       { src: '/images/blog/hydrafacial-equipment.png', caption: 'HydraFacial Equipment & Serums' }
     ],
     category: 'Skin Care',
+    tags: ['HydraFacial', 'Facial Treatment', 'Skin Rejuvenation', 'Glow'],
     author: 'Dr. Abhishek Arjel',
+    authorAvatar: '/images/hosp/doctor.jpg',
+    authorBio: 'MBBS, MD Dermatology – Founder of Nepalgunj Skin Center with 10+ years of expertise in advanced dermatological care and aesthetic treatments.',
     date: '2026-01-29',
-    readTime: '8 min read'
+    readTime: '8 min read',
+    views: 2340,
+    commentsCount: 12,
+    featured: true,
+    faq: [
+      { question: 'Is HydraFacial painful?', answer: 'No, HydraFacial is a completely painless treatment. Most patients describe it as a refreshing and relaxing experience similar to a light massage on the face.' },
+      { question: 'How long does a HydraFacial session take?', answer: 'A standard HydraFacial session takes about 30-45 minutes. With optional add-ons like LED light therapy, it may extend to 60 minutes.' },
+      { question: 'Can I wear makeup after HydraFacial?', answer: 'Yes! One of the best things about HydraFacial is zero downtime. You can apply makeup immediately after treatment, though many patients prefer to show off their natural glow.' },
+      { question: 'How much does HydraFacial cost in Nepal?', answer: 'HydraFacial pricing varies based on the specific treatment plan. Contact Nepalgunj Skin Center for current pricing and package offers.' }
+    ],
+    comments: [
+      { name: 'Sunita Sharma', date: '2026-02-02', text: 'I had my first HydraFacial last week and the results were amazing! My skin has never looked this good. Highly recommend Dr. Arjel and his team.' },
+      { name: 'Rajesh K.', date: '2026-02-05', text: 'Was skeptical at first but the before/after photos convinced me. The treatment was so relaxing and my pores have visibly shrunk.' },
+      { name: 'Priya Thapa', date: '2026-02-10', text: 'Best investment for my skin! I now get it done monthly. The staff at Nepalgunj Skin Center is so professional and friendly.' }
+    ]
   },
   {
     id: 'understanding-acne',
@@ -95,9 +112,24 @@ export const blogPosts = [
     `,
     image: '/images/blog/acne-treatment.jpg',
     category: 'Skin Care',
+    tags: ['Acne', 'Breakouts', 'Skin Treatment', 'Dermatology'],
     author: 'Dr. Abhishek Arjel',
+    authorAvatar: '/images/hosp/doctor.jpg',
+    authorBio: 'MBBS, MD Dermatology – Founder of Nepalgunj Skin Center with 10+ years of expertise in advanced dermatological care and aesthetic treatments.',
     date: '2026-01-15',
-    readTime: '5 min read'
+    readTime: '5 min read',
+    views: 3120,
+    commentsCount: 8,
+    featured: false,
+    faq: [
+      { question: 'Can acne be completely cured?', answer: 'While acne can be effectively managed and controlled, some people may experience recurring breakouts. A consistent skincare regimen and professional treatment can keep acne under control long-term.' },
+      { question: 'Does diet affect acne?', answer: 'Yes, research shows that high-glycemic foods and dairy products may worsen acne in some individuals. A balanced diet rich in fruits, vegetables, and omega-3 fatty acids can support clearer skin.' },
+      { question: 'When should I see a dermatologist for acne?', answer: 'You should consult a dermatologist if over-the-counter products aren\'t working after 2-3 months, if you have severe or cystic acne, or if acne is leaving scars.' }
+    ],
+    comments: [
+      { name: 'Anita Gurung', date: '2026-01-20', text: 'This article helped me understand my acne so much better. Booked a consultation and my skin is already improving!' },
+      { name: 'Bikash Poudel', date: '2026-01-25', text: 'Very informative. I didn\'t know there were so many types of acne. The treatment options mentioned here are exactly what I needed.' }
+    ]
   },
   {
     id: 'hair-transplant-guide',
@@ -132,9 +164,24 @@ export const blogPosts = [
     `,
     image: '/images/blog/hair-transplant.jpg',
     category: 'Hair Care',
+    tags: ['Hair Transplant', 'FUE', 'Hair Loss', 'Hair Restoration'],
     author: 'Dr. Abhishek Arjel',
+    authorAvatar: '/images/hosp/doctor.jpg',
+    authorBio: 'MBBS, MD Dermatology – Founder of Nepalgunj Skin Center with 10+ years of expertise in advanced dermatological care and aesthetic treatments.',
     date: '2026-01-10',
-    readTime: '7 min read'
+    readTime: '7 min read',
+    views: 4560,
+    commentsCount: 15,
+    featured: false,
+    faq: [
+      { question: 'Is hair transplant permanent?', answer: 'Yes! The transplanted hair follicles are taken from the "permanent zone" at the back of your head. These follicles are genetically resistant to balding and will continue to grow for a lifetime.' },
+      { question: 'How much does a hair transplant cost in Nepal?', answer: 'The cost varies based on the number of grafts needed. At Nepalgunj Skin Center, we offer competitive pricing with flexible payment options. Contact us for a personalized quote.' },
+      { question: 'Does a hair transplant look natural?', answer: 'Absolutely. Modern FUE techniques allow us to place follicles at precise angles and densities, resulting in a completely natural appearance that is indistinguishable from your original hair.' }
+    ],
+    comments: [
+      { name: 'Ram Bahadur', date: '2026-01-15', text: 'Got my FUE done here 8 months ago. The results are incredible – nobody can tell it\'s a transplant. Dr. Arjel is truly skilled.' },
+      { name: 'Sanjay M.', date: '2026-01-18', text: 'Very detailed article. I was nervous about the procedure but this cleared all my doubts. Scheduling my consultation soon!' }
+    ]
   },
   {
     id: 'science-behind-hydrafacial',
@@ -173,9 +220,22 @@ export const blogPosts = [
     `,
     image: '/images/blog/hydrafacial.jpg',
     category: 'Skin Care',
+    tags: ['HydraFacial', 'Vortex-Fusion', 'Facial', 'Skin Science'],
     author: 'Dr. Abhishek Arjel',
+    authorAvatar: '/images/hosp/doctor.jpg',
+    authorBio: 'MBBS, MD Dermatology – Founder of Nepalgunj Skin Center with 10+ years of expertise in advanced dermatological care and aesthetic treatments.',
     date: '2026-01-05',
-    readTime: '4 min read'
+    readTime: '4 min read',
+    views: 1850,
+    commentsCount: 6,
+    featured: false,
+    faq: [
+      { question: 'How is HydraFacial different from a regular facial?', answer: 'HydraFacial uses patented Vortex-Fusion technology that simultaneously cleanses, exfoliates, extracts, hydrates, and protects. Traditional facials typically do these steps separately and less effectively.' },
+      { question: 'Can HydraFacial help with acne?', answer: 'Yes! HydraFacial can be customized with acne-targeting boosters containing salicylic acid. It helps unclog pores, reduce bacteria, and calm inflammation.' }
+    ],
+    comments: [
+      { name: 'Meera Joshi', date: '2026-01-10', text: 'Love the science breakdown! Makes me appreciate the treatment even more. Getting my next session this weekend.' }
+    ]
   },
   {
     id: 'sun-protection-guide',
@@ -214,9 +274,23 @@ export const blogPosts = [
     `,
     image: '/images/blog/sun-protection.jpg',
     category: 'Skin Care',
+    tags: ['Sun Protection', 'SPF', 'UV Damage', 'Sunscreen'],
     author: 'Dr. Abhishek Arjel',
+    authorAvatar: '/images/hosp/doctor.jpg',
+    authorBio: 'MBBS, MD Dermatology – Founder of Nepalgunj Skin Center with 10+ years of expertise in advanced dermatological care and aesthetic treatments.',
     date: '2025-12-28',
-    readTime: '5 min read'
+    readTime: '5 min read',
+    views: 2780,
+    commentsCount: 9,
+    featured: false,
+    faq: [
+      { question: 'What SPF should I use in Nepal?', answer: 'In Nepal, especially at higher altitudes, we recommend SPF 50+ with broad-spectrum protection against both UVA and UVB rays. Reapply every 2 hours when outdoors.' },
+      { question: 'Can sun damage be reversed?', answer: 'Many signs of sun damage can be significantly improved with professional treatments like chemical peels, laser therapy, and topical retinoids. Prevention is always better than cure though!' }
+    ],
+    comments: [
+      { name: 'Deepa Rai', date: '2026-01-02', text: 'Living in Nepal, I never realized how important sun protection is at altitude. This article was eye-opening. Thank you Dr. Arjel!' },
+      { name: 'Kiran Shrestha', date: '2026-01-05', text: 'Great tips! I\'ve been using SPF 30 but will switch to 50+ after reading this. The UV radiation info about altitude was very helpful.' }
+    ]
   },
   {
     id: 'botox-vs-fillers',
@@ -256,9 +330,24 @@ export const blogPosts = [
     `,
     image: '/images/blog/botox-fillers.jpg',
     category: 'Anti-Aging',
+    tags: ['Botox', 'Dermal Fillers', 'Anti-Aging', 'Wrinkles'],
     author: 'Dr. Abhishek Arjel',
+    authorAvatar: '/images/hosp/doctor.jpg',
+    authorBio: 'MBBS, MD Dermatology – Founder of Nepalgunj Skin Center with 10+ years of expertise in advanced dermatological care and aesthetic treatments.',
     date: '2025-12-20',
-    readTime: '6 min read'
+    readTime: '6 min read',
+    views: 3890,
+    commentsCount: 11,
+    featured: false,
+    faq: [
+      { question: 'Is Botox safe?', answer: 'Yes, Botox is FDA-approved and has been used safely for cosmetic purposes for over 20 years. When administered by a qualified dermatologist, it is very safe with minimal side effects.' },
+      { question: 'At what age should I start Botox?', answer: 'There\'s no specific age. Many people start "preventive Botox" in their late 20s to early 30s. The best approach is to consult with a dermatologist who can assess your individual needs.' },
+      { question: 'Do fillers look natural?', answer: 'When done by an experienced practitioner like Dr. Arjel, fillers look completely natural. The key is using the right amount in the right areas. We follow a "less is more" philosophy.' }
+    ],
+    comments: [
+      { name: 'Sita Devi', date: '2025-12-25', text: 'Finally I understand the difference between Botox and fillers! This article explained it so clearly. Going in for a consultation next week.' },
+      { name: 'Manisha P.', date: '2025-12-28', text: 'Got Botox for my forehead lines at NSC and the results are amazing. Dr. Arjel is very skilled – my face looks natural, just fresher!' }
+    ]
   },
   {
     id: 'dealing-with-melasma',
@@ -299,9 +388,23 @@ export const blogPosts = [
     `,
     image: '/images/blog/melasma.jpg',
     category: 'Skin Care',
+    tags: ['Melasma', 'Pigmentation', 'Skin Lightening', 'Hormonal'],
     author: 'Dr. Abhishek Arjel',
+    authorAvatar: '/images/hosp/doctor.jpg',
+    authorBio: 'MBBS, MD Dermatology – Founder of Nepalgunj Skin Center with 10+ years of expertise in advanced dermatological care and aesthetic treatments.',
     date: '2025-12-15',
-    readTime: '6 min read'
+    readTime: '6 min read',
+    views: 2150,
+    commentsCount: 7,
+    featured: false,
+    faq: [
+      { question: 'Does melasma go away on its own?', answer: 'Melasma triggered by pregnancy may fade after delivery. However, most cases require ongoing management with sun protection and topical treatments to keep pigmentation under control.' },
+      { question: 'Can I use home remedies for melasma?', answer: 'While some natural ingredients like vitamin C and niacinamide can help, melasma typically requires professional-grade treatments for significant improvement. We recommend consulting a dermatologist for the best results.' }
+    ],
+    comments: [
+      { name: 'Kamala Thapa', date: '2025-12-20', text: 'I\'ve struggled with melasma for years. This article gave me hope. The multi-pronged approach mentioned here is exactly what worked for me at NSC.' },
+      { name: 'Sarita B.', date: '2025-12-22', text: 'The tip about iron-oxide sunscreens was new to me. Already seeing slight improvement after my first chemical peel at the clinic.' }
+    ]
   }
 ];
 
