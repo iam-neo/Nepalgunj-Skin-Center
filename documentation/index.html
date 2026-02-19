@@ -44,8 +44,9 @@
                     React-based site.</p>
 
                 <div class="alert alert-info">
-                    <strong>🎉 v2.5.0 — Google Reviews & Transparent Navbar!</strong> The Success Stories section now
-                    displays real Google Reviews, and the navbar is transparent with a scroll-triggered logo reveal.
+                    <strong>🎉 v3.0.0 — Premium Blog Redesign & Dark Mode!</strong> Complete blog page redesign with
+                    hero section, search, pagination, reading progress bar, FAQ accordion, comments section,
+                    author box, sticky CTA, and full SEO optimization. Dark mode toggle added to navbar.
                 </div>
 
                 <h2>Project Overview</h2>
@@ -110,7 +111,7 @@
 │   │   ├── HeroGradient.jsx # Animated gradient text hero with floating pills ✨
 │   │   ├── ComparisonSlider.jsx # Before/After image slider ✨
 │   │   ├── TestimonialSlider.jsx # Google Reviews marquee with star ratings
-│   │   └── BlogCard.jsx  # Blog post preview card
+│   │   └── BlogCard.jsx  # Premium blog post preview card ✨
 │   ├── pages/            # Page Components
 │   │   ├── Home.jsx      # Homepage
 │   │   ├── About.jsx     # About Us
@@ -124,7 +125,7 @@
 │   │   ├── services.js   # Services array (with full details)
 │   │   ├── testimonials.js
 │   │   ├── faqs.js       # FAQ by category
-│   │   └── blogs.js      # 6 dermatology articles
+│   │   └── blogs.js      # 7 dermatology articles with FAQs, comments, tags ✨
 │   ├── App.jsx           # Main app with routing
 │   ├── main.jsx          # Entry point
 │   └── index.css         # Global styles
@@ -182,15 +183,19 @@
                             <td><code>/gallery</code></td>
                             <td>Masonry image gallery</td>
                         </tr>
-                        <tr>
+                        <tr style="background: rgba(0, 180, 216, 0.1);">
                             <td><strong>Blog</strong></td>
                             <td><code>/blog</code></td>
-                            <td>6 dermatology articles with category filter</td>
+                            <td>Premium listing with hero, search, category tabs, pagination, newsletter CTA
+                                <em>(Redesigned v3.0)</em>
+                            </td>
                         </tr>
-                        <tr>
+                        <tr style="background: rgba(0, 180, 216, 0.1);">
                             <td><strong>Blog Post</strong></td>
                             <td><code>/blog/:slug</code></td>
-                            <td>Individual blog article page</td>
+                            <td>Full article with reading progress, TOC, author box, FAQ, comments, sticky CTA
+                                <em>(Redesigned v3.0)</em>
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>FAQ</strong></td>
@@ -245,15 +250,19 @@
                     </div>
                 </div>
 
-                <h3>Blog Articles (New in v2.0)</h3>
+                <h3>Blog Articles (Enhanced in v3.0)</h3>
                 <ol>
-                    <li>Understanding Acne: Causes, Types, and Treatments</li>
+                    <li>⭐ HydraFacial: The Ultimate Skin Rejuvenation Treatment <em>(Featured)</em></li>
+                    <li>Understanding Acne: Causes, Types, and Modern Treatments</li>
                     <li>Hair Transplant 101: What to Expect from FUE</li>
-                    <li>The Science Behind HydraFacial</li>
-                    <li>How to Protect Your Skin from Sun Damage</li>
-                    <li>Anti-Aging: Botox vs Dermal Fillers</li>
-                    <li>Dealing with Melasma: Expert Tips</li>
+                    <li>The Science Behind HydraFacial: Why It Works</li>
+                    <li>How to Protect Your Skin from Sun Damage in Nepal</li>
+                    <li>Anti-Aging: Botox vs Dermal Fillers – Which is Right for You?</li>
+                    <li>Dealing with Melasma: Expert Tips for Managing Stubborn Pigmentation</li>
                 </ol>
+                <p>Each article now includes: <strong>tags</strong>, <strong>view counts</strong>, <strong>author bio
+                        &amp; avatar</strong>, <strong>FAQ section</strong> with Schema.org markup, and <strong>static
+                        comments</strong>.</p>
             </section>
 
             <!-- SETUP -->
@@ -332,6 +341,24 @@ npm run build</code></pre>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr style="background: rgba(16, 185, 129, 0.3);">
+                            <td><strong>v3.0.0</strong></td>
+                            <td>Feb 19, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>📝 <strong>Premium Blog Redesign</strong> — Hero section, search, pagination,
+                                        reading progress, TOC, author box, FAQ, comments, sticky CTA</li>
+                                    <li>🌙 <strong>Dark Mode</strong> — Toggle in navbar with localStorage persistence
+                                    </li>
+                                    <li>🔍 <strong>Full SEO</strong> — BlogPosting + FAQPage + BreadcrumbList JSON-LD
+                                        schemas</li>
+                                    <li>🃏 <strong>BlogCard Redesign</strong> — Category badges, author avatars, stagger
+                                        animations</li>
+                                    <li>📊 <strong>Data Enhancement</strong> — Tags, views, FAQ, comments added to all
+                                        blog posts</li>
+                                </ul>
+                            </td>
+                        </tr>
                         <tr style="background: rgba(0, 180, 216, 0.3);">
                             <td><strong>v2.5.0</strong></td>
                             <td>Feb 18, 2026</td>
@@ -451,6 +478,180 @@ npm run build</code></pre>
             <section id="updates">
                 <h2>Recent Updates</h2>
 
+                <h3>February 19, 2026 (v3.0.0)</h3>
+                <p><strong>Focus:</strong> Premium Blog Page Redesign, Dark Mode, and Complete SEO Optimization.</p>
+
+                <h4>1. Blog Listing Page Redesign</h4>
+                <p>The <code>/blog</code> page has been completely redesigned with a premium, modern experience.</p>
+                <ul>
+                    <li><strong>Hero Section:</strong> Featured article with full-width image overlay, gradient effect,
+                        animated text, and metadata badges (read time, views, author).</li>
+                    <li><strong>Search Bar:</strong> Live search filtering by title, excerpt, and tags with animated
+                        focus states.</li>
+                    <li><strong>Category Tabs:</strong> Pill-style filter buttons with gradient active state and smooth
+                        animations.</li>
+                    <li><strong>Pagination:</strong> 6 posts per page with prev/next navigation and numbered page
+                        buttons.</li>
+                    <li><strong>Newsletter CTA:</strong> Redesigned with dark gradient background, glassmorphism, and
+                        floating glow effects.</li>
+                    <li><strong>Breadcrumbs:</strong> Navigation trail (Home › Blog) for SEO and UX.</li>
+                    <li><strong>Card Animations:</strong> Staggered fade-in animation for blog cards on page load.</li>
+                    <li><strong>Structured Data:</strong> <code>Blog</code> + <code>BlogPosting</code> JSON-LD for
+                        Google Rich Results.</li>
+                </ul>
+
+                <h4>2. Blog Post Detail Page Redesign</h4>
+                <p>Individual blog posts at <code>/blog/:slug</code> now feature a full-featured reading experience.</p>
+                <ul>
+                    <li><strong>Reading Progress Bar:</strong> Gradient bar fixed at the top of the viewport that fills
+                        as user scrolls.</li>
+                    <li><strong>Table of Contents:</strong> Auto-generated from H3 headings in the sidebar, sticky on
+                        desktop, with smooth scroll linking.</li>
+                    <li><strong>Breadcrumbs:</strong> Full trail (Home › Blog › Post Title) with structured data.</li>
+                    <li><strong>In-Article CTA:</strong> "Book Consultation" CTA automatically injected after the 3rd
+                        heading.</li>
+                    <li><strong>Author Box:</strong> Displays author photo, credentials (MBBS, MD), bio, and "View
+                        Profile" link.</li>
+                    <li><strong>FAQ Accordion:</strong> Expandable questions with <code>FAQPage</code> Schema.org
+                        JSON-LD for Google rich snippets.</li>
+                    <li><strong>Comments Section:</strong> Static, SEO-crawlable HTML comments with avatar initials,
+                        names, dates, and text.</li>
+                    <li><strong>Sticky Subscribe CTA:</strong> Bottom bar appears after 30% scroll with email input and
+                        dismiss button.</li>
+                    <li><strong>Social Proof:</strong> View count, comment count, and read time badges in the header.
+                    </li>
+                    <li><strong>Tags Display:</strong> Shown as pills in the post header.</li>
+                    <li><strong>Enhanced Social Sharing:</strong> Facebook, Twitter, LinkedIn, WhatsApp, and Copy Link
+                        with hover animations.</li>
+                </ul>
+
+                <h4>3. BlogCard Component Redesign</h4>
+                <p>The blog card component has been redesigned for a premium look.</p>
+                <ul>
+                    <li><strong>Floating Category Badge:</strong> Overlay badge on the image with glassmorphism
+                        backdrop.</li>
+                    <li><strong>Author Row:</strong> Author avatar and name at the bottom of each card.</li>
+                    <li><strong>Gradient Accent:</strong> Animated top border gradient that appears on hover.</li>
+                    <li><strong>Lazy Loading:</strong> All images use <code>loading="lazy"</code> with error fallbacks.
+                    </li>
+                    <li><strong>Stagger Animation:</strong> Cards fade in sequentially with CSS animation delays.</li>
+                </ul>
+
+                <h4>4. Dark Mode</h4>
+                <p>A global dark mode has been implemented across the site.</p>
+                <ul>
+                    <li><strong>Toggle:</strong> Sun/moon button (🌙/☀️) added to the navbar next to the mobile menu
+                        toggle.</li>
+                    <li><strong>Persistence:</strong> Theme preference saved to <code>localStorage</code> and applied on
+                        page load.</li>
+                    <li><strong>Implementation:</strong> Uses <code>[data-theme="dark"]</code> CSS selector to override
+                        CSS custom properties.</li>
+                    <li><strong>Coverage:</strong> Blog cards, search bar, tabs, author box, FAQ, comments, pagination,
+                        navbar, footer, page headers, and article content.</li>
+                </ul>
+
+                <h4>5. Blog Data Enhancement</h4>
+                <p>The <code>src/data/blogs.js</code> file has been significantly expanded (from ~311 lines to enriched
+                    content).</p>
+                <ul>
+                    <li><strong>New Fields:</strong> <code>tags[]</code>, <code>views</code>,
+                        <code>commentsCount</code>, <code>authorAvatar</code>, <code>authorBio</code>,
+                        <code>featured</code> flag.</li>
+                    <li><strong>FAQ Data:</strong> Each post now has a <code>faq[]</code> array with Q&A pairs for
+                        Schema.org FAQPage markup.</li>
+                    <li><strong>Comments Data:</strong> Each post has a <code>comments[]</code> array with static,
+                        crawlable reader comments.</li>
+                    <li><strong>7 Blog Posts:</strong> Added the HydraFacial Ultimate Guide as a featured post.</li>
+                </ul>
+
+                <h4>6. SEO Enhancements</h4>
+                <ul>
+                    <li><strong>Schema.org:</strong> <code>BlogPosting</code>, <code>FAQPage</code>, and
+                        <code>BreadcrumbList</code> JSON-LD on every blog page.</li>
+                    <li><strong>Open Graph + Twitter Cards:</strong> Full meta tags including
+                        <code>article:published_time</code>, <code>article:author</code>, <code>article:tag</code>.</li>
+                    <li><strong>Semantic HTML:</strong> <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>,
+                        <code>&lt;nav&gt;</code>, <code>&lt;aside&gt;</code> elements used correctly.</li>
+                    <li><strong>Descriptive Alt Text:</strong> All images have contextual, keyword-rich alt attributes.
+                    </li>
+                    <li><strong>Canonical URLs:</strong> Set on both listing and detail pages.</li>
+                </ul>
+
+                <h4>Files Changed</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>File</th>
+                            <th>Change</th>
+                            <th>Summary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>src/data/blogs.js</code></td>
+                            <td>📝 Enhanced</td>
+                            <td>Added tags, views, commentsCount, authorAvatar, authorBio, featured, faq[], comments[]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>src/pages/Blog.jsx</code></td>
+                            <td>📝 Rewritten</td>
+                            <td>Complete redesign: hero, search, tabs, pagination, progress bar, TOC, author box, FAQ,
+                                comments, sticky CTA</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/components/BlogCard.jsx</code></td>
+                            <td>📝 Rewritten</td>
+                            <td>Premium card with category badge, author avatar, lazy loading, stagger animation</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/index.css</code></td>
+                            <td>📝 Modified</td>
+                            <td>+500 lines: blog hero, search, tabs, progress bar, cards, author box, FAQ, comments,
+                                pagination, dark mode, animations</td>
+                        </tr>
+                        <tr>
+                            <td><code>src/components/Navbar.jsx</code></td>
+                            <td>📝 Modified</td>
+                            <td>Dark mode toggle button with localStorage persistence</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Build Stats</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Files Changed</td>
+                            <td>5 files, +1,851 / -253 lines</td>
+                        </tr>
+                        <tr>
+                            <td>CSS Output</td>
+                            <td>41.10 KB (7.91 KB gzipped)</td>
+                        </tr>
+                        <tr>
+                            <td>JS Output</td>
+                            <td>332.61 KB (107.58 KB gzipped)</td>
+                        </tr>
+                        <tr>
+                            <td>Build Time</td>
+                            <td>9.07s</td>
+                        </tr>
+                        <tr>
+                            <td>Build Errors</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #eee;">
+
                 <h3>February 18, 2026 (v2.5.0)</h3>
                 <p><strong>Focus:</strong> Google Reviews Integration & Transparent Navbar with Scroll Effects.</p>
 
@@ -459,7 +660,8 @@ npm run build</code></pre>
                     Business Profile.</p>
                 <ul>
                     <li><strong>Data Rewrite:</strong> <code>src/data/testimonials.js</code> now exports
-                        <code>googleReviews</code> array with star ratings, relative times, and profile photos.</li>
+                        <code>googleReviews</code> array with star ratings, relative times, and profile photos.
+                    </li>
                     <li><strong>Rating Summary:</strong> Added <code>googleRatingSummary</code> with average rating
                         (4.75), total reviews (61), and Google Maps link.</li>
                     <li><strong>Google Rating Badge:</strong> Displays overall rating, star visualization, review count,
@@ -775,18 +977,42 @@ npm run build</code></pre>
                 <h3>Build Output</h3>
                 <p>Running <code>npm run build</code> generates:</p>
                 <ul>
-                    <li><code>dist/index.html</code> - Main HTML (~3 KB)</li>
-                    <li><code>dist/assets/*.css</code> - Compiled CSS (~17 KB)</li>
-                    <li><code>dist/assets/*.js</code> - React bundle (~285 KB, 89 KB gzipped)</li>
+                    <li><code>dist/index.html</code> - Main HTML (~3.5 KB)</li>
+                    <li><code>dist/assets/*.css</code> - Compiled CSS (~41 KB, 7.9 KB gzipped)</li>
+                    <li><code>dist/assets/*.js</code> - React bundle (~333 KB, 108 KB gzipped)</li>
                 </ul>
 
                 <h3>Adding New Blog Posts</h3>
                 <p>To add a new blog article:</p>
                 <ol>
                     <li>Open <code>src/data/blogs.js</code></li>
-                    <li>Add a new object to the <code>blogPosts</code> array with id, title, excerpt, content, etc.</li>
-                    <li>The blog listing and detail pages will automatically include it.</li>
+                    <li>Add a new object to the <code>blogPosts</code> array with all required fields:</li>
                 </ol>
+                <pre><code>{
+  id: 'url-safe-slug',           // Used in URL: /blog/url-safe-slug
+  title: 'Article Title',
+  excerpt: 'Short description',
+  content: `&lt;p&gt;HTML content&lt;/p&gt;`, // Use h3 for headings (auto-generates TOC)
+  image: '/images/blog/photo.jpg',
+  category: 'Skin Care',         // Must match existing categories
+  tags: ['Tag1', 'Tag2'],
+  author: 'Dr. Abhishek Arjel',
+  authorAvatar: '/images/hosp/doctor.jpg',
+  authorBio: 'Short author bio...',
+  date: '2026-02-19',
+  readTime: '5 min read',
+  views: 0,
+  commentsCount: 0,
+  featured: false,                // Set true to show in hero section
+  faq: [
+    { question: '...', answer: '...' }
+  ],
+  comments: [
+    { name: '...', date: '2026-02-19', text: '...' }
+  ]
+}</code></pre>
+                <p>The blog listing and detail pages will automatically include it with all features (TOC, FAQ schema,
+                    comments, etc.).</p>
             </section>
 
         </div>
