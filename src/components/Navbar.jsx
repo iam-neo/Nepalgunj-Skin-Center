@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
+    const isHome = location.pathname === '/';
     const [isDark, setIsDark] = useState(() => {
         if (typeof window !== 'undefined') {
             return localStorage.getItem('theme') === 'dark';
@@ -45,7 +47,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+        <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''} ${!isHome ? 'navbar-solid' : ''}`}>
             <div className="container">
                 <Link to="/" className="logo">
                     <img

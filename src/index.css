@@ -356,6 +356,35 @@ button {
   animation: slideDown 0.3s ease forwards;
 }
 
+/* Solid navbar for non-home pages */
+.navbar-solid {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-solid .navbar-logo {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar-solid .nav-item>a {
+  color: var(--text-primary);
+  text-shadow: none;
+}
+
+.navbar-solid .nav-item>a:hover,
+.navbar-solid .nav-item>a.active {
+  color: var(--primary-blue);
+}
+
+.navbar-solid.navbar-scrolled {
+  position: fixed;
+  top: 0;
+}
+
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
@@ -2730,6 +2759,19 @@ button {
 
 [data-theme="dark"] .navbar-scrolled {
   background: rgba(15, 23, 42, 0.95);
+}
+
+[data-theme="dark"] .navbar-solid {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+[data-theme="dark"] .navbar-solid .nav-item>a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] .navbar-solid .nav-item>a:hover,
+[data-theme="dark"] .navbar-solid .nav-item>a.active {
+  color: var(--accent-light);
 }
 
 [data-theme="dark"] .blog-card,
