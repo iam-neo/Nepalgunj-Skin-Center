@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom';
 import HeroGradient from '../components/HeroGradient';
 import ComparisonSlider from '../components/ComparisonSlider';
 import TestimonialSlider from '../components/TestimonialSlider';
+import HomePopup from '../components/HomePopup';
 import { concerns } from '../data/services';
 
 const Home = () => {
     return (
         <>
+            <HomePopup />
             <HeroGradient />
 
             {/* Concerns Grid */}
