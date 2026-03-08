@@ -55,7 +55,7 @@ const About = () => {
                     <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
                         <h2>Our Story</h2>
                         <p>
-                            Founded in 2015, Nepalgunj Skin Center began with a simple mission: to bring
+                            Founded in 2018, Nepalgunj Skin Center began with a simple mission: to bring
                             advanced dermatological care to Western Nepal. What started as a small clinic
                             has grown into the region's premier destination for skin, hair, and aesthetic treatments.
                         </p>
