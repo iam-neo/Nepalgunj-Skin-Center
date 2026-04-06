@@ -1,6 +1,7 @@
 export const faqCategories = [
     { id: 'general', name: 'General' },
     { id: 'hair', name: 'Hair Transplant' },
+    // { id: 'treatment', name: 'Treatment' },
     { id: 'skin', name: 'Skin Treatments' },
     { id: 'laser', name: 'Laser Procedures' },
     { id: 'anti-aging', name: 'Anti-Aging' }
@@ -66,22 +67,40 @@ export const faqs = [
         question: 'Is HydraFacial suitable for all skin types?',
         answer: 'Yes! HydraFacial is gentle and effective for all skin types, including sensitive skin. It provides deep cleansing, exfoliation, and hydration with no downtime.'
     },
+    {
+        id: 10,
+        category: 'skin',
+        question: 'How long does it take to see results?',
+        answer: 'Results very depending on the treatment and skin condition, but most patients start noticing improvements within a few sessions.'
+    },
+    {
+        id: 11,
+        category: 'skin',
+        question: 'Are treatments safe?',
+        answer: 'Yes, all treatments are performed using clinically approved methods and are safe for different skin types.'
+    },
+    {
+        id: 12,
+        category: 'skin',
+        question: 'Are there any side effects?',
+        answer: 'Some treatments may cause mild redness or sensitivity, but these are temporary and usually resolve quickly.'
+    },
 
     // Laser Procedures
     {
-        id: 10,
+        id: 13,
         category: 'laser',
         question: 'Is laser hair removal painful?',
         answer: 'Most patients describe it as a mild snapping sensation. We use cooling technology to ensure maximum comfort during the procedure.'
     },
     {
-        id: 11,
+        id: 14,
         category: 'laser',
         question: 'How many sessions are needed for laser hair removal?',
         answer: 'Typically 6-8 sessions are needed for optimal results, spaced 4-6 weeks apart. This ensures we target hair in all growth phases.'
     },
     {
-        id: 12,
+        id: 15,
         category: 'laser',
         question: 'Can lasers remove tattoos?',
         answer: 'Yes, we offer laser tattoo removal using Q-switched lasers that break down ink particles without damaging surrounding skin.'

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -101,7 +102,20 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© {currentYear} Nepalgunj Skin Center. All Rights Reserved.</p>
+                    <p>
+                        © {currentYear} Nepalgunj Skin Center. All Rights Reserved.
+                        <br />
+                        <span style={{ fontSize: '0.9em', opacity: 0.8, marginTop: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                            Design & Developed by <strong>Nirmal</strong> |
+                            <a href="https://instagram.com/ni.nirmal" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', display: 'flex', alignItems: 'center' }}>
+                                <FaInstagram size={18} />
+                            </a>
+                            |
+                            <a href="https://www.linkedin.com/in/nirmal-mgr/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', display: 'flex', alignItems: 'center' }}>
+                                <FaLinkedin size={18} />
+                            </a>
+                        </span>
+                    </p>
                 </div>
             </div>
         </footer>
