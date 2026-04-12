@@ -23,8 +23,8 @@ const HomePopup = () => {
     // Change these values to update the popup content.
     // Ensure mediaUrl points to a valid image (.jpg, .png, .gif) or video (.mp4) in the public folder or absolute URL.
     const popupContent = {
-        mediaUrl: '/images/events/women.jpg', // Updated to use the uploaded image
-        linkUrl: 'https://www.facebook.com/share/p/1CGkUoHxPW/q', // The link to redirect to (can be external like 'https://...')
+        mediaUrl: '/images/pop/new.png', // Updated to use the uploaded image
+        linkUrl: 'https://www.facebook.com/share/p/17CQwfN7Q3/', // The link to redirect to (can be external like 'https://...')
         altText: 'Special Event'
     };
 

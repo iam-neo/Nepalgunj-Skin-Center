@@ -8,10 +8,10 @@ import { concerns } from '../data/services';
 const Home = () => {
     return (
         <>
-            {/* <HomePopup /> */}
+            <HomePopup />
             <HeroGradient />
 
-            {/* Concerns Grid */}
+            Concerns Grid
             <section className="section">
                 <div className="container">
                     <div className="text-center" style={{ marginBottom: '2rem' }}>
