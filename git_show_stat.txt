@@ -1,0 +1,91 @@
+commit 45226eedee9dbf975cedaad881ab00f411daf3da
+Author: iam-neo <nirmalrokamagar54@gmail.com>
+Date:   Sun Apr 12 12:28:07 2026 +0545
+
+    changes image
+
+ public/images/pop/new.png | Bin 656347 -> 656599 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a487dae75e2e5a79048df8082f21b34f9cca8c3e
+Author: iam-neo <nirmalrokamagar54@gmail.com>
+Date:   Sun Apr 12 10:26:21 2026 +0545
+
+    Feat: New year offer pop-up
+
+ public/images/pop/new.png    | Bin 0 -> 656347 bytes
+ src/components/HomePopup.jsx |   4 ++--
+ src/pages/Home.jsx           |   4 ++--
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit b27cb918180098c3e8b6696bd82e4f6db2969a15
+Author: iam-neo <nirmalrokamagar54@gmail.com>
+Date:   Mon Apr 6 12:02:02 2026 +0545
+
+    footer modify
+
+ src/components/Footer.jsx | 16 +++++++++++++++-
+ src/data/faqs.js          | 25 ++++++++++++++++++++++---
+ 2 files changed, 37 insertions(+), 4 deletions(-)
+
+commit ff2f582bcfc6f7825b7631e12733d1070a23c7a6
+Author: iam-neo <nirmalrokamagar54@gmail.com>
+Date:   Mon Mar 9 11:36:37 2026 +0545
+
+    pop-up off
+
+ src/pages/Home.jsx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 996b30e4645a24040d601bc8bb7bb36d3879a04f
+Author: iam-neo <nirmalrokamagar54@gmail.com>
+Date:   Sun Mar 8 15:40:06 2026 +0545
+
+    feat: added pop-uops
+
+ public/images/apple-touch-icon-114x114.png | Bin 1166 -> 0 bytes
+ public/images/apple-touch-icon-144x144.png | Bin 1346 -> 0 bytes
+ public/images/apple-touch-icon-72x72.png   | Bin 1014 -> 0 bytes
+ public/images/apple-touch-icon.png         | Bin 547 -> 0 bytes
+ public/images/close.png                    | Bin 292 -> 0 bytes
+ public/images/events/women.jpg             | Bin 0 -> 123986 bytes
+ public/images/favicon.png                  | Bin 547 -> 0 bytes
+ public/images/footer-bg.png                | Bin 17587 -> 0 bytes
+ public/images/logo-white-footer.png        | Bin 3410 -> 0 bytes
+ public/images/logo-white-footer@2x.png     | Bin 7005 -> 0 bytes
+ public/images/logo-wide-white.png          | Bin 4107 -> 0 bytes
+ public/images/logo-wide-white@2x.png       | Bin 8209 -> 0 bytes
+ public/images/logo-wide.png                | Bin 4059 -> 0 bytes
+ public/images/logo-wide@2x.png             | Bin 8142 -> 0 bytes
+ public/images/map-marker.png               | Bin 1752 -> 0 bytes
+ public/images/map-marker2.png              | Bin 2526 -> 0 bytes
+ public/images/map-marker3.png              | Bin 965 -> 0 bytes
+ public/images/pattern1.png                 | Bin 101 -> 0 bytes
+ public/images/pattern2.png                 | Bin 101 -> 0 bytes
+ public/images/pattern3.png                 | Bin 99 -> 0 bytes
+ public/images/shadow-overlay.png           | Bin 714 -> 0 bytes
+ public/images/signature.png                | Bin 1120 -> 0 bytes
+ public/images/title-dots.png               | Bin 101 -> 0 bytes
+ src/components/HomePopup.jsx               |  77 +++++++++++++++++++++++++
+ src/index.css                              |  87 +++++++++++++++++++++++++++++
+ src/pages/Home.jsx                         |   2 +
+ 26 files changed, 166 insertions(+)
+
+commit 808a68d28b74989116e0af205c883f87c47ad90f
+Author: iam-neo <nirmalrokamagar54@gmail.com>
+Date:   Sun Mar 8 13:16:57 2026 +0545
+
+    update
+
+ src/pages/About.jsx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 4f3aa00a40ea471bc67584146e284dd40d183442
+Author: iam-neo <nirmalrokamagar54@gmail.com>
+Date:   Sun Mar 8 13:08:24 2026 +0545
+
+    feat: make navbar transparent only on home page
+
+ src/components/Navbar.jsx |  6 ++++--
+ src/index.css             | 42 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 46 insertions(+), 2 deletions(-)

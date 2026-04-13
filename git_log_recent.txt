@@ -1,0 +1,7 @@
+45226ee changes image
+a487dae Feat: New year offer pop-up
+b27cb91 footer modify
+ff2f582 pop-up off
+996b30e feat: added pop-uops
+808a68d update
+4f3aa00 feat: make navbar transparent only on home page

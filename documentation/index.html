@@ -341,7 +341,19 @@ npm run build</code></pre>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="background: rgba(16, 185, 129, 0.3);">
+                        <tr style="background: rgba(16, 185, 129, 0.4);">
+                            <td><strong>v3.1.0</strong></td>
+                            <td>April 12, 2026</td>
+                            <td>
+                                <ul>
+                                    <li>🎉 <strong>Promotional Pop-ups</strong> — HomePopup component for seasonal events with toggle</li>
+                                    <li>🔍 <strong>Navbar Polish</strong> — Restricted scroll behaviors to the Home page exclusively</li>
+                                    <li>📝 <strong>Footer Updates</strong> — 2026 copyright, developer credits, and social media links</li>
+                                    <li>🧹 <strong>Optimization</strong> — Cleanup of unused legacy image and icon assets</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr style="background: rgba(16, 185, 129, 0.2);">
                             <td><strong>v3.0.0</strong></td>
                             <td>Feb 19, 2026</td>
                             <td>
@@ -477,6 +489,33 @@ npm run build</code></pre>
             <!-- RECENT UPDATES -->
             <section id="updates">
                 <h2>Recent Updates</h2>
+
+                <h3>April 12, 2026 (v3.1.0)</h3>
+                <p><strong>Focus:</strong> Promotional Pop-ups, Navbar Polish, and Footer Enhancements.</p>
+
+                <h4>1. Promotional Pop-ups Optimization</h4>
+                <p>A new pop-up component was implemented to handle seasonal promotions and announcements on the homepage.</p>
+                <ul>
+                    <li><strong>Component:</strong> Added <code>src/components/HomePopup.jsx</code>.</li>
+                    <li><strong>Content:</strong> Configured for events such as "Women's Day" and "New Year Offer" with dedicated graphic assets.</li>
+                    <li><strong>Visibility Toggling:</strong> Easy management to toggle pop-ups on or off centrally inside <code>Home.jsx</code> depending on ongoing promotions.</li>
+                    <li><strong>Styling:</strong> Enhanced <code>src/index.css</code> with mobile-friendly overlay styles and entrance animations for the pop-ups.</li>
+                </ul>
+
+                <h4>2. Transparent Navbar Adjustments</h4>
+                <p>Improved the implementation of the transparent hero navbar to enhance consistency.</p>
+                <ul>
+                    <li><strong>Page Specificity:</strong> The transparent-to-solid scroll effect for the navbar has been restricted strictly to the Home Page for better layout stability across secondary pages.</li>
+                </ul>
+
+                <h4>3. Footer &amp; Content Improvements</h4>
+                <ul>
+                    <li><strong>Dynamic Footer:</strong> Modified <code>src/components/Footer.jsx</code> to include updated copyright information for 2026, the developer's credentials, and links to Instagram and LinkedIn profiles.</li>
+                    <li><strong>FAQ Enhancements:</strong> Expanded <code>src/data/faqs.js</code> with additional frequently asked questions to improve user resourcefulness.</li>
+                    <li><strong>Asset Cleanup:</strong> Removed various unused assets (e.g., legacy icons, patterns, old static backgrounds) to optimize application build size.</li>
+                </ul>
+
+                <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #eee;">
 
                 <h3>February 19, 2026 (v3.0.0)</h3>
                 <p><strong>Focus:</strong> Premium Blog Page Redesign, Dark Mode, and Complete SEO Optimization.</p>
