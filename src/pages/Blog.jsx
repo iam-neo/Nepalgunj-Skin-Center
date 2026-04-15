@@ -51,6 +51,7 @@ export const Blog = () => {
 
     // Reset page when filter changes
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setCurrentPage(1);
     }, [selectedCategory, searchQuery]);
 
@@ -345,7 +346,6 @@ export const BlogPost = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [stickyDismissed]);
 
-    if (!post) {
     const handleCopyLink = () => {
         navigator.clipboard.writeText(window.location.href).then(() => {
             setLinkCopied(true);
@@ -364,7 +364,7 @@ export const BlogPost = () => {
             items.push({ text, id: text.toLowerCase().replace(/[^a-z0-9]+/g, '-') });
         }
         return items;
-    }, [post.content]);
+    }, [post]);
 
     // Inject IDs into h3 tags for anchor linking and inject CTA
     const processedContent = useMemo(() => {
@@ -392,9 +392,10 @@ export const BlogPost = () => {
         }
 
         return content;
-    }, [post.content, tocItems]);
+    }, [post, tocItems]);
 
     const postImage = post?.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/og-default.jpg`;
+    const postUrl = post ? `${SITE_URL}/blog/${post.id}` : '';
 
     if (!post) {
         return (
