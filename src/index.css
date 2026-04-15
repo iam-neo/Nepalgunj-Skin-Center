@@ -2837,6 +2837,275 @@ button {
   color: #CBD5E1;
 }
 
+/* --- Dark Mode: Service & Feature Cards --- */
+[data-theme="dark"] .service-card {
+  background: #1E293B;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .service-card h3 a {
+  color: #90E0EF;
+}
+
+[data-theme="dark"] .feature-card {
+  background: #1E293B;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .feature-icon {
+  background: rgba(0, 180, 216, 0.15);
+}
+
+/* --- Dark Mode: Concern Items (Home) --- */
+[data-theme="dark"] .concern-item {
+  background: #1E293B;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .concern-item:hover {
+  background: #334155;
+  border-color: rgba(0, 180, 216, 0.3);
+}
+
+/* --- Dark Mode: Doctor Section --- */
+[data-theme="dark"] .doctor-section {
+  background: #1E293B;
+}
+
+[data-theme="dark"] .doctor-highlight {
+  background: rgba(0, 180, 216, 0.08);
+  border-color: rgba(0, 180, 216, 0.15);
+}
+
+/* --- Dark Mode: Hero Gradient --- */
+[data-theme="dark"] .hero-gradient {
+  background: #0F172A;
+}
+
+[data-theme="dark"] .floating-pill {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .floating-pill:hover {
+  background: #334155;
+  color: #90E0EF;
+}
+
+[data-theme="dark"] .hero-tagline {
+  background: rgba(0, 180, 216, 0.15);
+  color: #00B4D8;
+}
+
+[data-theme="dark"] .hero-heading {
+  color: #F1F5F9;
+}
+
+/* --- Dark Mode: Dropdown Menu --- */
+[data-theme="dark"] .dropdown-menu {
+  background: #1E293B;
+  border-top-color: #00B4D8;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .dropdown-menu a {
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .dropdown-menu a:hover {
+  background: #334155;
+  color: #90E0EF;
+}
+
+/* --- Dark Mode: Contact Form & Info --- */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background: #1E293B;
+  border-color: #334155;
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #64748B;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+  border-color: #00B4D8;
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
+}
+
+[data-theme="dark"] label {
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .contact-info-card {
+  background: linear-gradient(135deg, #0F172A 0%, #03045E 100%);
+}
+
+/* --- Dark Mode: Gallery --- */
+[data-theme="dark"] .btn-filter {
+  background: #1E293B;
+  border-color: #334155;
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .btn-filter:hover {
+  background: #334155;
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .btn-filter.active {
+  background: var(--gradient-primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+[data-theme="dark"] .gallery-item {
+  background: #1E293B;
+}
+
+[data-theme="dark"] .gallery-caption {
+  background: #1E293B;
+}
+
+[data-theme="dark"] .gallery-caption h4 {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .lightbox-overlay {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="dark"] .lightbox-content {
+  background: #1E293B;
+}
+
+[data-theme="dark"] .lightbox-caption {
+  color: #F1F5F9;
+}
+
+/* --- Dark Mode: FAQ Accordion --- */
+[data-theme="dark"] .faq-category-btn {
+  background: #1E293B;
+  border-color: #334155;
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .faq-category-btn.active {
+  background: var(--gradient-primary);
+  color: #fff;
+}
+
+[data-theme="dark"] .faq-item {
+  background: #1E293B;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .faq-question {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .faq-question:hover {
+  color: #00B4D8;
+}
+
+[data-theme="dark"] .faq-answer {
+  color: #CBD5E1;
+}
+
+/* --- Dark Mode: Testimonial Section --- */
+[data-theme="dark"] .testimonial-card {
+  background: #1E293B;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .google-rating-badge {
+  background: #1E293B;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .review-tag {
+  background: rgba(0, 180, 216, 0.15);
+  color: #00B4D8;
+}
+
+/* --- Dark Mode: Buttons --- */
+[data-theme="dark"] .btn-secondary {
+  border-color: #00B4D8;
+  color: #00B4D8;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: #00B4D8;
+  color: #0F172A;
+}
+
+[data-theme="dark"] .btn-glass {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: #00B4D8;
+  color: #00B4D8;
+}
+
+/* --- Dark Mode: Top Bar --- */
+[data-theme="dark"] .top-bar {
+  background: #03045E;
+}
+
+/* --- Dark Mode: Scrolled Navbar Links --- */
+[data-theme="dark"] .navbar-scrolled .nav-item>a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] .navbar-scrolled .nav-item>a:hover,
+[data-theme="dark"] .navbar-scrolled .nav-item>a.active {
+  color: #90E0EF;
+}
+
+/* --- Dark Mode: Menu Toggle --- */
+[data-theme="dark"] .menu-toggle {
+  color: #F1F5F9;
+}
+
+/* --- Dark Mode: Mobile Nav --- */
+@media (max-width: 900px) {
+  [data-theme="dark"] .nav-links {
+    background: #1E293B;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  [data-theme="dark"] .nav-item {
+    border-bottom-color: #334155;
+  }
+}
+
+/* --- Dark Mode: Read More Links --- */
+[data-theme="dark"] .read-more {
+  color: #00B4D8;
+}
+
+[data-theme="dark"] .read-more:hover {
+  color: #90E0EF;
+}
+
+/* --- Dark Mode: Comparison Slider --- */
+[data-theme="dark"] .comparison-slider-container {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Dark Mode: Links in general --- */
+[data-theme="dark"] .footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+  color: #90E0EF;
+}
+
 /* --- Dark Mode Toggle --- */
 .theme-toggle {
   width: 38px;
