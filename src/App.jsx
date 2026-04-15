@@ -16,6 +16,7 @@ const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Named exports require a tiny wrapper for React.lazy
 const Blog = lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })));
@@ -50,6 +51,7 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>
