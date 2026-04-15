@@ -11,6 +11,7 @@ import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
 import Gallery from './pages/Gallery';
+import WhatsAppButton from './components/WhatsAppButton';
 import './index.css';
 
 // Scroll to top on route change
@@ -44,6 +45,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </Router>
   );
 }
