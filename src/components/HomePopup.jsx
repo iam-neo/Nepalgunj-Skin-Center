@@ -31,7 +31,7 @@ const HomePopup = () => {
     // Determine if the media is a video based on extension
     const isVideo = popupContent.mediaUrl.match(/\.(mp4|webm)$/i);
 
-    const MediaElement = () => {
+    const renderMediaElement = () => {
         if (isVideo) {
             return (
                 <video
@@ -62,11 +62,11 @@ const HomePopup = () => {
 
                 {popupContent.linkUrl.startsWith('http') ? (
                     <a href={popupContent.linkUrl} target="_blank" rel="noopener noreferrer" onClick={handleClose}>
-                        <MediaElement />
+                        {renderMediaElement()}
                     </a>
                 ) : (
                     <Link to={popupContent.linkUrl} onClick={handleClose}>
-                        <MediaElement />
+                        {renderMediaElement()}
                     </Link>
                 )}
             </div>

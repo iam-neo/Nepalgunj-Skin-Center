@@ -346,6 +346,57 @@ export const BlogPost = () => {
     }, [stickyDismissed]);
 
     if (!post) {
+    const handleCopyLink = () => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            setLinkCopied(true);
+            setTimeout(() => setLinkCopied(false), 2000);
+        });
+    };
+
+    // Extract h3 headings for TOC
+    const tocItems = useMemo(() => {
+        if (!post) return [];
+        const regex = /<h3>(.*?)<\/h3>/gi;
+        const items = [];
+        let match;
+        while ((match = regex.exec(post.content)) !== null) {
+            const text = match[1].replace(/<[^>]*>/g, '');
+            items.push({ text, id: text.toLowerCase().replace(/[^a-z0-9]+/g, '-') });
+        }
+        return items;
+    }, [post.content]);
+
+    // Inject IDs into h3 tags for anchor linking and inject CTA
+    const processedContent = useMemo(() => {
+        if (!post) return '';
+        let content = post.content;
+        let headingIndex = 0;
+        content = content.replace(/<h3>(.*?)<\/h3>/gi, (match, text) => {
+            const id = tocItems[headingIndex]?.id || '';
+            headingIndex++;
+            return `<h3 id="${id}">${text}</h3>`;
+        });
+
+        // Inject CTA after the 3rd heading
+        const h3Matches = [...content.matchAll(/<h3[^>]*>.*?<\/h3>/gi)];
+        if (h3Matches.length >= 3) {
+            const insertPos = h3Matches[2].index;
+            const ctaHtml = `
+                <div class="article-cta">
+                    <h3 style="border:none;margin-top:0;padding:0">Need Expert Skin Care Advice?</h3>
+                    <p>Schedule a consultation with Dr. Abhishek Arjel for personalized treatment recommendations.</p>
+                    <a href="/contact" class="btn btn-primary" style="display:inline-flex">Book Consultation →</a>
+                </div>
+            `;
+            content = content.slice(0, insertPos) + ctaHtml + content.slice(insertPos);
+        }
+
+        return content;
+    }, [post.content, tocItems]);
+
+    const postImage = post?.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/og-default.jpg`;
+
+    if (!post) {
         return (
             <section className="section text-center" style={{ paddingTop: '8rem' }}>
                 <div className="container">
@@ -375,54 +426,6 @@ export const BlogPost = () => {
         .slice(0, 2);
 
     const hasMultipleImages = post.images && post.images.length > 0;
-    const postUrl = `${SITE_URL}/blog/${post.id}`;
-    const postImage = post.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/og-default.jpg`;
-
-    const handleCopyLink = () => {
-        navigator.clipboard.writeText(window.location.href).then(() => {
-            setLinkCopied(true);
-            setTimeout(() => setLinkCopied(false), 2000);
-        });
-    };
-
-    // Extract h3 headings for TOC
-    const tocItems = useMemo(() => {
-        const regex = /<h3>(.*?)<\/h3>/gi;
-        const items = [];
-        let match;
-        while ((match = regex.exec(post.content)) !== null) {
-            const text = match[1].replace(/<[^>]*>/g, '');
-            items.push({ text, id: text.toLowerCase().replace(/[^a-z0-9]+/g, '-') });
-        }
-        return items;
-    }, [post.content]);
-
-    // Inject IDs into h3 tags for anchor linking and inject CTA
-    const processedContent = useMemo(() => {
-        let content = post.content;
-        let headingIndex = 0;
-        content = content.replace(/<h3>(.*?)<\/h3>/gi, (match, text) => {
-            const id = tocItems[headingIndex]?.id || '';
-            headingIndex++;
-            return `<h3 id="${id}">${text}</h3>`;
-        });
-
-        // Inject CTA after the 3rd heading
-        const h3Matches = [...content.matchAll(/<h3[^>]*>.*?<\/h3>/gi)];
-        if (h3Matches.length >= 3) {
-            const insertPos = h3Matches[2].index;
-            const ctaHtml = `
-                <div class="article-cta">
-                    <h3 style="border:none;margin-top:0;padding:0">Need Expert Skin Care Advice?</h3>
-                    <p>Schedule a consultation with Dr. Abhishek Arjel for personalized treatment recommendations.</p>
-                    <a href="/contact" class="btn btn-primary" style="display:inline-flex">Book Consultation →</a>
-                </div>
-            `;
-            content = content.slice(0, insertPos) + ctaHtml + content.slice(insertPos);
-        }
-
-        return content;
-    }, [post.content, tocItems]);
 
     // Article structured data
     const articleSchema = {
