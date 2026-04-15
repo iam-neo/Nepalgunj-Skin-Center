@@ -9,6 +9,8 @@ const Contact = () => {
         message: ''
     });
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         setFormData({
@@ -17,11 +19,47 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // In production, this would send to a backend
-        console.log('Form submitted:', formData);
-        setSubmitted(true);
+        setIsSubmitting(true);
+        setError('');
+
+        try {
+            // Send data to Web3Forms API
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    // This is a free public access key for testing/demo. 
+                    // The user should replace it with their own from Web3Forms.com
+                    access_key: import.meta.env.VITE_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE',
+                    subject: `New Contact from ${formData.name} - Nepalgunj Skin Center`,
+                    from_name: 'Nepalgunj Skin Center Website',
+                    "Patient Name": formData.name,
+                    "Patient Email": formData.email,
+                    "Patient Phone": formData.phone || 'Not provided',
+                    "Service Inquired": formData.service || 'General Inquiry',
+                    "Patient Message": formData.message
+                })
+            });
+
+            const result = await response.json();
+            
+            if (response.status === 200) {
+                setSubmitted(true);
+                // Reset form
+                setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+            } else {
+                setError(result.message || 'Something went wrong. Please try again.');
+            }
+        } catch (err) {
+            setError('Failed to send message. Please check your internet connection.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -52,12 +90,31 @@ const Contact = () => {
                                     borderRadius: 'var(--radius-xl)',
                                     textAlign: 'center'
                                 }}>
-                                    <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✓</div>
+                                    <div style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--primary)' }}>✓</div>
                                     <h3>Thank You!</h3>
-                                    <p>Your message has been sent. We'll contact you soon.</p>
+                                    <p>Your message has been sent successfully. Our team will contact you within 24 hours.</p>
+                                    <button 
+                                        className="btn btn-secondary" 
+                                        onClick={() => setSubmitted(false)}
+                                        style={{ marginTop: '1.5rem' }}
+                                    >
+                                        Send Another Message
+                                    </button>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit}>
+                                    {error && (
+                                        <div style={{ 
+                                            padding: '1rem', 
+                                            background: '#fee2e2', 
+                                            color: '#b91c1c', 
+                                            borderRadius: 'var(--radius-md)', 
+                                            marginBottom: '1.5rem',
+                                            fontSize: '0.9375rem'
+                                        }}>
+                                            {error}
+                                        </div>
+                                    )}
                                     <div className="form-group">
                                         <label htmlFor="name">Full Name *</label>
                                         <input
@@ -128,8 +185,13 @@ const Contact = () => {
                                         />
                                     </div>
 
-                                    <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
-                                        Send Message
+                                    <button 
+                                        type="submit" 
+                                        className="btn btn-primary" 
+                                        style={{ width: '100%', opacity: isSubmitting ? 0.7 : 1 }}
+                                        disabled={isSubmitting}
+                                    >
+                                        {isSubmitting ? 'Sending Message...' : 'Send Message'}
                                     </button>
                                 </form>
                             )}
