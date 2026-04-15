@@ -147,22 +147,22 @@ const About = () => {
 
                     <div className="grid grid-4">
                         <div className="feature-card">
-                            <div className="feature-icon">🎯</div>
+                            <div className="feature-icon" aria-hidden="true">🎯</div>
                             <h4>Excellence</h4>
                             <p>Committed to the highest standards in everything we do.</p>
                         </div>
                         <div className="feature-card">
-                            <div className="feature-icon">💝</div>
+                            <div className="feature-icon" aria-hidden="true">💝</div>
                             <h4>Compassion</h4>
                             <p>Treating every patient with care, respect, and understanding.</p>
                         </div>
                         <div className="feature-card">
-                            <div className="feature-icon">🔒</div>
+                            <div className="feature-icon" aria-hidden="true">🔒</div>
                             <h4>Integrity</h4>
                             <p>Honest advice and transparent pricing with no hidden costs.</p>
                         </div>
                         <div className="feature-card">
-                            <div className="feature-icon">💡</div>
+                            <div className="feature-icon" aria-hidden="true">💡</div>
                             <h4>Innovation</h4>
                             <p>Embracing the latest technologies and treatment methods.</p>
                         </div>

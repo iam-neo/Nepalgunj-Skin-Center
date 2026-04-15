@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const galleryItems = [
     // Hair Transplant
@@ -29,9 +29,27 @@ const Gallery = () => {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [selectedImage, setSelectedImage] = useState(null);
 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') setSelectedImage(null);
+        };
+        if (selectedImage) {
+            window.addEventListener('keydown', handleKeyDown);
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = 'unset';
+        };
+    }, [selectedImage]);
+
     const filteredItems = selectedCategory === 'All'
         ? galleryItems
         : galleryItems.filter(item => item.category === selectedCategory);
+
 
     return (
         <>

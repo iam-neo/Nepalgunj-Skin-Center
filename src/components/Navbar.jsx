@@ -66,13 +66,14 @@ const Navbar = () => {
                     >
                         {isDark ? '☀️' : '🌙'}
                     </button>
-                    <div
+                    <button
                         className="menu-toggle"
                         onClick={() => setIsOpen(!isOpen)}
-                        aria-label="Toggle menu"
+                        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+                        aria-expanded={isOpen}
                     >
                         {isOpen ? '✕' : '☰'}
-                    </div>
+                    </button>
                 </div>
 
                 <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
@@ -89,7 +90,7 @@ const Navbar = () => {
                     ))}
 
                     <li className="nav-item">
-                        <a href="#">Concerns ▾</a>
+                        <button className="dropdown-trigger" aria-haspopup="true" aria-label="Browse concerns">Concerns ▾</button>
                         <ul className="dropdown-menu">
                             {concerns.map((concern, index) => (
                                 <li key={index}>

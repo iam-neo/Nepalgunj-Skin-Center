@@ -100,17 +100,17 @@ const Home = () => {
 
                     <div className="grid grid-3">
                         <div className="feature-card">
-                            <div className="feature-icon">👨‍⚕️</div>
+                            <div className="feature-icon" aria-hidden="true">👨‍⚕️</div>
                             <h3>Expert Team</h3>
                             <p>Our clinics are led by highly qualified and experienced dermatologists and cosmetic surgeons.</p>
                         </div>
                         <div className="feature-card">
-                            <div className="feature-icon">🔬</div>
+                            <div className="feature-icon" aria-hidden="true">🔬</div>
                             <h3>Advanced Technology</h3>
                             <p>We use US-FDA approved lasers and the latest medical equipment for safe and effective results.</p>
                         </div>
                         <div className="feature-card">
-                            <div className="feature-icon">💖</div>
+                            <div className="feature-icon" aria-hidden="true">💖</div>
                             <h3>Personalized Care</h3>
                             <p>Every skin is unique. We customize treatment plans tailored specifically to your needs.</p>
                         </div>

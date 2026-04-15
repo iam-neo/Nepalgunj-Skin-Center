@@ -470,6 +470,49 @@ button {
   width: 100%;
 }
 
+/* Dropdown Trigger Button (replaces <a href="#">) */
+.dropdown-trigger {
+  font-weight: 500;
+  font-size: inherit;
+  color: var(--text-primary);
+  padding: var(--space-sm) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  position: relative;
+}
+
+.dropdown-trigger:hover {
+  color: var(--primary-blue);
+}
+
+.navbar-solid .dropdown-trigger {
+  color: var(--text-primary);
+}
+
+.navbar-solid .dropdown-trigger:hover {
+  color: var(--primary-blue);
+}
+
+.navbar-scrolled .dropdown-trigger {
+  color: var(--text-primary);
+}
+
+.navbar-scrolled .dropdown-trigger:hover {
+  color: var(--primary-blue);
+}
+
+[data-theme="dark"] .navbar-solid .dropdown-trigger,
+[data-theme="dark"] .navbar-scrolled .dropdown-trigger {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] .navbar-solid .dropdown-trigger:hover,
+[data-theme="dark"] .navbar-scrolled .dropdown-trigger:hover {
+  color: #90E0EF;
+}
+
 /* Dropdown */
 .dropdown-menu {
   display: none;
