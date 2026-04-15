@@ -5,6 +5,7 @@ import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import LoadingSpinner from './components/LoadingSpinner';
 import './index.css';
 
@@ -57,6 +58,7 @@ function App() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <ScrollToTopButton />
     </Router>
   );
 }
