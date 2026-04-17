@@ -38,12 +38,12 @@ const Navbar = () => {
     ];
 
     const concerns = [
-        { label: 'Hair Loss & Transplant', path: '/services' },
-        { label: 'Acne & Scars', path: '/services' },
-        { label: 'Pigmentation', path: '/services' },
-        { label: 'Anti-Aging', path: '/services' },
-        { label: 'Laser Removal', path: '/services' },
-        { label: 'Weight Management', path: '/services' }
+        { label: 'Hair Loss & Transplant', path: '/services/hair-transplant' },
+        { label: 'Acne & Scars', path: '/services/acne-treatment' },
+        { label: 'Pigmentation', path: '/services/pigmentation' },
+        { label: 'Anti-Aging', path: '/services/anti-aging' },
+        { label: 'Laser Removal', path: '/services/laser-hair-removal' },
+        { label: 'Weight Management', path: '/services/weight-management' }
     ];
 
     return (
