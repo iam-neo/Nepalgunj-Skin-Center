@@ -5,7 +5,7 @@ import BlogCard from '../components/BlogCard';
 import { Helmet } from 'react-helmet-async';
 import { FaFacebook, FaTwitter, FaLinkedin, FaWhatsapp, FaLink, FaCheck, FaSearch, FaEye, FaComments, FaClock, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-const SITE_URL = 'https://nepalgunjskincenter.com';
+const SITE_URL = 'https://nepalgunjskincenter.com.np';
 const SITE_NAME = 'Nepalgunj Skin Center';
 const POSTS_PER_PAGE = 6;
 
