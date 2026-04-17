@@ -5,9 +5,14 @@ const HomePopup = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
+        // Only show popup once per session
+        const alreadyShown = sessionStorage.getItem('popupShown');
+        if (alreadyShown) return;
+
         // Show popup after a short delay (e.g., 1.5 seconds)
         const timer = setTimeout(() => {
             setIsOpen(true);
+            sessionStorage.setItem('popupShown', 'true');
         }, 1500);
 
         return () => clearTimeout(timer);
