@@ -77,7 +77,7 @@ export const services = [
                 a: 'Yes, grafts are implanted following natural hair growth direction and density.'
             }
         ],
-        duration: '4 - 8+ Hours (depending on graft count)',
+        duration: '8 - 12+ Hours (depending on graft count)',
         pricing: 'Charged per graft after consultation'
     },
     {

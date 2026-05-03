@@ -130,12 +130,26 @@ const ServiceDetail = () => {
                                     <p style={{ fontWeight: '600', color: 'var(--deep-blue)' }}>{service.pricing || 'Consultation Required'}</p>
                                 </div>
 
-                                <div style={{ marginBottom: '2rem' }}>
+                                <div style={{ marginBottom: '1.5rem' }}>
                                     <h4 style={{ fontSize: '0.875rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '1px' }}>Recovery</h4>
-                                    <p style={{ fontWeight: '600', color: 'var(--deep-blue)' }}>Minimal to None</p>
+                                    <p style={{ fontWeight: '600', color: 'var(--deep-blue)' }}>{service.recovery || 'Minimal to None'}</p>
                                 </div>
 
-                                <Link to="/contact" className="btn btn-primary" style={{ width: '100%' }}>
+                                {service.resultsTimeline && (
+                                    <div style={{ marginBottom: '1.5rem' }}>
+                                        <h4 style={{ fontSize: '0.875rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '1px' }}>Results Timeline</h4>
+                                        <p style={{ fontWeight: '600', color: 'var(--deep-blue)' }}>{service.resultsTimeline}</p>
+                                    </div>
+                                )}
+
+                                {service.candidate && (
+                                    <div style={{ marginBottom: '1.5rem' }}>
+                                        <h4 style={{ fontSize: '0.875rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '1px' }}>Ideal Candidate</h4>
+                                        <p style={{ fontWeight: '600', color: 'var(--deep-blue)' }}>{service.candidate}</p>
+                                    </div>
+                                )}
+
+                                <Link to="/contact" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
                                     Book Appointment
                                 </Link>
 
