@@ -65,7 +65,7 @@ export const services = [
             }
         ],
         candidate: 'Suitable for male pattern baldness, receding hairline, and thinning hair.',
-        recovery: 'Most patients resume normal routine within a few days.',
+        recovery: 'Minimal downtime with recovery over several days',
         resultsTimeline: 'Visible growth typically begins after 3–4 months.',
         faq: [
             {

@@ -16,7 +16,7 @@ const ServiceDetail = () => {
             <section className="page-header">
                 <div className="container">
                     <h1>{service.title}</h1>
-                    <p>Advanced Dermatological Care</p>
+                    <p>{service.description || 'Advanced Dermatological Care'}</p>
                 </div>
             </section>
 
