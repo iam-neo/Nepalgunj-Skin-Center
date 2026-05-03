@@ -126,17 +126,41 @@ export const services = [
         id: 'laser-tattoo-removal',
         icon: <FaEraser />,
         title: 'Laser Tattoo Removal',
-        description: 'Effective removal of unwanted tattoos using Q-Switched technology.',
-        longDescription: 'We use high-powered Q-Switched lasers to break down tattoo ink particles, allowing your body to naturally eliminate them. Works on various ink colors.',
+        description: 'Advanced Q-Switched laser treatment designed to fade unwanted tattoos safely and effectively.',
+        longDescription: 'Our Q-Switched Laser Tattoo Removal treatment uses targeted laser energy to break down tattoo ink particles beneath the skin. Over multiple sessions, the body gradually clears the fragmented ink, helping fade unwanted tattoos with minimal damage to surrounding skin.',
         image: '/images/services/tattoo.png',
-        benefits: ['Safe removal', 'Minimal scarring', 'Effective on dark inks', 'Multiple sessions'],
-        procedure: [
-            { title: 'Numbing', desc: 'Topical anesthetic applied.' },
-            { title: 'Laser', desc: 'Laser pulses break down ink.' },
-            { title: 'Healing', desc: 'Antibiotic ointment application.' }
+        benefits: [
+            'Targets unwanted tattoo pigment',
+            'Minimal damage to surrounding skin',
+            'Suitable for dark ink tattoos',
+            'Gradual fading over sessions',
+            'Non-surgical treatment'
         ],
-        duration: '20 - 40 Mins',
-        pricing: 'Based on Size'
+        procedure: [
+            {
+                title: 'Preparation',
+                desc: 'The treatment area is assessed and numbing cream may be applied for comfort.'
+            },
+            {
+                title: 'Laser Treatment',
+                desc: 'Q-Switched laser pulses target tattoo pigment beneath the skin.'
+            },
+            {
+                title: 'Aftercare',
+                desc: 'Post-treatment care instructions are provided to support proper healing.'
+            }
+        ],
+        sessions: 'Multiple sessions are usually required depending on tattoo depth, ink color, and size.',
+        recovery: 'Temporary redness, swelling, or mild crusting may occur after treatment.',
+        resultsTimeline: 'Tattoo fading gradually improves over several sessions.',
+        suitableFor: [
+            'Black ink tattoos',
+            'Professional tattoos',
+            'Amateur tattoos',
+            'Small to large tattoo areas'
+        ],
+        duration: '20 - 40 Minutes',
+        pricing: 'Pricing varies based on tattoo size and complexity'
     },
     {
         id: 'laser-skin-whitening',
