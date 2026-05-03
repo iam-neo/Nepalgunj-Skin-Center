@@ -8,7 +8,7 @@ import { concerns } from '../data/services';
 const Home = () => {
     return (
         <>
-            {/* <HomePopup /> */}
+            <HomePopup />
             <HeroGradient />
 
             {/* Concerns Grid */}
