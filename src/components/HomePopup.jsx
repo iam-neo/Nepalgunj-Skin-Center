@@ -73,7 +73,7 @@ const HomePopup = () => {
             return (
                 <div className={`popup-embed-wrapper ${aspectClass}`}>
                     <iframe
-                        src={`https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1514396190400152%2F&show_text=false&width=267&t=0&autoplay=1&mute=1`}
+                        src={`https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1514396190400152%2F&show_text=false&width=267&t=0&autoplay=true`}
                         className="popup-embed-iframe"
                         style={{ border: 'none', overflow: 'hidden', pointerEvents: 'none' }}
                         scrolling="no"
@@ -100,7 +100,7 @@ const HomePopup = () => {
                     <iframe
                         src={embedUrl}
                         className="popup-embed-iframe"
-                        style={{ border: 'none', overflow: 'hidden', pointerEvents: 'none' }}
+                        style={{ border: 'none', overflow: 'hidden' }}
                         scrolling="no"
                         frameBorder="0"
                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
