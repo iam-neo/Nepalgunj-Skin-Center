@@ -264,13 +264,53 @@ export const services = [
     },
     {
         id: 'laser-scar-reduction',
+
         icon: <MdOutlineHealing />,
+
         title: 'Laser Scar Reduction',
-        description: 'Minimize the appearance of acne scars, surgical scars, and stretch marks.',
-        longDescription: 'Fractional lasers create micro-injuries to trigger natural healing and collagen remodeling, significantly improving scar texture and appearance.',
+
+        description:
+            'Advanced fractional laser treatment designed to improve the appearance of acne scars, surgical scars, and stretch marks.',
+
+        longDescription:
+            'This treatment uses fractional laser technology to create controlled micro-injuries in the skin, triggering natural healing and collagen remodeling. Over a series of sessions, it helps improve skin texture, soften scar appearance, and promote smoother and more even-looking skin.',
+
         image: '/images/services/scar.jpg',
-        benefits: ['Smoother skin', 'Reduced scar depth', 'Better texture', 'Minimal downtime'],
-        duration: '30 - 60 Mins',
+
+        benefits: [
+            'Improves skin texture',
+            'Reduces appearance of scars',
+            'Stimulates natural collagen production',
+            'Suitable for acne and surgical scars',
+            'Minimal downtime'
+        ],
+
+        procedure: [
+            {
+                title: 'Skin Evaluation',
+                desc: 'Scar type and skin condition are assessed to determine treatment settings.'
+            },
+            {
+                title: 'Fractional Laser Treatment',
+                desc: 'Controlled laser energy creates micro-channels to stimulate skin regeneration.'
+            },
+            {
+                title: 'Healing & Aftercare',
+                desc: 'Soothing care and recovery instructions are provided to support healing.'
+            }
+        ],
+        sessions: 'Multiple sessions are usually required depending on scar type and severity.',
+        recovery: 'Mild redness and sensitivity may occur for a few days.',
+        resultsTimeline: 'Gradual improvement is visible over several weeks to months.',
+        suitableFor: [
+            'Acne scars',
+            'Surgical scars',
+            'Stretch marks',
+            'Uneven skin texture'
+        ],
+
+        duration: '30 - 60 Minutes',
+
         pricing: 'Consultation Required'
     },
     {
