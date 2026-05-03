@@ -165,29 +165,101 @@ export const services = [
     },
     {
         id: 'laser-skin-whitening',
+
         icon: <MdWbSunny />,
-        title: 'Laser Skin Whitening',
-        description: 'Brighten your complexion and reduce pigmentation with laser therapy.',
-        longDescription: 'This treatment targets melanin deposits to reduce dark spots, tanning, and uneven skin tone, revealing a brighter and more radiant complexion.',
+
+        title: 'Laser Skin Brightening (Pigmentation Treatment)',
+
+        description:
+            'Advanced laser treatment designed to reduce pigmentation, dark spots, and uneven skin tone for a brighter and more even complexion.',
+
+        longDescription:
+            'This laser treatment targets excess melanin deposits in the skin to help reduce pigmentation, tanning, sun damage, and dark spots. It works by breaking down melanin clusters gradually, allowing the skin to appear clearer, brighter, and more even-toned over multiple sessions without altering your natural skin color.',
+
         image: '/images/services/LSW.jpg',
-        benefits: ['Even skin tone', 'Reduced pigmentation', 'Glow & radiance', 'Non-invasive'],
-        procedure: [
-            { title: 'Cleansing', desc: 'Skin is prepped.' },
-            { title: 'Laser', desc: 'Targeting melanin deposits.' },
-            { title: 'Protection', desc: 'Sunscreen application.' }
+
+        benefits: [
+            'Reduces pigmentation and dark spots',
+            'Improves uneven skin tone',
+            'Helps reduce sun damage and tanning',
+            'Enhances natural skin brightness',
+            'Non-invasive procedure'
         ],
-        duration: '30 Mins',
+        procedure: [
+            {
+                title: 'Skin Assessment',
+                desc: 'Skin type and pigmentation level are evaluated before treatment.'
+            },
+            {
+                title: 'Laser Application',
+                desc: 'Targeted laser energy is used to break down excess melanin deposits.'
+            },
+            {
+                title: 'Post-Treatment Care',
+                desc: 'Soothing products and sunscreen are applied to protect the skin.'
+            }
+        ],
+        sessions: 'Multiple sessions are usually required depending on pigmentation severity.',
+        recovery: 'Minimal downtime with possible mild redness.',
+        resultsTimeline: 'Gradual improvement is seen over a few sessions.',
+        suitableFor: [
+            'Pigmentation',
+            'Sun tanning',
+            'Dark spots',
+            'Uneven skin tone',
+            'Dull complexion'
+        ],
+        duration: '30 Minutes',
         pricing: 'Consultation Required'
     },
     {
         id: 'laser-wrinkle-reduction',
+
         icon: <RiTimeLine />,
+
         title: 'Laser Wrinkle Reduction',
-        description: 'Smooth out fine lines and wrinkles for a youthful appearance.',
-        longDescription: 'Stimulate collagen production deep within the skin to smooth out fine lines and wrinkles without surgery or injections.',
+
+        description:
+            'Non-invasive laser treatment designed to improve the appearance of fine lines and wrinkles by stimulating natural collagen production.',
+
+        longDescription:
+            'This treatment uses targeted laser energy to stimulate collagen and elastin production within the skin. Over a series of sessions, it helps improve skin texture, reduce the appearance of fine lines, and promote a smoother, firmer, and more youthful-looking complexion without surgery or injections.',
+
         image: '/images/services/LSR.jpg',
-        benefits: ['Collagen boost', 'Smoother texture', 'Youthful look', 'No needles'],
-        duration: '45 Mins',
+
+        benefits: [
+            'Stimulates natural collagen production',
+            'Improves appearance of fine lines',
+            'Enhances skin texture and firmness',
+            'Non-invasive treatment',
+            'No needles or surgery'
+        ],
+
+        procedure: [
+            {
+                title: 'Skin Assessment',
+                desc: 'Skin condition and wrinkle depth are evaluated before treatment.'
+            },
+            {
+                title: 'Laser Treatment',
+                desc: 'Controlled laser energy is applied to stimulate collagen remodeling.'
+            },
+            {
+                title: 'Post-Treatment Care',
+                desc: 'Soothing products and sun protection guidance are provided after treatment.'
+            }
+        ],
+        sessions: 'Multiple sessions are typically recommended for best results.',
+        recovery: 'Mild redness or sensitivity may occur for a short period.',
+        resultsTimeline: 'Gradual improvement in skin texture over several weeks to months.',
+        suitableFor: [
+            'Fine lines',
+            'Early wrinkles',
+            'Skin laxity',
+            'Uneven skin texture',
+            'Aging skin concerns'
+        ],
+        duration: '45 Minutes',
         pricing: 'Per Session'
     },
     {
