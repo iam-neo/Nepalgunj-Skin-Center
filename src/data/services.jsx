@@ -363,18 +363,53 @@ export const services = [
     },
     {
         id: 'prp-gfc-treatment',
+
         icon: <MdBloodtype />,
+
         title: 'PRP / GFC Hair Treatment',
-        description: 'Boost hair growth using your body’s own growth factors.',
-        longDescription: 'Platelet-Rich Plasma (PRP) and Growth Factor Concentrate (GFC) therapies use your own blood to stimulate hair follicles, reduce hair fall, and promote thicker growth.',
+
+        description:
+            'Autologous hair restoration treatment that uses your body’s own growth factors to support hair follicle health and reduce hair thinning.',
+
+        longDescription:
+            'PRP (Platelet-Rich Plasma) and GFC (Growth Factor Concentrate) therapies involve processing a small sample of your blood to extract growth factors that may help stimulate hair follicles. The treatment is designed to support hair regrowth, reduce hair thinning, and improve hair density over a series of sessions, depending on individual response.',
+
         image: '/images/services/GFC.jpg',
-        benefits: ['Natural growth', 'Reduces hair fall', 'Thicker hair', 'Safe & autologous'],
-        procedure: [
-            { title: 'Blood Draw', desc: 'Small amount of blood taken.' },
-            { title: 'Separation', desc: 'Centrifuged to isolate plasma/growth factors.' },
-            { title: 'Injection', desc: 'Injected into scalp.' }
+
+        benefits: [
+            'Uses natural growth factors from your body',
+            'Supports reduction of hair thinning',
+            'May improve hair density over time',
+            'Non-surgical treatment',
+            'Suitable for early hair loss cases'
         ],
-        duration: '45 Mins',
+
+        procedure: [
+            {
+                title: 'Blood Collection',
+                desc: 'A small amount of blood is drawn from the patient.'
+            },
+            {
+                title: 'Processing',
+                desc: 'Blood is processed to extract platelet-rich plasma or growth factors.'
+            },
+            {
+                title: 'Scalp Application',
+                desc: 'Prepared solution is carefully injected into targeted scalp areas.'
+            }
+        ],
+        sessions: 'Multiple sessions are usually required for best results.',
+        recovery: 'Mild swelling, redness, or tenderness may occur for 1–2 days.',
+        resultsTimeline: 'Visible improvement may be seen gradually after several sessions.',
+
+        suitableFor: [
+            'Early-stage hair thinning',
+            'Hair fall control',
+            'Weak hair follicles',
+            'Androgenetic alopecia (mild to moderate)'
+        ],
+
+        duration: '45 Minutes',
         pricing: 'Per Session'
     },
     {
