@@ -26,6 +26,7 @@
             <li><a href="#seo" class="nav-link">SEO Strategy</a></li>
             <li><a href="#version" class="nav-link">Version History</a></li>
             <li><a href="#updates" class="nav-link">Recent Updates</a></li>
+            <li><a href="#popup-guide" class="nav-link">Home Popup Guide</a></li>
             <li><a href="#technical" class="nav-link">Technical Reference</a></li>
         </ul>
         <div style="margin-top: auto; padding-top: 2rem; font-size: 0.8rem; color: #666;">
@@ -1053,6 +1054,341 @@ npm run build</code></pre>
 }</code></pre>
                 <p>The blog listing and detail pages will automatically include it with all features (TOC, FAQ schema,
                     comments, etc.).</p>
+            </section>
+
+            <!-- HOME POPUP GUIDE -->
+            <section id="popup-guide">
+                <h2>Home Popup Guide</h2>
+                <p>The <strong>HomePopup</strong> component displays a promotional popup on the homepage. It supports
+                    <strong>4 media types</strong>: local images, local videos, Facebook video embeds, and Instagram
+                    post/reel embeds.
+                </p>
+
+                <div class="alert alert-info">
+                    <strong>📍 File Location:</strong> <code>src/components/HomePopup.jsx</code><br>
+                    <strong>📍 Used In:</strong> <code>src/pages/Home.jsx</code><br>
+                    <strong>📍 Styles:</strong> <code>src/index.css</code> (search for "HOME POPUP")
+                </div>
+
+                <h3>1. Enable / Disable the Popup</h3>
+                <p>The popup is toggled by commenting or uncommenting a single line in <code>src/pages/Home.jsx</code>.
+                </p>
+
+                <h4>✅ To ENABLE the popup:</h4>
+                <pre><code>// In src/pages/Home.jsx (around line 11)
+const Home = () => {
+    return (
+        &lt;&gt;
+            &lt;HomePopup /&gt;       &lt;!-- ✅ Popup is ON --&gt;
+            &lt;HeroGradient /&gt;
+            ...</code></pre>
+
+                <h4>❌ To DISABLE the popup:</h4>
+                <pre><code>// In src/pages/Home.jsx (around line 11)
+const Home = () => {
+    return (
+        &lt;&gt;
+            {/* &lt;HomePopup /&gt; */}  &lt;!-- ❌ Popup is OFF --&gt;
+            &lt;HeroGradient /&gt;
+            ...</code></pre>
+
+                <div class="alert alert-info">
+                    <strong>💡 Tip:</strong> The popup only shows <strong>once per browser session</strong>. To test it
+                    again, open your browser's Developer Console and run: <code>sessionStorage.clear()</code> then
+                    refresh the page.
+                </div>
+
+                <h3>2. Popup Configuration</h3>
+                <p>All popup settings are controlled inside <code>src/components/HomePopup.jsx</code> in the
+                    <code>popupContent</code> object (around line 49):
+                </p>
+
+                <pre><code>const popupContent = {
+    mediaType: 'image',              // 'image' | 'video' | 'facebook' | 'instagram'
+    mediaUrl: '/images/pop/new.png', // URL or path to the media
+    aspectRatio: 'landscape',        // 'landscape' | 'portrait' | 'square' (for embeds)
+    linkUrl: '',                     // Optional: link when clicking image/video
+    altText: 'Special Event'         // Alt text for images
+};</code></pre>
+
+                <h3>3. Aspect Ratio Options (for Facebook &amp; Instagram embeds)</h3>
+                <p>Reels are vertical, regular videos are horizontal, and some Instagram posts are square.
+                    Use the <code>aspectRatio</code> property to match the content's shape:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>aspectRatio</th>
+                            <th>Ratio</th>
+                            <th>Use For</th>
+                            <th>Popup Width</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>'landscape'</code></td>
+                            <td>16:9</td>
+                            <td>Regular horizontal videos</td>
+                            <td>560px</td>
+                        </tr>
+                        <tr style="background: rgba(0, 180, 216, 0.1);">
+                            <td><code>'portrait'</code></td>
+                            <td>9:16</td>
+                            <td>Facebook Reels, Instagram Reels (vertical)</td>
+                            <td>380px (narrower)</td>
+                        </tr>
+                        <tr>
+                            <td><code>'square'</code></td>
+                            <td>1:1</td>
+                            <td>Square Instagram posts</td>
+                            <td>560px</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-info">
+                    <strong>💡 Tip:</strong> The <code>aspectRatio</code> only applies to Facebook and Instagram embeds.
+                    For local images and videos, the size adjusts automatically to the media's natural dimensions.
+                </div>
+
+                <h3>4. Media Type Options</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>mediaType</th>
+                            <th>What It Does</th>
+                            <th>Example <code>mediaUrl</code></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>'image'</code></td>
+                            <td>Shows a local image from the <code>public/</code> folder</td>
+                            <td><code>/images/pop/new.png</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>'video'</code></td>
+                            <td>Shows a local video (autoplay, muted, looped)</td>
+                            <td><code>/videos/promo.mp4</code></td>
+                        </tr>
+                        <tr style="background: rgba(0, 180, 216, 0.1);">
+                            <td><code>'facebook'</code></td>
+                            <td>Embeds a Facebook video directly in the popup</td>
+                            <td><code>https://www.facebook.com/YourPage/videos/123456/</code></td>
+                        </tr>
+                        <tr style="background: rgba(0, 180, 216, 0.1);">
+                            <td><code>'instagram'</code></td>
+                            <td>Embeds an Instagram post or reel directly in the popup</td>
+                            <td><code>https://www.instagram.com/reel/ABC123/</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>5. Example Configurations</h3>
+
+                <h4>A) Local Image Popup (e.g., event poster)</h4>
+                <pre><code>const popupContent = {
+    mediaType: 'image',
+    mediaUrl: '/images/pop/new.png',
+    aspectRatio: 'landscape',        // not used for images, but can leave it
+    linkUrl: 'https://www.facebook.com/YourPage/posts/123',  // opens on click
+    altText: 'New Year Offer'
+};</code></pre>
+                <p>📁 Place images in: <code>public/images/pop/</code></p>
+
+                <h4>B) Local Video Popup</h4>
+                <pre><code>const popupContent = {
+    mediaType: 'video',
+    mediaUrl: '/videos/promo.mp4',
+    aspectRatio: 'landscape',
+    linkUrl: '',
+    altText: 'Promo Video'
+};</code></pre>
+                <p>📁 Place videos in: <code>public/videos/</code></p>
+
+                <h4>C) Facebook Landscape Video Embed</h4>
+                <pre><code>const popupContent = {
+    mediaType: 'facebook',
+    mediaUrl: 'https://www.facebook.com/YourPage/videos/123456789/',
+    aspectRatio: 'landscape',         // ← regular horizontal video
+    linkUrl: '',
+    altText: ''
+};</code></pre>
+
+                <h4>D) Facebook Reel Embed (vertical)</h4>
+                <pre><code>const popupContent = {
+    mediaType: 'facebook',
+    mediaUrl: 'https://www.facebook.com/reel/123456789',
+    aspectRatio: 'portrait',          // ← vertical reel (9:16)
+    linkUrl: '',
+    altText: ''
+};</code></pre>
+
+                <div class="alert alert-info">
+                    <strong>⚠️ Important — Facebook URL Format:</strong>
+                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                        <li>✅ Use: <code>https://www.facebook.com/PageName/videos/VIDEOID/</code></li>
+                        <li>✅ Use: <code>https://www.facebook.com/watch/?v=VIDEOID</code></li>
+                        <li>✅ Use: <code>https://www.facebook.com/reel/REELID</code></li>
+                        <li>❌ Do NOT use: <code>https://www.facebook.com/share/v/...</code> (share links don't embed)</li>
+                        <li>❌ Do NOT use: <code>https://fb.watch/...</code> (short links don't embed)</li>
+                    </ul>
+                    <br>
+                    <strong>The video must be set to "Public" on Facebook for embedding to work.</strong>
+                </div>
+
+                <h4>E) Instagram Reel Embed (vertical)</h4>
+                <pre><code>const popupContent = {
+    mediaType: 'instagram',
+    mediaUrl: 'https://www.instagram.com/reel/ABC123/',
+    aspectRatio: 'portrait',          // ← vertical reel (9:16)
+    linkUrl: '',
+    altText: ''
+};</code></pre>
+
+                <h4>F) Instagram Square Post Embed</h4>
+                <pre><code>const popupContent = {
+    mediaType: 'instagram',
+    mediaUrl: 'https://www.instagram.com/p/ABC123/',
+    aspectRatio: 'square',            // ← square post (1:1)
+    linkUrl: '',
+    altText: ''
+};</code></pre>
+
+                <div class="alert alert-info">
+                    <strong>⚠️ Important — Instagram URL Format:</strong>
+                    <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                        <li>✅ Use: <code>https://www.instagram.com/reel/CODE/</code></li>
+                        <li>✅ Use: <code>https://www.instagram.com/p/CODE/</code></li>
+                        <li>❌ Do NOT use private account posts (the account must be public)</li>
+                    </ul>
+                </div>
+
+                <h3>6. How to Get the Correct URL</h3>
+
+                <h4>For Facebook Videos:</h4>
+                <ol>
+                    <li>Go to the video on Facebook.</li>
+                    <li>Click the <strong>three dots (⋯)</strong> menu on the video post.</li>
+                    <li>Click <strong>"Embed"</strong> — if this option is available, the video is embeddable.</li>
+                    <li>Or copy the URL from the browser address bar while viewing the video.</li>
+                    <li>The URL should look like: <code>https://www.facebook.com/PageName/videos/123456/</code></li>
+                </ol>
+
+                <h4>For Instagram Posts/Reels:</h4>
+                <ol>
+                    <li>Go to the post or reel on Instagram (desktop is easiest).</li>
+                    <li>Click the <strong>three dots (⋯)</strong> menu on the post.</li>
+                    <li>Click <strong>"Copy Link"</strong>.</li>
+                    <li>The URL should look like: <code>https://www.instagram.com/reel/CODE/</code> or <code>https://www.instagram.com/p/CODE/</code></li>
+                </ol>
+
+                <h3>7. Popup Behavior</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Behavior</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Appears after</td>
+                            <td>1.5 seconds delay after page load</td>
+                        </tr>
+                        <tr>
+                            <td>Shows per session</td>
+                            <td>Only once per browser session (uses <code>sessionStorage</code>)</td>
+                        </tr>
+                        <tr>
+                            <td>Close methods</td>
+                            <td>Click the ✕ button or click the dark overlay background</td>
+                        </tr>
+                        <tr>
+                            <td>Animation</td>
+                            <td>Fade-in overlay + scale-up content</td>
+                        </tr>
+                        <tr>
+                            <td>Dark mode</td>
+                            <td>Automatically adapts to dark mode theme</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile responsive</td>
+                            <td>Scales to 95% width on small screens</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>8. Troubleshooting</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Problem</th>
+                            <th>Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Popup doesn't appear</td>
+                            <td>Run <code>sessionStorage.clear()</code> in browser console and refresh. Also check
+                                that <code>&lt;HomePopup /&gt;</code> is uncommented in <code>Home.jsx</code>.</td>
+                        </tr>
+                        <tr>
+                            <td>Facebook shows "Video Unavailable"</td>
+                            <td>The video is either private or you're using a share link (<code>/share/v/</code>). Use
+                                the full video page URL and ensure the video is set to Public.</td>
+                        </tr>
+                        <tr>
+                            <td>Instagram shows blank or error</td>
+                            <td>The account may be private. Only public account posts can be embedded.</td>
+                        </tr>
+                        <tr>
+                            <td>Local image not showing</td>
+                            <td>Make sure the image is in the <code>public/</code> folder and the path starts with
+                                <code>/</code> (e.g., <code>/images/pop/new.png</code>).</td>
+                        </tr>
+                        <tr>
+                            <td>Embed looks too small/large</td>
+                            <td>Change the <code>aspectRatio</code> value: use <code>'portrait'</code> for vertical reels,
+                                <code>'landscape'</code> for horizontal videos, or <code>'square'</code> for square posts.
+                                You can also adjust the CSS in <code>index.css</code> — look for <code>.popup-content-embed</code>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>9. Quick Cheat Sheet</h3>
+                <pre><code>// ==========================================
+// POPUP QUICK REFERENCE
+// ==========================================
+// File: src/components/HomePopup.jsx
+// Toggle: src/pages/Home.jsx (comment/uncomment &lt;HomePopup /&gt;)
+//
+// LOCAL IMAGE:
+//   mediaType: 'image'
+//   mediaUrl:  '/images/pop/poster.png'
+//
+// LOCAL VIDEO:
+//   mediaType: 'video'
+//   mediaUrl:  '/videos/clip.mp4'
+//
+// FACEBOOK VIDEO (horizontal):
+//   mediaType:   'facebook'
+//   mediaUrl:    'https://www.facebook.com/PageName/videos/123456/'
+//   aspectRatio: 'landscape'
+//
+// FACEBOOK REEL (vertical):
+//   mediaType:   'facebook'
+//   mediaUrl:    'https://www.facebook.com/reel/123456/'
+//   aspectRatio: 'portrait'
+//
+// INSTAGRAM REEL (vertical):
+//   mediaType:   'instagram'
+//   mediaUrl:    'https://www.instagram.com/reel/CODE/'
+//   aspectRatio: 'portrait'
+//
+// INSTAGRAM POST (square):
+//   mediaType:   'instagram'
+//   mediaUrl:    'https://www.instagram.com/p/CODE/'
+//   aspectRatio: 'square'
+// ==========================================</code></pre>
             </section>
 
         </div>
