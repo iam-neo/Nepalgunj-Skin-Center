@@ -66,16 +66,14 @@ const HomePopup = () => {
         const aspectClass = getAspectClass();
 
         // --- Facebook Video Embed ---
-        // autoplay=1 → starts playing automatically
-        // mute=1     → required by browsers for autoplay to work
         if (mediaType === 'facebook') {
             const encodedUrl = encodeURIComponent(mediaUrl);
             return (
                 <div className={`popup-embed-wrapper ${aspectClass}`}>
                     <iframe
-                        src={`https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1514396190400152%2F&show_text=false&width=267&t=0&autoplay=true`}
+                        src={`https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1514396190400152%2F&show_text=false&width=267&t=0`}
                         className="popup-embed-iframe"
-                        style={{ border: 'none', overflow: 'hidden', pointerEvents: 'none' }}
+                        style={{ border: 'none', overflow: 'hidden' }}
                         scrolling="no"
                         frameBorder="0"
                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
@@ -87,14 +85,11 @@ const HomePopup = () => {
         }
 
         // --- Instagram Post/Reel Embed ---
-        // Instagram embeds auto-play reels by default
         if (mediaType === 'instagram') {
             let embedUrl = mediaUrl.replace(/\/$/, '') + '/embed/';
             if (embedUrl.includes('/embed/embed/')) {
                 embedUrl = embedUrl.replace('/embed/embed/', '/embed/');
             }
-            // Add autoplay param
-            embedUrl += '?autoplay=1';
             return (
                 <div className={`popup-embed-wrapper ${aspectClass}`}>
                     <iframe
