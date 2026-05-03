@@ -84,17 +84,43 @@ export const services = [
         id: 'laser-hair-reduction',
         icon: <GiRazor />,
         title: 'Laser Hair Reduction',
-        description: 'Pain-free permanent hair reduction using advanced Diode Laser technology.',
-        longDescription: 'Say goodbye to shaving and waxing. Our Diode Laser targets hair follicles at the root to inhibit growth, providing smooth, hair-free skin safe for all skin types.',
+        description: 'Long-term hair reduction using advanced Diode Laser technology with minimal discomfort.',
+        longDescription: 'Our Diode Laser Hair Reduction treatment targets hair follicles at the root to reduce unwanted hair growth over multiple sessions. The procedure is designed to deliver smoother skin, reduce ingrown hairs, and provide long-term results with minimal downtime.',
         image: '/images/services/LHR.jpg',
-        benefits: ['Permanent reduction', 'Smooth skin', 'No ingrown hairs', 'Safe & effective'],
-        procedure: [
-            { title: 'Shaving', desc: 'Area is shaved before treatment.' },
-            { title: 'Laser', desc: 'Cooling gel and laser application.' },
-            { title: 'Post-Care', desc: 'Soothing lotion applied.' }
+        benefits: [
+            'Long-term hair reduction',
+            'Helps reduce ingrown hairs',
+            'Smoother skin texture',
+            'Quick treatment sessions',
+            'Minimal downtime'
         ],
-        duration: '15 - 45 Mins',
-        pricing: 'Per Session / Package'
+        procedure: [
+            {
+                title: 'Preparation',
+                desc: 'The treatment area is cleaned and shaved before the procedure.'
+            },
+            {
+                title: 'Laser Application',
+                desc: 'Diode Laser energy is applied to target hair follicles with cooling support for comfort.'
+            },
+            {
+                title: 'Post-Treatment Care',
+                desc: 'Soothing products and aftercare instructions are provided after the session.'
+            }
+        ],
+        sessions: 'Multiple sessions are usually required for optimal results.',
+        recovery: 'Minimal downtime with temporary redness possible.',
+        suitableFor: [
+            'Face',
+            'Underarms',
+            'Arms',
+            'Legs',
+            'Bikini area',
+            'Back & chest'
+        ],
+        resultsTimeline: 'Visible reduction is typically noticed after a few sessions.',
+        duration: '15 - 45 Minutes',
+        pricing: 'Available per session or package'
     },
     {
         id: 'laser-tattoo-removal',

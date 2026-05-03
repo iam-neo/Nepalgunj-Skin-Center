@@ -55,6 +55,23 @@ const ServiceDetail = () => {
                                 </div>
                             </div>
 
+                            {service.suitableFor && (
+                                <div style={{ margin: '3rem 0' }}>
+                                    <h3>Treatment Areas</h3>
+                                    <div className="grid grid-2" style={{ marginTop: '1.5rem' }}>
+                                        {service.suitableFor.map((area, index) => (
+                                            <div key={index} style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                                                <span style={{
+                                                    color: 'var(--primary-blue)',
+                                                    fontSize: '1.25rem',
+                                                }}>📍</span>
+                                                <span>{area}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
                             <div style={{ background: 'var(--light-gray)', padding: '2rem', borderRadius: 'var(--radius-lg)', marginBottom: '3rem' }}>
                                 <h3 style={{ marginBottom: '1.5rem' }}>Treatment Procedure</h3>
                                 <div className="procedure-steps">
@@ -124,6 +141,13 @@ const ServiceDetail = () => {
                                     <h4 style={{ fontSize: '0.875rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '1px' }}>Duration</h4>
                                     <p style={{ fontWeight: '600', color: 'var(--deep-blue)' }}>{service.duration || 'Varies'}</p>
                                 </div>
+
+                                {service.sessions && (
+                                    <div style={{ marginBottom: '1.5rem' }}>
+                                        <h4 style={{ fontSize: '0.875rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '1px' }}>Sessions</h4>
+                                        <p style={{ fontWeight: '600', color: 'var(--deep-blue)' }}>{service.sessions}</p>
+                                    </div>
+                                )}
 
                                 <div style={{ marginBottom: '1.5rem' }}>
                                     <h4 style={{ fontSize: '0.875rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '1px' }}>Price</h4>
