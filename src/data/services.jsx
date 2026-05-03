@@ -415,12 +415,50 @@ export const services = [
     {
         id: 'vampire-facial',
         icon: <MdFaceRetouchingNatural />,
-        title: 'Vampire Facial',
-        description: 'Rejuvenate your face with microneedling and PRP.',
-        longDescription: 'Combines microneedling with PRP to boost collagen, improve texture, and give your skin a youthful glow. Famous for its anti-aging benefits.',
+        title: 'Vampire Facial (PRP Microneedling)',
+
+        description:
+            'Advanced skin rejuvenation treatment combining microneedling with PRP to support collagen production and improve overall skin texture.',
+
+        longDescription:
+            'The Vampire Facial combines microneedling with Platelet-Rich Plasma (PRP) derived from your own blood. The micro-injuries created by microneedling, combined with growth factors in PRP, help stimulate natural collagen production. Over time, this may improve skin texture, reduce fine lines, and enhance overall skin quality.',
+
         image: '/images/services/vampire.jpeg',
-        benefits: ['Collagen boost', 'Tightening', 'Glow', 'Anti-aging'],
-        duration: '60 Mins',
+
+        benefits: [
+            'Supports natural collagen production',
+            'Improves skin texture and tone',
+            'Helps reduce fine lines',
+            'Minimally invasive procedure',
+            'Uses body’s own growth factors'
+        ],
+        sessions: 'Multiple sessions are usually recommended for best results.',
+        recovery: 'Mild redness and sensitivity may occur for 1–3 days after treatment.',
+        resultsTimeline: 'Gradual improvement is seen over several weeks as collagen builds.',
+
+        suitableFor: [
+            'Dull skin',
+            'Fine lines',
+            'Uneven texture',
+            'Acne scars',
+            'Early aging signs'
+        ],
+        procedure: [
+            {
+                title: 'Blood Collection',
+                desc: 'A small amount of blood is drawn from your arm to prepare growth factors for treatment.',
+            },
+            {
+                title: 'Processing',
+                desc: 'The blood is centrifuged to separate platelet-rich plasma or growth factors used for regeneration.',
+            },
+            {
+                title: 'Scalp Injection',
+                desc: 'The prepared solution is injected into targeted areas of the scalp. Mild discomfort may be felt during the process.',
+            }
+        ],
+
+        duration: '60 Minutes',
         pricing: 'Per Session'
     },
     {
