@@ -159,6 +159,7 @@ export const services = [
             'Amateur tattoos',
             'Small to large tattoo areas'
         ],
+
         duration: '20 - 40 Minutes',
         pricing: 'Pricing varies based on tattoo size and complexity'
     },
