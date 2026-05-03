@@ -314,11 +314,51 @@ export const services = [
         id: 'laser-skin-resurfacing',
         icon: <MdLayers />,
         title: 'Laser Skin Resurfacing',
-        description: 'Rejuvenate your skin by removing damaged outer layers.',
-        longDescription: 'A comprehensive treatment for sun damage, age spots, and uneven texture. It removes the outer layer of skin to reveal fresh, healthy skin underneath.',
+        description:
+            'Advanced laser treatment designed to improve skin texture, reduce sun damage, and promote healthier skin renewal.',
+
+        longDescription:
+            'Laser Skin Resurfacing is a dermatological procedure that uses controlled laser energy to target damaged skin layers. It helps improve sun damage, fine lines, uneven texture, and age spots by stimulating skin renewal and collagen production. The treatment results in smoother, clearer, and more refined skin over time.',
+
         image: '/images/services/resurf.jpg',
-        benefits: ['Deep rejuvenation', 'Removes sun damage', 'Tighter skin', 'Fresh glow'],
-        duration: '60 Mins',
+
+        benefits: [
+            'Improves skin texture and tone',
+            'Reduces sun damage and pigmentation',
+            'Stimulates collagen renewal',
+            'Helps reduce fine lines',
+            'Enhances overall skin clarity'
+        ],
+
+        procedure: [
+            {
+                title: 'Skin Assessment',
+                desc: 'Skin condition and suitability for laser resurfacing are evaluated.'
+            },
+            {
+                title: 'Laser Treatment',
+                desc: 'Controlled laser energy is applied to resurface damaged skin layers.'
+            },
+            {
+                title: 'Healing & Aftercare',
+                desc: 'Post-treatment care instructions are provided to support proper healing.'
+            }
+        ],
+
+        sessions: 'Depending on skin condition, multiple sessions may be recommended.',
+        recovery: 'Redness, sensitivity, and peeling may occur for several days after treatment.',
+        downtime: 'Moderate downtime depending on treatment intensity.',
+        resultsTimeline: 'Improvements become visible gradually over several weeks as skin heals.',
+
+        suitableFor: [
+            'Sun-damaged skin',
+            'Fine lines',
+            'Uneven skin texture',
+            'Age spots',
+            'Dull complexion'
+        ],
+
+        duration: '60 Minutes',
         pricing: 'Consultation Required'
     },
     {
