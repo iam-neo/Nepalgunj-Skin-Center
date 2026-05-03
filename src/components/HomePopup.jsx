@@ -25,22 +25,92 @@ const HomePopup = () => {
     if (!isOpen) return null;
 
     // --- POPUP CONFIGURATION ---
-    // Change these values to update the popup content.
-    // Ensure mediaUrl points to a valid image (.jpg, .png, .gif) or video (.mp4) in the public folder or absolute URL.
+    // 
+    // MEDIA TYPE OPTIONS:
+    //   'image'     → Local image (.jpg, .png, .gif) from public folder or absolute URL
+    //   'video'     → Local video (.mp4, .webm) from public folder or absolute URL
+    //   'facebook'  → Facebook video embed (paste the Facebook video/reel URL)
+    //   'instagram' → Instagram post/reel embed (paste the Instagram post/reel URL)
+    //
+    // ASPECT RATIO OPTIONS (for facebook & instagram embeds):
+    //   'landscape'  → 16:9  — for normal horizontal videos
+    //   'portrait'   → 9:16  — for vertical Reels (Facebook & Instagram)
+    //   'square'     → 1:1   — for square Instagram posts
+    //
+    // EXAMPLES:
+    //   mediaType: 'facebook',  mediaUrl: 'https://www.facebook.com/PageName/videos/123', aspectRatio: 'landscape'
+    //   mediaType: 'facebook',  mediaUrl: 'https://www.facebook.com/reel/123',            aspectRatio: 'portrait'
+    //   mediaType: 'instagram', mediaUrl: 'https://www.instagram.com/reel/ABC123/',        aspectRatio: 'portrait'
+    //   mediaType: 'instagram', mediaUrl: 'https://www.instagram.com/p/ABC123/',           aspectRatio: 'square'
+    //   mediaType: 'image',     mediaUrl: '/images/pop/new.png'
+    //   mediaType: 'video',     mediaUrl: '/videos/promo.mp4'
+    //
     const popupContent = {
-        mediaUrl: '/images/pop/new.png', // Updated to use the uploaded image
-        linkUrl: 'https://www.facebook.com/share/p/17CQwfN7Q3/', // The link to redirect to (can be external like 'https://...')
+        mediaType: 'facebook',     // Change this: 'image' | 'video' | 'facebook' | 'instagram'
+        mediaUrl: 'https://www.facebook.com/share/v/1BEmkYAbRE/',  // Paste your URL here
+        aspectRatio: 'portrait',   // Change this: 'landscape' | 'portrait' | 'square' (for embeds only)
+        linkUrl: '',               // Optional: external link when clicking image/video (not used for embeds)
         altText: 'Special Event'
     };
 
-    // Determine if the media is a video based on extension
-    const isVideo = popupContent.mediaUrl.match(/\.(mp4|webm)$/i);
+    // Determine CSS class for aspect ratio
+    const getAspectClass = () => {
+        const ratio = popupContent.aspectRatio || 'landscape';
+        if (ratio === 'portrait') return 'popup-embed-portrait';
+        if (ratio === 'square') return 'popup-embed-square';
+        return ''; // landscape is the default
+    };
 
     const renderMediaElement = () => {
-        if (isVideo) {
+        const { mediaType, mediaUrl } = popupContent;
+        const aspectClass = getAspectClass();
+
+        // --- Facebook Video Embed ---
+        if (mediaType === 'facebook') {
+            const encodedUrl = encodeURIComponent(mediaUrl);
+            return (
+                <div className={`popup-embed-wrapper ${aspectClass}`}>
+                    <iframe
+                        src={`https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1514396190400152%2F&show_text=false&width=267&t=0`}
+                        className="popup-embed-iframe"
+                        style={{ border: 'none', overflow: 'hidden' }}
+                        scrolling="no"
+                        frameBorder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        allowFullScreen
+                        title="Facebook Video"
+                    />
+                </div>
+            );
+        }
+
+        // --- Instagram Post/Reel Embed ---
+        if (mediaType === 'instagram') {
+            let embedUrl = mediaUrl.replace(/\/$/, '') + '/embed/';
+            if (embedUrl.includes('/embed/embed/')) {
+                embedUrl = embedUrl.replace('/embed/embed/', '/embed/');
+            }
+            return (
+                <div className={`popup-embed-wrapper ${aspectClass}`}>
+                    <iframe
+                        src={embedUrl}
+                        className="popup-embed-iframe"
+                        style={{ border: 'none', overflow: 'hidden' }}
+                        scrolling="no"
+                        frameBorder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        allowFullScreen
+                        title="Instagram Post"
+                    />
+                </div>
+            );
+        }
+
+        // --- Local Video ---
+        if (mediaType === 'video') {
             return (
                 <video
-                    src={popupContent.mediaUrl}
+                    src={mediaUrl}
                     className="popup-media"
                     autoPlay
                     loop
@@ -49,30 +119,39 @@ const HomePopup = () => {
                 />
             );
         }
+
+        // --- Local Image (default) ---
         return (
             <img
-                src={popupContent.mediaUrl}
+                src={mediaUrl}
                 alt={popupContent.altText}
                 className="popup-media"
             />
         );
     };
 
+    const isEmbed = popupContent.mediaType === 'facebook' || popupContent.mediaType === 'instagram';
+    const isPortrait = popupContent.aspectRatio === 'portrait';
+
     return (
         <div className="popup-overlay" onClick={handleClose}>
-            <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <div className={`popup-content ${isEmbed ? 'popup-content-embed' : ''} ${isEmbed && isPortrait ? 'popup-content-embed-portrait' : ''}`} onClick={(e) => e.stopPropagation()}>
                 <button className="popup-close-btn" onClick={handleClose} aria-label="Close popup">
                     &times;
                 </button>
 
-                {popupContent.linkUrl.startsWith('http') ? (
+                {isEmbed ? (
+                    renderMediaElement()
+                ) : popupContent.linkUrl && popupContent.linkUrl.startsWith('http') ? (
                     <a href={popupContent.linkUrl} target="_blank" rel="noopener noreferrer" onClick={handleClose}>
                         {renderMediaElement()}
                     </a>
-                ) : (
+                ) : popupContent.linkUrl ? (
                     <Link to={popupContent.linkUrl} onClick={handleClose}>
                         {renderMediaElement()}
                     </Link>
+                ) : (
+                    renderMediaElement()
                 )}
             </div>
         </div>
