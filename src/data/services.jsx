@@ -25,7 +25,8 @@ import {
     GiRazor,
     GiMedicines,
     GiSewingNeedle,
-    GiNeedleDrill
+    GiNeedleDrill,
+    GiHairStrands
 } from 'react-icons/gi';
 import { RiTimeLine } from 'react-icons/ri';
 import { TbActivityHeartbeat } from 'react-icons/tb';
@@ -33,19 +34,51 @@ import { TbActivityHeartbeat } from 'react-icons/tb';
 export const services = [
     {
         id: 'hair-transplant',
-        icon: <FaHeadSideVirus />,
+        icon: <GiHairStrands />,
         title: 'Hair Transplant',
-        description: 'Restore your natural hairline with our advanced Follicular Unit Extraction (FUE) technique.',
-        longDescription: 'Our Hair Transplant service utilizes the latest FUE technology to extract individual hair follicles and implant them into thinning areas. This results in natural-looking density with minimal scarring and downtime.',
+        description: 'Natural-looking hair restoration using minimally invasive FUE hair transplant technology.',
+        longDescription: 'Our FUE Hair Transplant procedure involves extracting healthy hair follicles from the donor area and implanting them into thinning or bald regions with precision. The technique is minimally invasive, leaves no linear scar, and is designed to achieve natural hair growth patterns with faster recovery compared to traditional methods.',
         image: '/images/services/HT.jpg',
-        benefits: ['Permanent results', 'Natural hairline', 'Minimal downtime', 'No linear scarring'],
-        procedure: [
-            { title: 'Consultation', desc: 'Scalp analysis and design.' },
-            { title: 'Extraction', desc: 'Harvesting follicles under local anesthesia.' },
-            { title: 'Implantation', desc: 'Precise placement of grafts.' }
+        benefits: [
+            'Natural-looking hair growth',
+            'Minimally invasive FUE technique',
+            'No stitches or linear scar',
+            'Long-lasting results',
+            'Faster recovery time'
         ],
-        duration: '6 - 8 Hours',
-        pricing: 'Per Graft Basis'
+        procedure: [
+            {
+                title: 'Consultation',
+                desc: 'Hairline planning, scalp assessment, and graft estimation.'
+            },
+            {
+                title: 'Extraction',
+                desc: 'Healthy follicles are extracted from the donor area under local anesthesia.'
+            },
+            {
+                title: 'Implantation',
+                desc: 'Grafts are carefully implanted to match natural hair direction and density.'
+            },
+            {
+                title: 'Recovery & Aftercare',
+                desc: 'Post-procedure instructions are provided for healing and optimal growth.'
+            }
+        ],
+        candidate: 'Suitable for male pattern baldness, receding hairline, and thinning hair.',
+        recovery: 'Most patients resume normal routine within a few days.',
+        resultsTimeline: 'Visible growth typically begins after 3–4 months.',
+        faq: [
+            {
+                q: 'Is the procedure painful?',
+                a: 'The procedure is performed under local anesthesia, so discomfort is minimal.'
+            },
+            {
+                q: 'Will the transplanted hair look natural?',
+                a: 'Yes, grafts are implanted following natural hair growth direction and density.'
+            }
+        ],
+        duration: '4 - 8+ Hours (depending on graft count)',
+        pricing: 'Charged per graft after consultation'
     },
     {
         id: 'laser-hair-reduction',
