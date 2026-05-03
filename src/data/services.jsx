@@ -264,11 +264,8 @@ export const services = [
     },
     {
         id: 'laser-scar-reduction',
-
         icon: <MdOutlineHealing />,
-
         title: 'Laser Scar Reduction',
-
         description:
             'Advanced fractional laser treatment designed to improve the appearance of acne scars, surgical scars, and stretch marks.',
 
