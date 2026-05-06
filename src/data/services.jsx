@@ -37,31 +37,41 @@ export const services = [
         icon: <GiHairStrands />,
         title: 'Hair Transplant',
         description: 'Natural-looking hair restoration using minimally invasive FUE hair transplant technology.',
-        longDescription: 'Our FUE Hair Transplant procedure involves extracting healthy hair follicles from the donor area and implanting them into thinning or bald regions with precision. The technique is minimally invasive, leaves no linear scar, and is designed to achieve natural hair growth patterns with faster recovery compared to traditional methods.',
+        longDescription: 'Our FUE (Follicular Unit Extraction) Hair Transplant is an advanced, minimally invasive solution for hair loss, thinning hair, and baldness. This modern technique involves extracting healthy hair follicles from the donor area and implanting them into affected regions with high precision. Designed to deliver a natural- looking hairline, optimal density, and permanent results, FUE offers no stitches, no linear scar, and faster recovery compared to traditional hair transplant methods. At Nepalgunj Skin Center, we are proud to be a pioneer in introducing advanced Hair Transplant techniques in Nepalgunj and Western Nepal—delivering trusted, natural - looking results with precision and expertise.',
         image: '/images/services/HT.jpg',
         benefits: [
-            'Natural-looking hair growth',
+            'Natural-looking hair growth and hairline',
             'Minimally invasive FUE technique',
-            'No stitches or linear scar',
-            'Long-lasting results',
-            'Faster recovery time'
+            'No stitches or visible linear scar',
+            'Permanent, long-lasting results',
+            'Faster recovery with minimal downtime',
+            'Safe and effective for male and female hair loss'
+
         ],
         procedure: [
             {
-                title: 'Consultation',
-                desc: 'Hairline planning, scalp assessment, and graft estimation.'
+                title: 'Consultation & Planning',
+                desc: 'Comprehensive scalp evaluation, diagnosis of hair loss, customized hairline design, and precise graft estimation based on your facial structure and expectations.'
             },
             {
-                title: 'Extraction',
-                desc: 'Healthy follicles are extracted from the donor area under local anesthesia.'
+                title: 'Donor Area Preparation',
+                desc: 'The donor area (usually the back of the scalp) is trimmed and prepared under strict sterile conditions.'
             },
             {
-                title: 'Implantation',
-                desc: 'Grafts are carefully implanted to match natural hair direction and density.'
+                title: 'Follicular Unit Extraction (FUE)',
+                desc: 'Healthy hair follicles are carefully extracted one by one under local anesthesia, ensuring minimal trauma and maximum graft survival.'
             },
             {
-                title: 'Recovery & Aftercare',
-                desc: 'Post-procedure instructions are provided for healing and optimal growth.'
+                title: 'Recipient Area Creation',
+                desc: 'Tiny micro-channels are created in the bald or thinning areas, following the natural angle, direction, and density of hair growth.'
+            },
+            {
+                title: 'Graft Implantation',
+                desc: 'Each graft is meticulously placed into the recipient sites, ensuring precise control over depth, angle, and distribution for a natural-looking result.'
+            },
+            {
+                title: 'Post-Procedure Care & Instructions',
+                desc: 'Comprehensive post-procedure care guidelines, including wound care, showering instructions, and medication schedules, are provided to ensure optimal healing and graft survival.'
             }
         ],
         candidate: 'Suitable for male pattern baldness, receding hairline, and thinning hair.',
@@ -165,9 +175,7 @@ export const services = [
     },
     {
         id: 'laser-skin-whitening',
-
         icon: <MdWbSunny />,
-
         title: 'Laser Skin Brightening (Pigmentation Treatment)',
 
         description:
@@ -300,9 +308,14 @@ export const services = [
         recovery: 'Mild redness and sensitivity may occur for a few days.',
         resultsTimeline: 'Gradual improvement is visible over several weeks to months.',
         suitableFor: [
-            'Acne scars',
+            'Acne scars (boxcar, rolling, hypertrophic)',
             'Surgical scars',
-            'Stretch marks',
+            'Burn Scars/ Accidental Scars ',
+            'Stretch marks (striae)',
+            'Keloid scars',
+            'Post-inflammatory hyperpigmentation',
+            'Chickenpox scars',
+            'Enlarged pores',
             'Uneven skin texture'
         ],
 
