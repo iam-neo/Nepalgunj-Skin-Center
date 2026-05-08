@@ -376,9 +376,7 @@ export const services = [
     },
     {
         id: 'prp-gfc-treatment',
-
         icon: <MdBloodtype />,
-
         title: 'PRP / GFC Hair Treatment',
 
         description:
