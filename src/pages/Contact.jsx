@@ -199,7 +199,7 @@ const Contact = () => {
 
                         {/* Contact Info Card */}
                         <div className="contact-info-card">
-                            <h3 style={{ color: 'var(--white)', marginBottom: '2rem' }}>Get In Touch</h3>
+                            <h3 style={{ color: '#FFFFFF', marginBottom: '2rem' }}>Get In Touch</h3>
 
                             <div className="contact-info-item">
                                 <div className="contact-info-icon">📍</div>
