@@ -3647,6 +3647,237 @@ button {
   border-color: var(--primary);
 }
 
+/* ============================================
+   DARK MODE — TEXT COLOR FIXES
+   Fix: --white is #0F172A in dark mode, which
+   is correct for backgrounds but breaks all
+   text that uses color: var(--white).
+   ============================================ */
+
+/* --- Page Header (all inner pages) --- */
+[data-theme="dark"] .page-header h1 {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .page-header p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Section Dark (CTA sections) --- */
+[data-theme="dark"] .section-dark {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .section-dark h2,
+[data-theme="dark"] .section-dark h3 {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .section-dark p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Footer Text --- */
+[data-theme="dark"] .footer {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .footer-col h3 {
+  color: #90E0EF;
+}
+
+[data-theme="dark"] .footer-col p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+[data-theme="dark"] .footer-bottom,
+[data-theme="dark"] .footer-bottom p {
+  color: #F1F5F9;
+}
+
+/* --- Button Text Colors --- */
+[data-theme="dark"] .btn-primary {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .btn-white {
+  background: #1E293B;
+  color: #90E0EF;
+  border: 1px solid rgba(144, 224, 239, 0.3);
+}
+
+[data-theme="dark"] .btn-white:hover {
+  background: rgba(0, 180, 216, 0.15);
+  color: #F1F5F9;
+}
+
+/* --- Feature Icon Text --- */
+[data-theme="dark"] .feature-icon {
+  color: #FFFFFF;
+}
+
+/* --- Blog Card Title Links --- */
+[data-theme="dark"] .blog-card h3 a {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .blog-card h3 a:hover {
+  color: #00B4D8;
+}
+
+/* --- Blog Card Meta & Author Row --- */
+[data-theme="dark"] .blog-card-author-row {
+  border-top-color: #334155;
+}
+
+[data-theme="dark"] .blog-card-category {
+  background: rgba(0, 180, 216, 0.85);
+  color: #FFFFFF;
+}
+
+/* --- Blog Hero Featured Article --- */
+[data-theme="dark"] .blog-hero-content h1 {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .blog-hero-excerpt {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Blog TOC --- */
+[data-theme="dark"] .blog-toc {
+  background: #1E293B;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .blog-toc h4 {
+  color: #90E0EF;
+}
+
+/* --- Blog Content --- */
+[data-theme="dark"] .blog-content blockquote {
+  background: #1E293B;
+  border-left-color: #00B4D8;
+}
+
+/* --- FAQ Sidebar --- */
+[data-theme="dark"] .faq-sidebar {
+  background: #1E293B;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .faq-nav a:hover,
+[data-theme="dark"] .faq-nav a.active {
+  background: #334155;
+  color: #00B4D8;
+}
+
+/* --- Contact Info Card --- */
+[data-theme="dark"] .contact-info-card h3 {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .contact-info-item h4 {
+  color: #90E0EF;
+}
+
+[data-theme="dark"] .contact-info-item p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Service Detail Sidebar --- */
+[data-theme="dark"] .service-image-container {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Service Card Link Colors --- */
+[data-theme="dark"] .service-card h3 {
+  color: #90E0EF;
+}
+
+/* --- Testimonial Section --- */
+[data-theme="dark"] .testimonial-name {
+  color: #F1F5F9;
+}
+
+[data-theme="dark"] .testimonial-text {
+  color: #CBD5E1;
+}
+
+[data-theme="dark"] .review-treatment-tag {
+  background: rgba(0, 180, 216, 0.15);
+  color: #00B4D8;
+}
+
+[data-theme="dark"] .google-rating-number {
+  color: #F1F5F9;
+}
+
+/* --- Doctor Section --- */
+[data-theme="dark"] .doctor-highlight .title {
+  color: #CBD5E1;
+}
+
+/* --- Comparison Slider Labels --- */
+[data-theme="dark"] .comparison-label {
+  color: #FFFFFF;
+}
+
+/* --- Breadcrumbs (Blog Listing) --- */
+[data-theme="dark"] .breadcrumbs a {
+  color: #00B4D8;
+}
+
+[data-theme="dark"] .breadcrumbs .current {
+  color: #CBD5E1;
+}
+
+/* --- Newsletter CTA --- */
+[data-theme="dark"] .blog-newsletter h2 {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .blog-newsletter p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Home Popup --- */
+[data-theme="dark"] .popup-content {
+  background: #1E293B;
+}
+
+/* --- Lightbox text in dark mode --- */
+[data-theme="dark"] .lightbox-caption h3 {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .lightbox-caption p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Loading Spinner --- */
+[data-theme="dark"] .loading-spinner {
+  color: #00B4D8;
+}
+
+/* --- Inline style overrides: common elements
+   that use hardcoded color: var(--deep-blue)
+   which becomes light cyan in dark mode — these
+   are fine. But elements using var(--white) for
+   text need fixing --- */
+[data-theme="dark"] .hero-subtext {
+  color: #CBD5E1;
+}
+
+/* --- Smooth dark mode transition --- */
+html,
+html body,
+html .navbar,
+html .navbar-scrolled,
+html .navbar-solid {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .scroll-to-top {
     bottom: 90px;
